@@ -28,7 +28,7 @@ body.two-col.bp.bobcat {
 		@include float-right;
 		margin-right: 1.5em;
 	}
-  section.content { 
+	section.content { 
 		//@include column($blueprint-liquid-grid-columns - ($blueprint-liquid-grid-columns / 5), true);
  		margin-left: 1.5em; 
 	} 
