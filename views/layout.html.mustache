@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      {{page_title}}
+    </title> 
+    {{{meta}}}
+    {{{stylesheets}}}
+    {{{javascripts}}}
+  </head>
+  <body id="{{document_id}}" class="bp two-col bobcat {{document_class}}">
+    <div id="container">
+      {{{ header }}}
+      
+      <div class="clearBoth"></div>
+      
+      {{{ sidebar }}}     
+      
+      <section id="content" class="content">
+        {{{content}}}
+      </section>
+      
+      {{{ footer }}}
+    </div>
+  </body>
+</html>
+

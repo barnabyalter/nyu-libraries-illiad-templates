@@ -1,0 +1,37 @@
+<section id="sidebar" class="sidebar">
+  {{#boxes}}
+  <menu id="{{id}}" class="box">
+    {{#header}}
+      <h2>{{{header}}}</h2>
+    {{/header}}
+    {{#option_groups}}
+      <ul id="{{id}}">
+      {{#header}}
+        <li>
+        <h3>{{{header}}}</h3>
+          <ul>
+      {{/header}}
+      {{#options}}
+        {{#link}}
+          {{#target}}
+            <li><a href="{{{link}}}" id="{{id}}" target="{{target}}" name="{{id}}">{{{title}}}</a></li>
+          {{/target}}
+          {{^target}}
+            <li><a href="{{{link}}}" id="{{id}}" name="{{id}}">{{{title}}}</a></li>
+          {{/target}}
+        {{/link}}
+      {{/options}}
+      {{#content}}
+        <li>
+        {{{content}}}
+        </li>
+      {{/content}}
+      {{#header}}
+          </ul>
+        </li>
+      {{/header}}
+      </ul>
+    {{/option_groups}}
+  </menu>
+  {{/boxes}}
+</section>

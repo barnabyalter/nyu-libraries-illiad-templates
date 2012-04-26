@@ -1,0 +1,10 @@
+{{#stylesheets}}
+{{^ie}}
+<link rel="{{rel}}" type="{{type}}" href="{{href}}" media="{{media}}">
+{{/ie}}
+{{#ie}}
+<!--[if lte IE 8]>
+<link rel="{{rel}}" type="{{type}}" href="{{href}}" media="{{media}}">
+<![endif]-->
+{{/ie}}
+{{/stylesheets}}

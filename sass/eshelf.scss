@@ -1,0 +1,130 @@
+// Import base variables and mixins which bobcat and sub layouts use
+@import "bobcat5";
+
+/* Override bobcat content styles for left sidebar */
+body.two-col.bp.bobcat.eshelf {
+  .sidebar {
+		@include sidebar;
+		@include float-left;
+		margin-left: 1.5em;
+	}
+  .content { 
+ 		margin-right: 1.5em; 
+		padding: 1em;
+	}
+	.sidebar { width: 19em; }
+	.content { margin-left: 22em; width: auto; }
+}
+
+/* Set table styles for inside main content section */
+.content {
+	table {
+	  tr.row-header th {
+	    font-size: 1.5em;
+	    background: #ccc;
+	    font-weight: lighter;
+	  }
+	  thead {
+			th {
+	    	background: #EEE;
+	    	margin: 1px;
+	  	}
+	  	tr.row-headings th {
+	    	border: 1px solid #fff;
+	  		background: #EEE;
+	  	}
+		}
+		#resultsList {
+			li.result, #resultsList div.appetizer {
+				padding-left: 0px;
+			}
+			.format {
+				margin-left: 2em;
+				margin-right: 1em;
+				max-width: 50px;
+			}
+			.record_checkbox {
+				position: absolute;
+			}
+	 		div.entree {
+				margin-left: 6.5em;
+			}
+		}
+	}
+	.request_buttons {
+		text-align: right;
+	}
+}
+
+body.account #shelf_options {
+	#account { font-weight: bold; }
+	#records { font-weight: normal; }
+}
+
+#aleph_account {
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	/*height style hacks for all browser*/
+	min-height: 600px;
+	_height: 600px;
+}
+
+div.checkall_checkbox_wrapper {
+	padding-top:7px;
+	padding-bottom:5px;
+ 	label {
+		padding-left:5px;
+	}	
+	&.checkall_checkbox_end {
+		border-top: 2px solid #D9D9D9;
+		padding-top: 15px;
+	}
+}
+
+#folder_options {
+	padding-top: 5px;
+	border-top: 2px solid #cfcfd0;
+}
+
+// Pagination 
+.pagination {
+	text-align: left;
+	margin-bottom: 5px;
+	margin-top: 7px;
+}
+
+// JS Tags 
+div.tags_pre, div.js_tags_wrapper, div.js_tags_input_wrapper, a.js_tags_action, ul.js_tags_list, ul.js_tags_list li {
+	display: inline;
+}
+
+a.js_tags_action {
+	margin-left: 5px;
+	font-size: 10px;
+}
+
+ul.js_tags_list li {
+	padding-left: 0;
+}
+
+div.js_tags_input_wrapper {
+	@include no-margin;
+	@include no-padding;
+	input {
+		border: $thin_border;
+	}
+}
+
+div.js_tags {
+	margin-top: 7px;
+}
+
+h3.spinner_search_tags {
+	background-image: url($ajax_loader_image);
+	background-repeat: no-repeat;
+	background-position: 80%;
+}
+
+#status { @include check_availability; }
+

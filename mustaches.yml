@@ -1,0 +1,28 @@
+---
+views:
+  - Form:
+    - ArticleRequest
+    - BookChapterRequest
+    - LoanRequest
+    - GenericRequestPeriodicalVolume
+    - ThesisRequest
+    - GenericRequestAudioVisual
+    - GenericRequestMusicalScore
+    - GenericRequestMicroform
+    - OtherRequest
+    - EditArticleRequest
+    - EditBookChapterRequest
+    - EditLoanRequest
+    - EditGenericRequestPeriodicalVolume
+    - EditThesisRequest
+    - EditGenericRequestAudioVisual
+    - EditGenericRequestMusicalScore
+    - EditGenericRequestMicroform
+    - EditOtherRequest
+  - IncludeHeader
+  - IncludeMenu
+  - IncludeFooter
+  - IncludeJavascripts
+  - IncludeStylesheets
+  - IncludeMeta
+  - IncludeRequestButtons

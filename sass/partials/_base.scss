@@ -1,0 +1,134 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+//Configure blueprint
+$blueprint-liquid-grid-columns: 24;
+$blueprint-liquid-container-width: 100%;
+$blueprint-liquid-container-min-width: 950px;
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Import the non-default scaffolding module.
+//@import "blueprint/scaffolding";
+
+@import "blueprint/liquid";
+
+@import "blueprint/form";
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+@include blueprint;
+@include blueprint-liquid-grid;
+@include blueprint-form;
+
+//Borders
+$thin_border: 1px solid #ccc;
+$form_els_border: 1px solid #B4B4B5;
+$results_list_border: 2px solid #d9d9d9;
+$tab_border: 1px solid #fff;
+
+//Colors (gray theme)
+$link_color: #0000cc;
+$link_active_color: #ffcc33;
+$breadcrumb_bg: #efefef;
+$breadcrumb_text: #666666;
+$hr_color: #e0d8c9;
+$top_logo_color: #623e24;
+$box_bg_color: #dcddde;
+$header_bg_color: #ccc;
+$footer_text_color: #666;
+$active_tab_color: #eeeeef;
+
+//Background images
+$header_bg_image: "https://library.nyu.edu/images/common/header_bg_dark.gif";
+$header_bg_image_light: "https://library.nyu.edu/images/common/header_bg_light.gif";
+$top_banner: "https://library.nyu.edu/images/banner2.gif";
+$eshelf_image: "https://library.nyu.edu/images/common/eshelf.gif";
+$ajax_loader_image: "https://library.nyu.edu/images/ajax-loader.gif";
+$magnifier_image: "https://library.nyu.edu/images/common/magnifier.png";
+$box_bg_image: "https://library.nyu.edu/images/common/box_bg_short.gif";
+$bobcat_logo: "https://library.nyu.edu/images/common/bobcat_logo.png";
+$tip_icon_image: "https://library.nyu.edu/images/common/bobcat/tip_icon.png";
+
+//Fonts
+$text_fonts: Verdana, Arial, Geneva, Helvetica, sans-serif;
+$header_fonts: Arial, Verdana, Genevea, Helvetica, sans-serif;
+
+@mixin page-header-text {
+	font-size: 100%;
+	line-height: 49px;
+	font-weight: normal;
+}
+
+@mixin page-header-small-spacing {
+	padding-left: 1em;
+	padding-top: 15px;
+}
+
+@mixin no-margin {
+	margin: 0;
+}
+
+@mixin no-padding {
+	padding: 0;
+}
+
+@mixin no-style-list {
+	list-style: none;
+	background-image: none;
+}
+
+@mixin no-style-list-item {
+	list-style: none;
+	background-image: none;
+}
+
+@mixin sidebar {
+	font-family: $text_fonts;
+	.box {
+		background: $box_bg_color url($box_bg_image) repeat-x top left;
+		h2 {
+			background: $header_bg_color url($header_bg_image) repeat-x top left;
+			padding: 0.3em 1.5em;
+			font-size: 110%;
+			font-weight: normal;
+		}
+		h3 { 
+			font-size: 110%;	
+			font-weight: bold;
+		}
+		input[type="text"], #js_search_tags input[type="text"] {
+			background-image: url($magnifier_image);
+			background-position: 6px 50%;
+			background-repeat: no-repeat;
+			width: 80%;
+			border: $thin_border;
+			padding: 5px 0 5px 24px;
+		}
+		#shelf_options li #records {
+			font-weight: bold;
+		}
+		ul { @include no-style-list; }
+		> ul {
+			padding-bottom:1.5em;
+			&.tags_list {
+				margin: 0 auto;
+				padding: 0 auto;
+				li {
+					padding: 5px 0 0;
+					margin-right: 0;
+				}
+			}
+		}
+	} 
+}
+
+/*Alias Classes*/
+ul.nostyle {
+	@include no-style-list;
+	li { @include no-style-list-item; }
+}
+.floatLeft { @include float-left; }
+.floatRight { @include float-right; }
+.clearBoth { clear: both; }

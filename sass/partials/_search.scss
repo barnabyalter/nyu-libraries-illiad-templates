@@ -1,0 +1,51 @@
+@mixin form_els {
+	font-family: $text_fonts;
+	font-size: 1em;
+	color: black;
+	display: inline;
+	border: $form_els_border;
+}
+.search_container {
+	padding-bottom: 1em;
+	background: $box_bg_color url($box_bg_image) repeat-x 0 31px;
+}
+/* Search */
+.search {
+	margin: 20px;
+	form {
+		@include no-margin;
+		@include no-padding;
+	}
+	fieldset {
+		border: none;
+		padding: 0px;
+		margin-bottom: 1.5em;
+	}
+	textarea {
+		@include form_els;
+	}
+	input[type="text"] {
+		@include form_els;
+		background-color: white;
+		background-image: url($magnifier_image);
+		background-position: 6px 50%;
+		background-repeat: no-repeat;
+		height: 24px;
+		line-height: 24px;
+		vertical-align: middle;
+		padding-left: 24px;
+		width: 80%;
+		max-width: 30em;
+	}
+ 	select {
+		display: inline;
+	}
+	ul li {
+		@include no-margin;
+		@include no-padding;
+		background-image: none; 
+		line-height: auto;
+		float: left;
+		margin-right: .25em
+	}
+}
