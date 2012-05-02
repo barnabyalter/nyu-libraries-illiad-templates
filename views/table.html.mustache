@@ -1,7 +1,34 @@
-{{#tables}}
-{{{text_above}}}
-<div class="{{table_name}}">			
-  {{{table_code}}}
-</div>
-{{{text_below}}}
-{{/tables}}
+        {{#actions}}
+        <div class="actions">
+          <label for="{{id}}">{{title}}</label>
+          <select id="{{id}}" name="{{name}}"><option value=""></option>
+            {{#optgroups}}
+            <optgroup label="{{title}}">
+              {{#options}}
+                <option value="{{value}}">{{title}}</option>
+              {{/options}}
+            </optgroup>
+            {{/optgroups}}
+          </select>
+          <input id="user_submit" name="commit" type="submit" value="Submit" />
+        </div>
+        {{/actions}}
+        {{{menu}}}
+        {{#tables}}
+        <div class="status_container">
+        <#STATUS>
+        </div>
+        {{#text_above}}
+        <div class="pre_table_text">
+          {{{text_above}}}
+        </div>
+        {{/text_above}}
+        <div class="{{class}}" id="{{name}}Table">			
+          <#TABLE{{#name}} name="{{name}}"{{/name}}{{#headerText}} headerText="{{headerText}}"{{/headerText}}{{#hideColumnHeaders}} hideColumnHeaders="{{hideColumnHeaders}}"{{/hideColumnHeaders}}{{#maxRows}} maxRows="{{maxRows}}"{{/maxRows}}{{#noDataAction}} noDataAction="{{noDataAction}}"{{/noDataAction}}{{#noDataMessage}} noDataMessage="{{noDataMessage}}"{{/noDataMessage}}{{#columns}} column="{{.}}"{{/columns}}>
+        </div>
+        {{#text_below}}
+        <div class="post_table_text">
+          {{{text_below}}}
+        </div>
+        {{/text_below}}
+        {{/tables}}

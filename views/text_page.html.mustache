@@ -1,0 +1,12 @@
+            {{#page_header}}<h2>{{{page_header}}}</h2>{{/page_header}}
+            {{#text_sections}}
+              <div class="{{text_class}}" id="{{text_id}}">
+              {{#text_header}}<h3>{{{text_header}}}</h3>{{/text_header}}
+              {{#paragraphs}}
+                {{{.}}}
+              {{/paragraphs}}
+              {{#text}}<div class="status_container">
+                {{{text}}}
+              </div>{{/text}}
+              </div>
+            {{/text_sections}}

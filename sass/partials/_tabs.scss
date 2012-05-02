@@ -20,7 +20,7 @@
 			@include no-padding;
 			width: 16%;
 			overflow: hidden;
-			border-right: 1px solid white;
+			border-right: $light_border;
 			min-width: 100px;
 			line-height: auto;
 			background-image: none !important;

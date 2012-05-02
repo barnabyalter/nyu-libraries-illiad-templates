@@ -1,46 +1,58 @@
 {{#form}}
-          <form action="illiad.dll" method="post" name="{{form_name}}" class="f-wrap-request">
+<form action="<#DLL>" method="post" name="{{form_name}}" class="f-wrap-request">
             {{#hidden_fields}}
-            <input type="hidden" name="{{name}}" value="{{value}}">
+            <input type="hidden" name="{{name}}" value="{{{value}}}" />
             {{/hidden_fields}}
-            <h3>{{{header}}}</h3>
-            <fieldset>		
-              <div class="req"><b>*</b> Indicates required field</div>	
-              <#STATUS>
-              <h2>{{sub_header}}</h2>		
+            <h2>{{{form_header}}}</h2>
+            <div><span class="req">*</span> Indicates required field</div>	
+            <fieldset>
+              <h3>{{sub_header}}</h3>
+                  <div class="status_container">
+                  <#STATUS>
+                  </div>
                 {{#form_fields}}	
-                <label for="{{field}}">
-                <span class="field">
-                {{#required}}
-                <span class="req">*</span>
-                {{/required}}
-                <span class="<#ERROR name="ERROR{{field}}">"><b>{{field_title}}</b></span><br />
-                {{#note}}
-                <span class="note">{{{note}}}</span>
-                {{/note}}
-                </span>
-                {{#textarea}}
-                <textarea id="{{field}}" name="{{field}}" class="f-name" tabindex="{{tabindex}}"><#PARAM name="{{field}}"></textarea>
-                {{/textarea}}
-                {{#input_text}}
-                <input id="{{field}}" name="{{field}}" class="f-name" tabindex="{{tabindex}}" value="<#PARAM name="{{field}}">">
-                {{/input_text}}
-                {{#select}}
-                <select id="{{field}}" name="{{field}}" class="f-name" tabindex="{{tabindex}}">
-                <option selected><#PARAM name="{{field}}"></option>
-                {{#options}}
-                <option value="{{value}}">{{title}}</option>
-                {{/options}}
-                </select>
-                {{/select}}
-                <br />
-                </label>		
+                <div class="field">
+                  <label for="{{field}}">
+                  {{#required}}
+                  <span class="req">*</span>
+                  {{/required}}
+                  <span class="<#ERROR name="ERROR{{field}}">">{{{field_title}}}</span><br />
+                  {{#note}}
+                  <span class="note">{{{note}}}</span><br />
+                  {{/note}}
+                  </label>
+                  {{#textarea}}
+                  <textarea id="{{field}}" name="{{field}}" tabindex="{{count}}"><#PARAM name="{{field}}"></textarea>
+                  {{/textarea}}
+                  {{#input_text}}
+                  <input type="text" id="{{field}}" name="{{field}}" class="text" tabindex="{{count}}" value="<#PARAM name="{{field}}">" />
+                  {{/input_text}}
+                  {{#select}}
+                  <select id="{{field}}" name="{{field}}" tabindex="{{count}}">
+                    <option selected><#PARAM name="{{field}}"></option>
+                  {{#options}}
+                  {{#value}}
+                    <option value="{{value}}">
+                    {{#title}}
+                      {{title}}
+                    {{/title}}
+                    {{^title}}
+                      {{value}}
+                    {{/title}}
+                    </option>
+                  {{/value}}
+                  {{/options}}
+                  </select>
+                  {{/select}}	
+                </div>
                 {{/form_fields}}
                 {{#footer}}
+                <div class="field">
                 <p>
-                  <b>{{{footer}}}</b>
-                </p>  
-                {{/footer}}    
+                  {{{footer}}}
+                </p>
+                </div>
+                {{/footer}} 
               <#INCLUDE filename="include_request_buttons.html">
             </fieldset>
           </form>

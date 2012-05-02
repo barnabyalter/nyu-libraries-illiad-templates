@@ -1,0 +1,101 @@
+// Import base variables and mixins which bobcat and sub layouts use
+@import "eshelf";
+
+@mixin selected {
+  font-weight: bold;
+}
+
+body.two-col.bp.bobcat.eshelf.illiad {
+  
+  .content {
+    table {
+      thead {
+        tr.row-header th {
+    	    font-size: 2em;
+    	    background: transparent;
+    	    margin: 0 0 0.5em 0;
+    	    font-weight: lighter;
+    	  }
+      	tr.row-headings th {
+        	border-right: $light_border;
+        	border-bottom: $light_border;
+      		background: #EEE;
+      	}
+    	}
+    	tbody {
+    	  td {
+    	    border-right: $light_border;
+    	  }
+    	}
+    }
+    form {
+      fieldset {
+        margin-left: 0;
+        padding-left: 0;
+        border: 0;
+        .field { 
+          @include clearfix; 
+          border-top: $content_list_border;
+          padding: .5em 0 0 0;
+          margin: 0 0 .5em 0;
+          textarea {
+            height: 18px;
+            width: 300px;
+            &#Other { height: 10em; }
+          }
+          textarea, input[type=text], select {
+            display: block;
+            @include float-right;
+            @include clearfix;
+          }
+          label {
+            display: block;
+            width: 50%;
+            @include float-left;
+            @include clearfix;
+          }
+          span.note {
+            font-size: 80%;
+            font-weight: normal;
+            color: #333;
+          }
+        }
+        .request_buttons {
+      	  text-align: right;
+      	  @include clearfix; 
+        }
+      }
+    }
+    .status_container {
+      margin: 1em 0;
+      p {
+        padding: .3em 0;
+        margin: 0;
+      }
+      .statusError { color: red; }
+      .statusNormal { color: black; }
+      .statusInformation { color: black; }
+    }
+    .validationError { color: red; }
+  }
+  .sidebar {
+    #search_illiad {
+      ul {
+        padding-left: 0;
+      }
+    }
+  }
+  
+
+  &#LoanRequest { section.sidebar a#request_book { @include selected; } }
+  &#ArticleRequest { section.sidebar a#request_article { @include selected; } }
+  &#BookChapterRequest { section.sidebar a#request_book_chapter { @include selected; } }
+  &#GenericRequestPeriodicalVolume { section.sidebar a#request_periodical_volume { @include selected; } }
+  &#ThesisRequest { section.sidebar a#request_dissertation_thesis { @include selected; } }
+  &#GenericRequestAudioVisual { section.sidebar a#request_audio_visual { @include selected; } }
+  &#GenericRequestMusicalScore { section.sidebar a#request_musical_score { @include selected; } }
+  &#GenericRequestMicroform { section.sidebar a#request_microform { @include selected; } }
+  &#OtherRequest { section.sidebar a#request_other { @include selected; } }
+
+
+}

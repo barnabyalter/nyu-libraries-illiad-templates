@@ -17,7 +17,7 @@ class IncludeHeader < Mustache
     '
     <ul class="login">
       <li>
-        <li><a href="<#ACTION action="99">" class="nyulibrary_icons_logout">Log-out <#PARAM name="FirstName"></a></li>
+        <li><a href="<#ACTION action="99">" class="nyulibrary_icons_logout">Log-out <#USER field="FirstName"> </a></li>
       </li>
     </ul>
     '
@@ -26,7 +26,7 @@ class IncludeHeader < Mustache
   def head_group
     {
       :application_title => "e-Shelf",
-      :username_text =>'for <#PARAM name="FirstName"> <#PARAM name="LastName">',
+      :username_text =>'for <#USER field="FirstName"> <#USER field="LastName">',
     }
   end
 

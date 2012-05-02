@@ -12,53 +12,48 @@ body.two-col.bp.bobcat.eshelf {
  		margin-right: 1.5em; 
 		padding: 1em;
 	}
-	.sidebar { width: 19em; }
-	.content { margin-left: 22em; width: auto; }
+	.sidebar { width: 17em; }
+	.content { margin-left: 20em; width: auto; }
+	header { margin-bottom: 0; }
 }
 
 /* Set table styles for inside main content section */
 .content {
-	table {
-	  tr.row-header th {
-	    font-size: 1.5em;
-	    background: #ccc;
-	    font-weight: lighter;
-	  }
-	  thead {
-			th {
-	    	background: #EEE;
-	    	margin: 1px;
-	  	}
-	  	tr.row-headings th {
-	    	border: 1px solid #fff;
-	  		background: #EEE;
-	  	}
+  @extend #results; 
+	#resultsList {
+		li.result, #resultsList div.appetizer {
+			padding-left: 0px;
 		}
-		#resultsList {
-			li.result, #resultsList div.appetizer {
-				padding-left: 0px;
-			}
-			.format {
-				margin-left: 2em;
-				margin-right: 1em;
-				max-width: 50px;
-			}
-			.record_checkbox {
-				position: absolute;
-			}
-	 		div.entree {
-				margin-left: 6.5em;
-			}
+		.format {
+			margin-left: 2em;
+			margin-right: 1em;
+			max-width: 50px;
 		}
-	}
-	.request_buttons {
-		text-align: right;
+		.record_checkbox {
+			position: absolute;
+		}
+ 		div.entree {
+			margin-left: 6.5em;
+		}
 	}
 }
 
-body.account #shelf_options {
-	#account { font-weight: bold; }
-	#records { font-weight: normal; }
+body.two-col.bp.bobcat.eshelf {
+  &.show {
+    #shelf_options li {
+	    #records { font-weight: bold; }
+    }
+  }
+  &.illiad {
+    #shelf_options li {
+	    #ill { font-weight: bold; }
+    }
+  }
+  &.account {
+    #shelf_options li {
+	    #account { font-weight: bold; }
+    }
+  }
 }
 
 #aleph_account {
@@ -126,5 +121,17 @@ h3.spinner_search_tags {
 	background-position: 80%;
 }
 
-#status { @include check_availability; }
+.row-even { @extend .even; }
+.row-odd { @extend .odd; }
+
+.req {
+  color: $required_field;
+  font-size: 150%;
+  font-weight: bold;
+  line-height: 1em;
+  width: .3em;
+  height: .3em;
+}
+
+
 

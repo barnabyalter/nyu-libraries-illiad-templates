@@ -5,7 +5,7 @@
 #facets {
 	float: left;
 	width: 17em;
-	border: $results_list_border;
+	border: $content_list_border;
 	div {
   	margin: 1em 0;
 	}
@@ -24,7 +24,7 @@
 		font-weight: normal;
 	}
 	.box {
-		border-bottom: $results_list_border;
+		border-bottom: $content_list_border;
 		margin: .5em 1em;
  		h3 {
 			font-size: 12px;

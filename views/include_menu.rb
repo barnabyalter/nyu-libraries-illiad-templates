@@ -5,7 +5,7 @@ class IncludeMenu < Mustache
     [
       {
         :id => "shelf", 
-        :header => "My E-Shelf",
+        :header => 'My Shelf <a href="http://library.nyu.edu/info/eshelf.html" class="nyulibrary_icons_help nyulibrary_help" style="text-decoration:none;" title="">&nbsp;</a>',
         :option_groups => [
           { :id => "shelf_options", :header => nil, :options => 
             [
@@ -16,15 +16,15 @@ class IncludeMenu < Mustache
           },
           { :id => "request", :header => "Request", :options => 
             [
-              { :link => '<#ACTION action="10" form="22">' , :id => "request_article", :title => "Article" },
-              { :link => '<#ACTION action="10" form="21">' , :id => "request_book", :title => "Book" },
-              { :link => '<#ACTION action="10" form="23">' , :id => "request_book_chapter", :title => "Book Chapter" },
+              { :link => '<#ACTION action="10" form="22">', :id => "request_article", :title => "Article" },
+              { :link => '<#ACTION action="10" form="21">', :id => "request_book", :title => "Book" },
+              { :link => '<#ACTION action="10" form="23">', :id => "request_book_chapter", :title => "Book Chapter" },
               { :link => '<#ACTION action="10" form="20" value="GenericRequestPeriodicalVolume">' , :id => "request_periodical_volume", :title => "Periodical Volume" },
-              { :link => '<#ACTION action="10" form="27">' , :id => "request_dissertation_thesis", :title => "Dissertation/Thesis" },
-              { :link => '<#ACTION action="10" form="20" value="GenericRequestAudioVisual">' , :id => "request_audio_visual", :title => "Audio/Visual" },
-              { :link => '<#ACTION action="10" form="20" value="GenericRequestMusicalScore">' , :id => "request_musical_score", :title => "Musical Score" },
-              { :link => '<#ACTION action="10" form="20" value="GenericRequestMicroform">' , :id => "request_microform", :title => "Microform" },
-              { :link => '<#ACTION action="10" form="29">' , :id => "request_other", :title => "Other" }
+              { :link => '<#ACTION action="10" form="27">', :id => "request_dissertation_thesis", :title => "Dissertation/Thesis" },
+              { :link => '<#ACTION action="10" form="20" value="GenericRequestAudioVisual">', :id => "request_audio_visual", :title => "Audio/Visual" },
+              { :link => '<#ACTION action="10" form="20" value="GenericRequestMusicalScore">', :id => "request_musical_score", :title => "Musical Score" },
+              { :link => '<#ACTION action="10" form="20" value="GenericRequestMicroform">', :id => "request_microform", :title => "Microform" },
+              { :link => '<#ACTION action="10" form="29">', :id => "request_other", :title => "Other" }
             ]
           },
           { :id => "view", :header => "View", :options => 
@@ -38,9 +38,9 @@ class IncludeMenu < Mustache
               { :link => '<#ACTION action="10" form="73">' , :id => "view_notifications", :title => "Notifications" }
             ]
           },
-          { :id => nil, :header => "Search", :content => 
+          { :id => "search_illiad", :header => "Search", :content => 
             '
-            <form action="illiad.dll" name="Search" method="post" id="Search">
+            <form action="<#DLL>" name="Search" method="post" id="Search">
               <input type="hidden" name="IlliadForm" value="Search"> 
               <input id="SessionID" name="SessionID" type="hidden" value="<#PARAM name="SessionID">"> 
               <label for="SearchCriteria">

@@ -1,18 +1,18 @@
 @mixin bottom_nav {
 	margin-top: 1.5em 0;
-	border-top: $results_list_border;
+	border-top: $content_list_border;
 	padding-top: 1em;
 }
 @mixin top_nav {
 	margin-bottom: 1.5em 0;
-	border-bottom: $results_list_border;
+	border-bottom: $content_list_border;
 	padding-bottom: 1em;
 }
 #results_container {
   padding-top: .5em;
 }
 /* Results */
-.content, #results {
+#results {
 	border: 2px solid #d9d9d9;
 	ul#resultsList {
 		margin: .5em 0 .5em;
@@ -26,7 +26,7 @@
 		li.result {
 			padding: 1em;
 			background-color: white;
-			border-top: $results_list_border;
+			border-top: $content_list_border;
 			margin-top: 1.5em 0 !important;
 		}
 		div.number {

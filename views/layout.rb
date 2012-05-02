@@ -2,7 +2,7 @@ require 'mustache'
 class Layout < Mustache
   
   def page_title
-    "Interlibrary Loan Request System - #{page_name}"
+    "BobCat - ILL - #{page_name}"
   end
   
   def page_name
@@ -14,7 +14,7 @@ class Layout < Mustache
   end
   
   def document_class
-    "eshelf"
+    "eshelf illiad"
   end
   
   def header

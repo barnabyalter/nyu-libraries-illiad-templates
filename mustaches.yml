@@ -1,6 +1,6 @@
 ---
 views:
-  - Form:
+  - Layout:
     - ArticleRequest
     - BookChapterRequest
     - LoanRequest
@@ -19,6 +19,24 @@ views:
     - EditGenericRequestMusicalScore
     - EditGenericRequestMicroform
     - EditOtherRequest
+    - IlliadMainMenu
+    - ViewOutstandingRequests
+    - ElectronicDelivery
+    - ViewRenewCheckedOutItems
+    - ViewResubmitCancelledRequests
+    - ViewRequestHistory
+    - ViewAllRequests
+    - ViewNotifications
+    - DetailedInformation
+    - ViewDefaultDetailed
+    - ViewDetailedInformation
+    - ViewNotificationsDetail
+    - ViewRenewCheckedOutDetailedInformation
+    - ViewResubmitDetailedInformation
+    - ViewSearchResults
+    - ElectronicDeliveryUndelete
+    - Error
+    - NewAuthRegistration
   - IncludeHeader
   - IncludeMenu
   - IncludeFooter

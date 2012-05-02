@@ -1,7 +1,7 @@
 
 /* Full Details */
 #full_details {
-	border: $results_list_border;
+	border: $content_list_border;
 	padding: .5em 1.25em;
 	.current_result {
 		@include float-left;
@@ -24,12 +24,12 @@
 	}
 	#secondary {
 		padding: 1em 0;
-		border-top: $results_list_border;
+		border-top: $content_list_border;
 		clear: left;
 	}
 	#tertiary {
 		padding: 1em 0;
-		border-top: $results_list_border;
+		border-top: $content_list_border;
 		clear: left;
 		ul {
 			width: 65%;
@@ -44,7 +44,7 @@
 	}
 	#quaternary {
 		padding: 1em 0 1.5em;
-		border-top: $results_list_border;
+		border-top: $content_list_border;
 		clear: left;
 		ul {
 			@include no-padding;

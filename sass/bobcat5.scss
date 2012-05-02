@@ -1,7 +1,10 @@
-
+/*
+ *=require_tree ./partials
+ */
 // Import base variables and mixins which bobcat and sub layouts use
 @import "partials/base";
 @import "partials/header";
+@import "partials/sidebar";
 @import "partials/content";
 @import "partials/search";
 @import "partials/forms";
