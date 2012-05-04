@@ -1,14 +1,13 @@
-#//= require_tree ./lib/jquery
-//= require ./lib/jquery/jquery.pjax.js
 jQuery ($)-> 
 
-  #$('a').pjax('#content')
-  
   #Init dropdown actions
+  $(".actions").show()
   $('div.actions').bobcat "droplist", droplist_class: "tsetse_droplist", events: ['click', 'hover']
   $('div.actions ul li a').live "click", (event)->
-    url = "#{$(this).closest("form").attr("action")}?#{$.query.load($(this).attr("href")).get("service[action]")}"
-    $(this).attr("href", url)
+    url = "#{$(this).closest("form").attr "action"}?#{$.query.load($(this).attr "href").get("service[action]")}"
+    $(this).attr "href": url
+  #Popup tips
+  $(".nyulibrary_help").nyulibrary_popup_tip "init"
 
   #Properly capitalize usernames
   capitalize = (phrase) -> phrase.replace /\B[A-Z]/g, (letter) -> letter.toLowerCase()
@@ -18,21 +17,26 @@ jQuery ($)->
   )
   
   #Shuffle around status classes
-  $(".status_container:has(span.statusNormal)").addClass("info")
-  $(".status_container:has(.success)").addClass("success")
-  $(".status_container:has(span.statusInformation)").addClass("info")
-  $(".status_container:has(span.statusError)").addClass("error")
-  $(".status_container").children(":has(.success)").removeClass("success")
-  $(".status_container").children(":has(.error)").removeClass("error")
+  $(".status_container:has(span.statusNormal)").addClass "info"
+  $(".status_container:has(.success)").addClass "success"
+  $(".status_container:has(span.statusInformation)").addClass "info"
+  $(".status_container:has(span.statusError)").addClass "error"
+  $(".status_container").children(":has(.success)").removeClass "success"
+  $(".status_container").children(":has(.error)").removeClass "error"
+  
+  match_form_text = (form_el, form_text) -> $.trim(form_el.children("option:selected").text()) is form_text
   
   #Form actions
   $("form#IlliadForm").validate() if $("form#IlliadForm").length
-  $("form .field:has(input#CitedIn)").hide()
+  $("form .field:has(input#CitedIn)").hide() unless match_form_text($("form #ShippingOptions"), "Other NYU Global Site")
   $("form #NotWantedAfter").datepicker()
   $("form #ShippingOptions").change -> 
-    if $.trim($(this).children("option:selected").text()) is "Other NYU Global Site"
+    if match_form_text($(this), "Other NYU Global Site")
       $("form .field:has(input#CitedIn)").show()  
       $("form .field input#CitedIn").addClass("required").focus()
     else
       $("form .field:has(input#CitedIn)").hide()    
+      
+  url = (anchor) -> anchor.attr "href"
+  $(".default-table table tbody tr td a").each -> $(this).closest("tr").find(":nth-child(3)").html($("<a />").attr("href",url($(this))).html($(this).closest("tr").find(":nth-child(3)").text()))
 

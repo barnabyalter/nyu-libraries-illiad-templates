@@ -11,6 +11,7 @@ class Form < Layout
     {
        :form_header => page_name,
        :form_name => self.class.name,
+       :form_id => "IlliadForm",
        :sub_header => "Describe the item you want",
        :count => lambda { return count += 1 },
        :hidden_fields => [

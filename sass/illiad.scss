@@ -8,6 +8,7 @@
 body.two-col.bp.bobcat.eshelf.illiad {
   
   .content {
+    .actions { display: none; }
     table {
       thead {
         tr.row-header th {
@@ -77,6 +78,12 @@ body.two-col.bp.bobcat.eshelf.illiad {
       .statusInformation { color: black; }
     }
     .validationError { color: red; }
+    #transactionMenu { 
+      border-top: $thin_border;
+      border-bottom: $thin_border;
+      font-weight: bold;
+      padding: .5em 0;
+    }
   }
   .sidebar {
     #search_illiad {
@@ -85,17 +92,21 @@ body.two-col.bp.bobcat.eshelf.illiad {
       }
     }
   }
+
   
 
-  &#LoanRequest { section.sidebar a#request_book { @include selected; } }
-  &#ArticleRequest { section.sidebar a#request_article { @include selected; } }
-  &#BookChapterRequest { section.sidebar a#request_book_chapter { @include selected; } }
-  &#GenericRequestPeriodicalVolume { section.sidebar a#request_periodical_volume { @include selected; } }
-  &#ThesisRequest { section.sidebar a#request_dissertation_thesis { @include selected; } }
-  &#GenericRequestAudioVisual { section.sidebar a#request_audio_visual { @include selected; } }
-  &#GenericRequestMusicalScore { section.sidebar a#request_musical_score { @include selected; } }
-  &#GenericRequestMicroform { section.sidebar a#request_microform { @include selected; } }
-  &#OtherRequest { section.sidebar a#request_other { @include selected; } }
+  &#LoanRequest, &#EditLoanRequest { section.sidebar a#request_book { @include selected; } }
+  &#ArticleRequest, &#EditArticleRequest { section.sidebar a#request_article { @include selected; } }
+  &#BookChapterRequest, &#EditBookChapterRequest { section.sidebar a#request_book_chapter { @include selected; } }
+  &#GenericRequestPeriodicalVolume, &#EditGenericRequestPeriodicalVolume { section.sidebar a#request_periodical_volume { @include selected; } }
+  &#ThesisRequest, &#EditThesisRequest { section.sidebar a#request_dissertation_thesis { @include selected; } }
+  &#GenericRequestAudioVisual, &#EditGenericRequestAudioVisual { section.sidebar a#request_audio_visual { @include selected; } }
+  &#GenericRequestMusicalScore, &#EditGenericRequestMusicalScore { section.sidebar a#request_musical_score { @include selected; } }
+  &#GenericRequestMicroform, &#EditGenericRequestMicroform { section.sidebar a#request_microform { @include selected; } }
+  &#OtherRequest, &#EditOtherRequest { section.sidebar a#request_other { @include selected; } }
 
+  &.view_requests { section.sidebar a#view_all { @include selected; } }
+  &#ElectronicDelivery { section.sidebar a#view_electronic { @include selected; } }
+  &#ViewNotifications { section.sidebar a#view_notifications { @include selected; } }
 
 }

@@ -1,6 +1,3 @@
-/*
- *=require_tree ./partials
- */
 // Import base variables and mixins which bobcat and sub layouts use
 @import "partials/base";
 @import "partials/header";
@@ -14,11 +11,11 @@
 @import "partials/footer";
 @import "partials/expand_contract";
 @import "partials/tabs";
-
-@import url('https://library.nyu.edu/css/common/icons.css');
-@import url('https://library.nyu.edu/scripts/jquery/css/tip-custom-yellow/tip-custom-yellow.css');
+@import "partials/tip-custom-yellow";
+@import "partials/icons";
 
 body.two-col.bp.bobcat {
+  font-family: $text_fonts;
   #container {
     @include container;
  	}

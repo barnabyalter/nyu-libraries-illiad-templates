@@ -10,7 +10,7 @@ class IncludeMenu < Mustache
           { :id => "shelf_options", :header => nil, :options => 
             [
               { :link => "http://eshelf.library.nyu.edu/account" , :id => "account", :title => "My library account" },
-              { :link => "http://ill.library.nyu.edu" , :id => "ill", :title => "My interlibrary loan (ILL)", :class => "selected" },
+              { :link => "http://illdev.library.nyu.edu" , :id => "ill", :title => "My interlibrary loan (ILL)", :class => "selected" },
               { :link => "http://eshelf.library.nyu.edu" , :id => "records", :title => "All saved records" }
             ]
           },
@@ -29,18 +29,19 @@ class IncludeMenu < Mustache
           },
           { :id => "view", :header => "View", :options => 
             [
-              { :link => '<#ACTION action="10" form="62">' , :id => "view_outstanding", :title => "Outstanding Requests" },
-              { :link => '<#ACTION action="10" form="64">' , :id => "view_electronic", :title => "Electronically Received Articles" },
-              { :link => '<#ACTION action="10" form="66">' , :id => "view_checked_out", :title => "Checked Out Items" },
-              { :link => '<#ACTION action="10" form="70">' , :id => "view_cancelled", :title => "Cancelled Requests" },
-              { :link => '<#ACTION action="10" form="68">' , :id => "view_history", :title => "History Requests" },
               { :link => '<#ACTION action="10" form="60">' , :id => "view_all", :title => "All Requests" },
+              #{ :link => '<#ACTION action="10" form="62">' , :id => "view_outstanding", :title => "Outstanding Requests" },
+              { :link => '<#ACTION action="10" form="64">' , :id => "view_electronic", :title => "Electronically Received Articles" },
+              #{ :link => '<#ACTION action="10" form="66">' , :id => "view_checked_out", :title => "Checked Out Items" },
+              #{ :link => '<#ACTION action="10" form="70">' , :id => "view_cancelled", :title => "Cancelled Requests" },
+              #{ :link => '<#ACTION action="10" form="68">' , :id => "view_history", :title => "History Requests" },
+              #{ :link => '<#ACTION action="10" form="60">' , :id => "view_all", :title => "All Requests" },
               { :link => '<#ACTION action="10" form="73">' , :id => "view_notifications", :title => "Notifications" }
             ]
           },
           { :id => "search_illiad", :header => "Search", :content => 
             '
-            <form action="<#DLL>" name="Search" method="post" id="Search">
+            <form action="illiad.dll" name="Search" method="post" id="Search">
               <input type="hidden" name="IlliadForm" value="Search"> 
               <input id="SessionID" name="SessionID" type="hidden" value="<#PARAM name="SessionID">"> 
               <label for="SearchCriteria">

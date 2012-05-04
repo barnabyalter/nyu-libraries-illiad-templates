@@ -1,5 +1,7 @@
+        {{#filter_by}}
         {{#actions}}
-        <div class="actions">
+        <form action="illiad.dll"  method="get">
+          <div class="actions">
           <label for="{{id}}">{{title}}</label>
           <select id="{{id}}" name="{{name}}"><option value=""></option>
             {{#optgroups}}
@@ -11,13 +13,15 @@
             {{/optgroups}}
           </select>
           <input id="user_submit" name="commit" type="submit" value="Submit" />
-        </div>
+          </div>
+        </form>
         {{/actions}}
+        {{/filter_by}}
         {{{menu}}}
-        {{#tables}}
         <div class="status_container">
         <#STATUS>
         </div>
+        {{#tables}}
         {{#text_above}}
         <div class="pre_table_text">
           {{{text_above}}}

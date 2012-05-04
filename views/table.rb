@@ -19,14 +19,18 @@ class Table < Layout
           :name => "filter_by",
           :title => "Filter by",
           :options => [
-            {:value => "?Action=10&Form=60", :title => "All Requests"},
-            {:value => "?Action=10&Form=62", :title => "Outstanding Requests"},
-            {:value => "?Action=10&Form=66", :title => "Checked Out Items"},
-            {:value => "?Action=10&Form=70", :title => "Cancelled Requests"},
-            {:value => "?Action=10&Form=68", :title => "Request History"}
+            {:value => "Action%3D10%26Form%3D60", :title => "All Requests"},
+            {:value => "Action%3D10%26Form%3D62", :title => "Outstanding Requests"},
+            {:value => "Action%3D10%26Form%3D66", :title => "Checked Out Items"},
+            {:value => "Action%3D10%26Form%3D70", :title => "Cancelled Requests"},
+            {:value => "Action%3D10%26Form%3D68", :title => "Request History"}
           ]
         }
       ]
     }
+  end
+  
+  def filter_by
+    false
   end
 end

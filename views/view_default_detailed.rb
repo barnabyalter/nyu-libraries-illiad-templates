@@ -29,7 +29,7 @@ class ViewDefaultDetailed < Table
   end
   
   def menu
-    '<#MENU name="transaction" separator="|">'
+    nil
   end
   
 end
