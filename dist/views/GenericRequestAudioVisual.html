@@ -1,0 +1,210 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - Audio/Visual Request
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="GenericRequestAudioVisual" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+        <form action="<#DLL>" method="post" name="GenericRequestAudioVisual" id="IlliadForm">
+            <input type="hidden" name="ILLiadForm" value="GenericRequestAudioVisual" />
+            <input type="hidden" name="Username" value="<#PARAM name="Username">" />
+            <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">" />
+            <input type="hidden" name="RequestType" value="Loan" />
+            <input type="hidden" name="DocumentType" value="Audio/Visual" />
+            <h2>Audio/Visual Request</h2>
+            <div><span class="req">*</span> Indicates required field</div>	
+            <fieldset>
+              <h3>Describe the item you want</h3>
+                  <div class="status_container">
+                  <#STATUS>
+                  </div>
+	
+                <div class="field">
+                  <label for="LoanAuthor">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORLoanAuthor">">Creator(s)</span><br />
+                  </label>
+                  <input type="text" id="LoanAuthor" name="LoanAuthor" class="text" tabindex="1" value="<#PARAM name="LoanAuthor">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="LoanTitle">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORLoanTitle">">Title</span><br />
+                  <span class="note">Please do not abbreviate unless your citation is abbreviated</span><br />
+                  </label>
+                  <textarea id="LoanTitle" name="LoanTitle" tabindex="2"><#PARAM name="LoanTitle"></textarea>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="LoanPublisher">
+                  <span class="<#ERROR name="ERRORLoanPublisher">">Recording/Production Company</span><br />
+                  </label>
+                  <input type="text" id="LoanPublisher" name="LoanPublisher" class="text" tabindex="3" value="<#PARAM name="LoanPublisher">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="LoanPlace">
+                  <span class="<#ERROR name="ERRORLoanPlace">">Place of Recording/Production</span><br />
+                  </label>
+                  <input type="text" id="LoanPlace" name="LoanPlace" class="text" tabindex="4" value="<#PARAM name="LoanPlace">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="LoanDate">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORLoanDate">">Date of Recording/Production</span><br />
+                  </label>
+                  <input type="text" id="LoanDate" name="LoanDate" class="text" tabindex="5" value="<#PARAM name="LoanDate">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="LoanEdition">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORLoanEdition">">Preferred Format</span><br />
+                  </label>
+                  <select id="LoanEdition" name="LoanEdition" tabindex="6">
+                    <option selected><#PARAM name="LoanEdition"></option>
+                    <option value="CD">
+                      CD
+                    </option>
+                    <option value="DVD">
+                      DVD
+                    </option>
+                    <option value="LP">
+                      LP
+                    </option>
+                    <option value="Cassette">
+                      Cassette
+                    </option>
+                    <option value="Film">
+                      Film
+                    </option>
+                    <option value="Other (write in &quot;Notes&quot; below)">
+                      Other (write in &quot;Notes&quot; below)
+                    </option>
+                  </select>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="AcceptAlternateEdition">
+                  <span class="<#ERROR name="ERRORAcceptAlternateEdition">">Will you accept an alternate format of this item?</span><br />
+                  </label>
+                  <select id="AcceptAlternateEdition" name="AcceptAlternateEdition" tabindex="7">
+                    <option selected><#PARAM name="AcceptAlternateEdition"></option>
+                    <option value="No">
+                      No
+                    </option>
+                    <option value="Yes">
+                      Yes
+                    </option>
+                  </select>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="ESPNumber">
+                  <span class="<#ERROR name="ERRORESPNumber">">OCLC Number</span><br />
+                  <span class="note">If given will speed request processing. OCLC numbers are found on <a href="http://www.worldcat.org" target="_blank">WorldCat</a>.</span><br />
+                  </label>
+                  <input type="text" id="ESPNumber" name="ESPNumber" class="text" tabindex="8" value="<#PARAM name="ESPNumber">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="NotWantedAfter">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORNotWantedAfter">">Not Wanted After Date</span><br />
+                  <span class="note">Date after which the requested material will not be useful to you	(MM/DD/YYYY) Note: loans can take a minimum of 7-10 days to obtain.</span><br />
+                  </label>
+                  <input type="text" id="NotWantedAfter" name="NotWantedAfter" class="text" tabindex="9" value="<#PARAM name="NotWantedAfter">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="AcceptNonEnglish">
+                  <span class="<#ERROR name="ERRORAcceptNonEnglish">">Will you accept the item in a language other than English?</span><br />
+                  <span class="note">If yes, specify acceptable languages in the notes field.</span><br />
+                  </label>
+                  <select id="AcceptNonEnglish" name="AcceptNonEnglish" tabindex="10">
+                    <option selected><#PARAM name="AcceptNonEnglish"></option>
+                    <option value="No">
+                      No
+                    </option>
+                    <option value="Yes">
+                      Yes
+                    </option>
+                  </select>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="ShippingOptions">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORShippingOptions">">Pickup Location</span><br />
+                  </label>
+                  <select id="ShippingOptions" name="ShippingOptions" tabindex="11">
+                    <option selected><#PARAM name="ShippingOptions"></option>
+                    <option value="NYU Bobst">
+                      NYU Bobst
+                    </option>
+                    <option value="NYU Abu Dhabi">
+                      NYU Abu Dhabi
+                    </option>
+                    <option value="NYU Institute of Fine Arts">
+                      NYU Institute of Fine Arts
+                    </option>
+                    <option value="NYU Inst Study Ancient World">
+                      NYU Inst Study Ancient World
+                    </option>
+                    <option value="NYU Jack Brause">
+                      NYU Jack Brause
+                    </option>
+                  </select>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="Notes">
+                  <span class="<#ERROR name="ERRORNotes">">Notes</span><br />
+                  <span class="note">Put any information here that may help us find the item, as well as any other pertinent information.</span><br />
+                  </label>
+                  <textarea id="Notes" name="Notes" tabindex="12"><#PARAM name="Notes"></textarea>
+	
+                </div>
+                <div class="field">
+                <p>
+                  <b>By submitting this request, you agree to adhere to all restrictions regarding this material expressed in <a href="http://library.nyu.edu/copyright/" target="_blank">U.S. Copyright Law</a>.</b>
+                </p>
+                </div>
+ 
+              <#INCLUDE filename="include_request_buttons.html">
+            </fieldset>
+          </form>
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - Edit Article Request
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="EditArticleRequest" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+        <form action="<#DLL>" method="post" name="EditArticleRequest" id="IlliadForm">
+            <input type="hidden" name="ILLiadForm" value="EditArticleRequest" />
+            <input type="hidden" name="Username" value="<#PARAM name="Username">" />
+            <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">" />
+            <input type="hidden" name="TransactionNumber" value="<#PARAM name="TransactionNumber">" />
+            <h2>Edit Article Request</h2>
+            <div><span class="req">*</span> Indicates required field</div>	
+            <fieldset>
+              <h3>Describe the item you want</h3>
+                  <div class="status_container">
+                  <#STATUS>
+                  </div>
+	
+                <div class="field">
+                  <label for="PhotoJournalTitle">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhotoJournalTitle">">Title (Journal, Newspaper or Conference Proceedings)</span><br />
+                  <span class="note">Please do not abbreviate unless your citation is abbreviated</span><br />
+                  </label>
+                  <textarea id="PhotoJournalTitle" name="PhotoJournalTitle" tabindex="1"><#PARAM name="PhotoJournalTitle"></textarea>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="PhotoJournalVolume">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhotoJournalVolume">">Volume</span><br />
+                  </label>
+                  <input type="text" id="PhotoJournalVolume" name="PhotoJournalVolume" class="text" tabindex="2" value="<#PARAM name="PhotoJournalVolume">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="PhotoJournalIssue">
+                  <span class="<#ERROR name="ERRORPhotoJournalIssue">">Issue Number or Designation</span><br />
+                  </label>
+                  <input type="text" id="PhotoJournalIssue" name="PhotoJournalIssue" class="text" tabindex="3" value="<#PARAM name="PhotoJournalIssue">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="PhotoJournalMonth">
+                  <span class="<#ERROR name="ERRORPhotoJournalMonth">">Month</span><br />
+                  </label>
+                  <input type="text" id="PhotoJournalMonth" name="PhotoJournalMonth" class="text" tabindex="4" value="<#PARAM name="PhotoJournalMonth">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="PhotoJournalYear">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhotoJournalYear">">Year</span><br />
+                  </label>
+                  <input type="text" id="PhotoJournalYear" name="PhotoJournalYear" class="text" tabindex="5" value="<#PARAM name="PhotoJournalYear">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="PhotoJournalInclusivePages">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhotoJournalInclusivePages">">Pages</span><br />
+                  </label>
+                  <input type="text" id="PhotoJournalInclusivePages" name="PhotoJournalInclusivePages" class="text" tabindex="6" value="<#PARAM name="PhotoJournalInclusivePages">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="ESPNumber">
+                  <span class="<#ERROR name="ERRORESPNumber">">OCLC Number</span><br />
+                  <span class="note">If given will speed request processing. OCLC numbers are found on <a href="http://www.worldcat.org" target="_blank">WorldCat</a>.</span><br />
+                  </label>
+                  <input type="text" id="ESPNumber" name="ESPNumber" class="text" tabindex="7" value="<#PARAM name="ESPNumber">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="ISSN">
+                  <span class="<#ERROR name="ERRORISSN">">ISSN/ISBN (International Standard Serial/Book Number)</span><br />
+                  <span class="note">If given will speed request processing</span><br />
+                  </label>
+                  <input type="text" id="ISSN" name="ISSN" class="text" tabindex="8" value="<#PARAM name="ISSN">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="PhotoArticleAuthor">
+                  <span class="<#ERROR name="ERRORPhotoArticleAuthor">">Article Author</span><br />
+                  </label>
+                  <input type="text" id="PhotoArticleAuthor" name="PhotoArticleAuthor" class="text" tabindex="9" value="<#PARAM name="PhotoArticleAuthor">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="PhotoArticleTitle">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhotoArticleTitle">">Article Title</span><br />
+                  </label>
+                  <input type="text" id="PhotoArticleTitle" name="PhotoArticleTitle" class="text" tabindex="10" value="<#PARAM name="PhotoArticleTitle">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="NotWantedAfter">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORNotWantedAfter">">Not Wanted After Date</span><br />
+                  <span class="note">Date after which the requested material will not be useful to you	(MM/DD/YYYY) Note: loans can take a minimum of 7-10 days to obtain.</span><br />
+                  </label>
+                  <input type="text" id="NotWantedAfter" name="NotWantedAfter" class="text" tabindex="11" value="<#PARAM name="NotWantedAfter">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="AcceptNonEnglish">
+                  <span class="<#ERROR name="ERRORAcceptNonEnglish">">Will you accept the item in a language other than English?</span><br />
+                  <span class="note">If yes, specify acceptable languages in the notes field.</span><br />
+                  </label>
+                  <select id="AcceptNonEnglish" name="AcceptNonEnglish" tabindex="12">
+                    <option selected><#PARAM name="AcceptNonEnglish"></option>
+                    <option value="No">
+                      No
+                    </option>
+                    <option value="Yes">
+                      Yes
+                    </option>
+                  </select>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="ShippingOptions">
+                  <span class="<#ERROR name="ERRORShippingOptions">">Scanning services are available, within <a href="http://library.nyu.edu/copyright/" target="_blank">fair use guidelines</a>, to NYU faculty and students at global sites. Please indicate if you are in:</span><br />
+                  </label>
+                  <select id="ShippingOptions" name="ShippingOptions" tabindex="13">
+                    <option selected><#PARAM name="ShippingOptions"></option>
+                    <option value="Abu Dhabi">
+                      Abu Dhabi
+                    </option>
+                    <option value="Other NYU Global Site">
+                      Other NYU Global Site
+                    </option>
+                  </select>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="CitedIn">
+                  <span class="<#ERROR name="ERRORCitedIn">">Please specify "Other" global site</span><br />
+                  </label>
+                  <input type="text" id="CitedIn" name="CitedIn" class="text" tabindex="14" value="<#PARAM name="CitedIn">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="Notes">
+                  <span class="<#ERROR name="ERRORNotes">">Notes</span><br />
+                  <span class="note">Put any information here that may help us find the item.</span><br />
+                  </label>
+                  <textarea id="Notes" name="Notes" tabindex="15"><#PARAM name="Notes"></textarea>
+	
+                </div>
+                <div class="field">
+                <p>
+                  <b>By submitting this request, you agree to adhere to all restrictions regarding this material expressed in <a href="http://library.nyu.edu/copyright/" target="_blank">U.S. Copyright Law</a>.</b>
+                </p>
+                </div>
+ 
+              <#INCLUDE filename="include_request_buttons.html">
+            </fieldset>
+          </form>
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+

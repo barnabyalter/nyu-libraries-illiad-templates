@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - View Notifications
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <link href="<#ACTION action="2" type="41" value="RSSID" valueType="lookup" absolutePath="true" includeSessionID="false">" rel="alternate" type="application/rss+xml" title="ILLiad Notifications" />
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="ViewNotifications" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+                
+        <div class="status_container">
+        <#STATUS>
+        </div>
+        <div class="pre_table_text">
+          
+        <p><a href="<#ACTION action="2" type="41" value="RSSID" valueType="lookup" absolutePath="false" includeSessionID="false">">Subscribe to Notifications Feed</a></p>
+      
+        </div>
+        <div class="default-table" id="ViewNotificationsTable">			
+          <#TABLE name="ViewNotifications" headerText="Notifications" maxRows="20" noDataAction="ShowMessageRow" noDataMessage="No Notifications">
+        </div>
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+

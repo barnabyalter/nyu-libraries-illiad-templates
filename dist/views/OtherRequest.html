@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - Other Request
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="OtherRequest" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+        <form action="<#DLL>" method="post" name="OtherRequest" id="IlliadForm">
+            <input type="hidden" name="ILLiadForm" value="OtherRequest" />
+            <input type="hidden" name="Username" value="<#PARAM name="Username">" />
+            <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">" />
+            <input type="hidden" name="RequestType" value="Loan" />
+            <h2>Other Request</h2>
+            <div><span class="req">*</span> Indicates required field</div>	
+            <fieldset>
+              <h3>Describe the item you want</h3>
+                  <div class="status_container">
+                  <#STATUS>
+                  </div>
+	
+                <div class="field">
+                  <label for="Other">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERROROther">">Citation</span><br />
+                  </label>
+                  <textarea id="Other" name="Other" tabindex="1"><#PARAM name="Other"></textarea>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="ESPNumber">
+                  <span class="<#ERROR name="ERRORESPNumber">">OCLC Number</span><br />
+                  <span class="note">If given will speed request processing. OCLC numbers are found on <a href="http://www.worldcat.org" target="_blank">WorldCat</a>.</span><br />
+                  </label>
+                  <input type="text" id="ESPNumber" name="ESPNumber" class="text" tabindex="2" value="<#PARAM name="ESPNumber">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="NotWantedAfter">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORNotWantedAfter">">Not Wanted After Date</span><br />
+                  <span class="note">Date after which the requested material will not be useful to you	(MM/DD/YYYY) Note: loans can take a minimum of 7-10 days to obtain.</span><br />
+                  </label>
+                  <input type="text" id="NotWantedAfter" name="NotWantedAfter" class="text" tabindex="3" value="<#PARAM name="NotWantedAfter">" />
+	
+                </div>
+	
+                <div class="field">
+                  <label for="ShippingOptions">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORShippingOptions">">Pickup Location</span><br />
+                  </label>
+                  <select id="ShippingOptions" name="ShippingOptions" tabindex="4">
+                    <option selected><#PARAM name="ShippingOptions"></option>
+                    <option value="NYU Bobst">
+                      NYU Bobst
+                    </option>
+                    <option value="NYU Abu Dhabi">
+                      NYU Abu Dhabi
+                    </option>
+                    <option value="NYU Institute of Fine Arts">
+                      NYU Institute of Fine Arts
+                    </option>
+                    <option value="NYU Inst Study Ancient World">
+                      NYU Inst Study Ancient World
+                    </option>
+                    <option value="NYU Jack Brause">
+                      NYU Jack Brause
+                    </option>
+                  </select>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="AcceptNonEnglish">
+                  <span class="<#ERROR name="ERRORAcceptNonEnglish">">Will you accept the item in a language other than English?</span><br />
+                  <span class="note">If yes, specify acceptable languages in the notes field.</span><br />
+                  </label>
+                  <select id="AcceptNonEnglish" name="AcceptNonEnglish" tabindex="5">
+                    <option selected><#PARAM name="AcceptNonEnglish"></option>
+                    <option value="No">
+                      No
+                    </option>
+                    <option value="Yes">
+                      Yes
+                    </option>
+                  </select>
+	
+                </div>
+	
+                <div class="field">
+                  <label for="Notes">
+                  <span class="<#ERROR name="ERRORNotes">">Notes</span><br />
+                  <span class="note">Put any information here that may help us find the item, as well as any other pertinent information.</span><br />
+                  </label>
+                  <textarea id="Notes" name="Notes" tabindex="6"><#PARAM name="Notes"></textarea>
+	
+                </div>
+                <div class="field">
+                <p>
+                  <b>By submitting this request, you agree to adhere to all restrictions regarding this material expressed in <a href="http://library.nyu.edu/copyright/" target="_blank">U.S. Copyright Law</a>.</b>
+                </p>
+                </div>
+ 
+              <#INCLUDE filename="include_request_buttons.html">
+            </fieldset>
+          </form>
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - View Resubmit Detailed Information
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="ViewResubmitDetailedInformation" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+                <#MENU name="transaction" separator="|">
+        <div class="status_container">
+        <#STATUS>
+        </div>
+        <div class="default-table" id="DetailedInformationTable">			
+          <#TABLE name="DetailedInformation" headerText="Transaction Information" hideColumnHeaders="true">
+        </div>
+        <div class="default-table" id="NotesInformationTable">			
+          <#TABLE name="NotesInformation" headerText="Notes" noDataAction="ShowMessageRow" noDataMessage="No Notes" column="NoteDate:Date/Time" column="AddedBy:Added By" column="Note">
+        </div>
+        <div class="default-table" id="TrackingInformationTable">			
+          <#TABLE name="TrackingInformation" headerText="Tracking" noDataAction="ShowMessageRow" noDataMessage="No Tracking" column="DateTime:Date/Time" column="ChangedTo:Status" column="ChangedBy:Changed By">
+        </div>
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+
