@@ -10,10 +10,11 @@ class ViewOutstandingRequests < Table
     { 
       :class => "default-table",
       :name => "ViewOutstandingRequests",
-      :headerText => "Outstanding Requests",
+      :headerText => "Requests in Processing",
       :noDataAction => "ShowMessageRow",
       :noDataMessage => "No Requests",
-      :columns => ["TransactionNumber:Transaction","DocumentType:Type","Title","Author","TransactionStatus:Status"]
+      :columns => ["ransactionNumber:Transaction Number (TN)","DocumentType:Format Type","Title","Author","CreationDate:Request Submitted"],
+      :orderBy => "RequestType,DocumentType,TransactionNumber ASC"
     }
     ]
   end
