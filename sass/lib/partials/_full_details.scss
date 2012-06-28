@@ -1,8 +1,7 @@
-
 /* Full Details */
 #full_details {
-	border: $content_list_border;
-	padding: .5em 1.25em;
+	border: $border_content_list;
+	padding: $padding_tiny ($padding_small * 1.25);
 	.current_result {
 		@include float-left;
 		text-align: left;
@@ -15,7 +14,7 @@
 		div.appetizer {
 			@include float-left;
 			width: 15em;
-			margin-bottom: 1em;
+			margin-bottom: $padding_small;
 			div#media_type {
 				margin-left: 11.5em;
 			}
@@ -23,13 +22,13 @@
 		div.cover {	@include float-right; }
 	}
 	#secondary {
-		padding: 1em 0;
-		border-top: $content_list_border;
+		padding: $padding_small 0;
+		border-top: $border_content_list;
 		clear: left;
 	}
 	#tertiary {
-		padding: 1em 0;
-		border-top: $content_list_border;
+		padding: $padding_small 0;
+		border-top: $border_content_list;
 		clear: left;
 		ul {
 			width: 65%;
@@ -38,37 +37,37 @@
 			&.other_bullets{ margin-bottom: 0; }
 			li {
 				@include no-margin;
-				padding: 0 0 .75em;
+				padding: 0 0 ($padding_standard * .75);
 			}
 		}
 	}
 	#quaternary {
-		padding: 1em 0 1.5em;
-		border-top: $content_list_border;
+		padding: $padding_small 0 $padding_standard;
+		border-top: $border_content_list;
 		clear: left;
 		ul {
 			@include no-padding;
 			width: 65%;			
-			margin: 0 0 2.25em;
+			margin: 0 0 ($padding_standard * 2.25);
 			li {
 				@include no-margin;
-				padding: 0 0 .75em;
+				padding: 0 0 ($padding_standard * .75);
 			}
 		}
 		#reviews {
 			.review_options { font-size: 75%; }
 			.review_date { font-size: 90%; }
-			blockquote { margin: 0 .25em; }
+			blockquote { margin: 0 ($padding_standard * .25); }
 			cite { display: block;	text-align: right; }
 			.review_form { width: 55%; }
 		}
 	}
 	#top_navigation {
-		@include top_nav;
-		padding-bottom: 1em;
+		@include top-subnav;
+		padding-bottom: $padding_small;
 	}
 	#bottom_navigation {
-		@include bottom_nav;
-		padding-top: 1.5em;
+		@include bottom-subnav;
+		padding-top: $padding_standard;
 	}
 }

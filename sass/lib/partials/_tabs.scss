@@ -1,38 +1,38 @@
 #tabs {
 	font-family:  $text_fonts;
-	font-size: 12px !important;
+	font-size: $base_font_size;
 	/* BG color included for IE */
-	background-color: #fff;
+	background-color: white;
 	.searchBox {
-		margin-top: 20px !important;
-		margin-bottom: 30px !important;
-		padding-top: 0px !important;
-		padding-left: 0px !important;
+		margin-top: 20px;
+		margin-bottom: 30px;
+		padding-top: 0;
+		padding-left: 0;
 	}
 	ul {
 		@include no-margin;
 		@include no-padding;
 		width: 100%;
-		height: 31px;
-		background-color: #fff;
+		height: $tab_height;
+		background-color: white;
 		li {
+		  @include float-left;
+		  @include clearfix;
 			@include no-margin;
 			@include no-padding;
-			width: 16%;
-			overflow: hidden;
-			border-right: $light_border;
-			min-width: 100px;
+		  width: 100% / ($tabs_count + 1);
+		  overflow: hidden;
+			border-right: $border_light;
+      min-width: 100px;
 			line-height: auto;
-			background-image: none !important;
-			@include float-left;
+			background-image: none;	
 			a {
 				@include no-margin;
 				@include no-padding;
 				display: block;
-				width: 12.5em;
-				height: 31px;
-				border-right: $tab_border;
-				line-height: 31px;
+				height: $tab_height;
+				border-right: $border_tabs;
+				line-height: $tab_height;
 				text-align: center;
 				background: $header_bg_color url($header_bg_image) repeat-x top left;
 				color: black;	

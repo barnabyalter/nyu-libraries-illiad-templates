@@ -1,6 +1,6 @@
 header {
 	background-color: white;
-	margin-bottom: 1.5em;
+	margin-bottom: $padding_standard;
 	> h1 span { visibility: hidden; position: absolute; }
 	h1 {
 		background: $top_logo_color url($top_banner) top left no-repeat;
@@ -14,7 +14,7 @@ header {
 			@include float-left;
 			font-weight: normal;
 			background: white url($eshelf_image) no-repeat top left;
-			margin: 0 0 0 .5em;
+			margin: 0 0 0 $padding_tiny;
 			padding: 0 0 0 95px;
 			font-size: 300%;	
 			line-height: 65px;
@@ -36,7 +36,7 @@ header {
 			@include float-right;
 			@include page-header-text;
 			@include page-header-small-spacing;
-			margin-right: 1.5em
+			margin-right: $padding_standard;
 		}
 	}
 	nav { 
@@ -72,7 +72,7 @@ header {
 		height: 67px;
 		line-height: 67px;
 		background: transparent url($bobcat_logo) no-repeat center center;
-		margin: 0 .5em;
+		margin: 0 $padding_tiny;
 	}
 	#hd_link_to_home {
 		height: 38px;

@@ -37,10 +37,10 @@ views:
     - ElectronicDeliveryUndelete
     - Error
     - NewAuthRegistration
-  - IncludeHeader
-  - IncludeMenu
-  - IncludeFooter
-  - IncludeJavascripts
-  - IncludeStylesheets
-  - IncludeMeta
-  - IncludeRequestButtons
+  - include_header
+  - include_menu
+  - include_footer
+  - include_javascripts
+  - include_stylesheets
+  - include_meta
+  - include_request_buttons

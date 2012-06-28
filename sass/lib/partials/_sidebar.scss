@@ -1,0 +1,92 @@
+@mixin sidebar {
+	font-family: $text_fonts;
+	.box {
+		background: $box_bg_color url($box_bg_image) repeat-x top left;
+		h2 {
+			@include sidebar-full-width-header;
+		}
+		h3 { 
+			font-size: 110%;	
+			font-weight: bold;
+		}
+		input[type="text"], #js_search_tags input[type="text"] {
+			background-image: url($magnifier_image);
+			background-position: 6px 50%;
+			background-repeat: no-repeat;
+			width: 80%;
+			border: $border_thin;
+			padding: 5px 0 5px 24px;
+		}
+		ul { @include no-style-list; }
+		> ul {
+		  @include no-margin;
+			padding-bottom: $padding_standard;
+			padding-left: $padding_tiny;
+			li { padding: $padding_tiny; }
+			&.tags_list {
+				margin: 0 auto;
+				padding: 0 auto;
+				li {
+					padding: 5px 0 0;
+					margin-right: 0;
+				}
+			}
+		}
+	} 
+}
+
+@mixin compressed-sidebar {
+  @include reset-float;
+  margin-right: $padding_standard;
+  margin-bottom: $padding_standard;
+  width: auto;
+  h2 { display: none; }
+  .box {
+    > ul {
+      &#shelf_options {
+        padding-left: 0;
+        li {
+          @include sidebar-full-width-header;
+          @include reset-float;
+          text-align: center;
+          &:after {
+            content: none;
+          }
+        }
+      }
+      &#search_illiad {
+        form {
+          input[type='text'] {
+            width: 70%;
+            font-size: $base_font_size * 2;
+          }
+          input[type='submit'] {
+            font-size: $base_font_size * 2;
+          }
+        }
+        padding-bottom: 0;
+      }
+      li {
+        h3 { text-align: center; }
+        @include inline-list;
+        @include no-padding;
+        @include no-margin;
+        ul {
+          li {
+            @include inline-list;
+            font-size: $base_font_size - 1;
+          }
+        }
+      }
+    }
+    border-bottom: $border_medium;
+  }
+ 
+}
+
+@mixin sidebar-full-width-header {
+  background: $header_bg_color url($header_bg_image) repeat-x top left;
+	padding: 0.3em $padding_small;
+	font-size: 110%;
+	font-weight: normal;
+}

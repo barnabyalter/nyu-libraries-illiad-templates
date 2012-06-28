@@ -9,7 +9,7 @@ div.collapsible-sidebar {
 	a.contract-toggler {
     float:left;
     width: 7px;
-    margin: -1em !important;
+    margin: -$padding_small !important;
     background: $background_color url($bullet_right) no-repeat center center;
     z-index: 100;
     &:hover {
@@ -20,7 +20,7 @@ div.collapsible-sidebar {
 	a.expand-toggler {
 		float:left;
 		width: 7px;
-		margin: -1em !important;
+		margin: -$padding_small !important;
 		background: $background_color url($bullet_left) no-repeat center center;
 		z-index: 100;
 		&:hover {

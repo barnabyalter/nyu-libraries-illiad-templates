@@ -1,0 +1,10 @@
+/* Forms */
+form {
+	input[type="text"], input[type="password"], textarea {
+		max-width: 26em;
+		width: 45%;
+	}
+	fieldset {
+		padding: 0;
+	}
+}

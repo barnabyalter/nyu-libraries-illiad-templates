@@ -1,6 +1,4 @@
-set :application, "illiad"
+server "illdev.library.nyu.edu", :app, :web, :db, :primary => true
+set :deploy_to, "/cygdrive/d/Inetpub/wwwroot/#{application}"
 
-server "128.122.90.45", :app, :web, :db, :primary => true
-set :deploy_to, "/cygdrive/c/inetpub/wwwroot/"
-
-set :user, "ba36"
+set :user, "illiad"

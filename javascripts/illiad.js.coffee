@@ -1,3 +1,4 @@
+#require_tree ./lib/jquery
 jQuery ($)-> 
 
   #Init dropdown actions

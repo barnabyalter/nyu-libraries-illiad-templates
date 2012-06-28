@@ -1,10 +1,7 @@
 // Import base variables and mixins which bobcat and sub layouts use
-@import "eshelf";
+@import "lib/eshelf";
 
-@mixin selected {
-  font-weight: bold;
-}
-
+// Styles specific to ILLiad sub styles of eshelf and bobcat
 body.two-col.bp.bobcat.eshelf.illiad {
   
   .content {
@@ -12,20 +9,20 @@ body.two-col.bp.bobcat.eshelf.illiad {
     table {
       thead {
         tr.row-header th {
-    	    font-size: 2em;
+    	    font-size: $base_font_size * 2;
     	    background: transparent;
-    	    margin: 0 0 0.5em 0;
+    	    margin: 0 0 $padding_tiny 0;
     	    font-weight: lighter;
     	  }
       	tr.row-headings th {
-        	border-right: $light_border;
-        	border-bottom: $light_border;
-      		background: #EEE;
+        	border-right: $border_light;
+        	border-bottom: $border_light;
+      		background: $breadcrumb_bg;
       	}
     	}
     	tbody {
     	  td {
-    	    border-right: $light_border;
+    	    border-right: $border_light;
     	  }
     	}
     }
@@ -36,12 +33,12 @@ body.two-col.bp.bobcat.eshelf.illiad {
         border: 0;
         .field { 
           @include clearfix; 
-          border-top: $content_list_border;
-          padding: .5em 0 0 0;
-          margin: 0 0 .5em 0;
+          border-top: $border_content_list;
+          padding: $padding_tiny 0 0 0;
+          margin: 0 0 $padding_tiny 0;
           textarea {
             height: 18px;
-            width: 300px;
+            max-width: 300px;
             &#Other { height: 10em; }
           }
           textarea, input[type=text], select {
@@ -56,9 +53,9 @@ body.two-col.bp.bobcat.eshelf.illiad {
             @include clearfix;
           }
           span.note {
-            font-size: 80%;
+            font-size: $base_font_size * .8;
             font-weight: normal;
-            color: #333;
+            color: tint(black, 10%);//#333;
           }
         }
         .request_buttons {
@@ -68,9 +65,10 @@ body.two-col.bp.bobcat.eshelf.illiad {
       }
     }
     .status_container {
-      margin: 1em 0;
+      @include wrap-text;
+      margin: $padding_small 0;
       p {
-        padding: .3em 0;
+        padding: ($padding_small * .3) 0;
         margin: 0;
       }
       .statusError { color: red; }
@@ -79,10 +77,10 @@ body.two-col.bp.bobcat.eshelf.illiad {
     }
     .validationError { color: red; }
     #transactionMenu { 
-      border-top: $thin_border;
-      border-bottom: $thin_border;
+      border-top: $border_thin;
+      border-bottom: $border_thin;
       font-weight: bold;
-      padding: .5em 0;
+      padding: $padding_tiny 0;
     }
   }
   .sidebar {
@@ -91,9 +89,7 @@ body.two-col.bp.bobcat.eshelf.illiad {
         padding-left: 0;
       }
     }
-  }
-
-  
+  }  
 
   &#LoanRequest, &#EditLoanRequest { section.sidebar a#request_book { @include selected; } }
   &#ArticleRequest, &#EditArticleRequest { section.sidebar a#request_article { @include selected; } }

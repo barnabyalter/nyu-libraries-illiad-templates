@@ -1,0 +1,15 @@
+body.two-col.bp.bobcat {
+	/* Availability */
+	.getItPurple, .getItGreen, .greenAvailable, .purpleAvailable {
+		color: $available_color;
+		&:hover {	color: $available_color; }
+		&:visited {	color: $available_color; }
+	}
+
+	.yellowAvailable, .redAvailable, .getItYellow, .getItRed {
+		color: $check_availability_color;
+		&:hover {	color: $check_availability_color;	}
+		&:visited {	color: $check_availability_color; }
+	}
+}
+

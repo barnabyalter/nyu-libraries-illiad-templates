@@ -1,21 +1,16 @@
-@mixin bottom_nav {
-	margin-top: 1.5em 0;
-	border-top: $content_list_border;
-	padding-top: 1em;
-}
-@mixin top_nav {
-	margin-bottom: 1.5em 0;
-	border-bottom: $content_list_border;
-	padding-bottom: 1em;
-}
+/* 
+  Styles for the main content of the page 
+  considered a content section in HTML5, 
+  but alternatively named #results when searching
+*/
 #results_container {
   padding-top: .5em;
 }
 /* Results */
 #results {
-	border: 2px solid #d9d9d9;
+  border: $border_medium;
 	ul#resultsList {
-		margin: .5em 0 .5em;
+		margin: $padding_tiny 0 $padding_tiny;
 		ul li {
 	  		background-image: none;
 	  		margin: auto; 
@@ -24,42 +19,42 @@
 	  		line-height: auto; 
 		}
 		li.result {
-			padding: 1em;
+			padding: $padding_small;
 			background-color: white;
-			border-top: $content_list_border;
-			margin-top: 1.5em 0 !important;
+			border-top: $border_content_list;
+			margin-top: $padding_standard 0 !important;
 		}
 		div.number {
-	  	margin-right: .5em;
+	  	margin-right: $padding_tiny;
 		}
 		div.appetizer {
 			@include float-left;
-			padding: .15em 1em;
+			padding: .15em $padding_small;
 			width: 30px;
 		}
 		div.entree {
 			margin-left: 5em;
-			padding: .15em 1em;
+			padding: .15em $padding_small;
 			div.frbr {
-				margin-bottom: .25em;
+				margin-bottom: $padding_small * .25;
 			}
 			div.fulldetails {
-				margin-top: .75em;
+				margin-top: $padding_small * .75;
 			}
 			h2.title {
 				font-size: 140%;
 				font-weight: bold;
-				margin-bottom: .5em;
+				margin-bottom: $padding_tiny;
 			}
 			div.author {
-				margin-bottom: .25em;
+				margin-bottom: $padding_small * .25;
 			}
 			div.locations {
-				margin: .75em 0;
+				margin: ($padding_small * .75) 0;
 			}
 			div.delivery {
 				font-size: 125%;
-				margin: .75em 0;
+				margin: ($padding_small * .75) 0;
 				span {
 					font-weight: bold;
 					&.getItText {	font-weight: normal; }
@@ -75,21 +70,21 @@
 						@include no-padding;
 						@include no-margin;
 						display: inline;
-						&.separator {	margin: 0 .25em; }
+						&.separator {	margin: 0 ($padding_small * .25); }
 					}
 				}
 			}
 		}
-		div.desert {
+		div.dessert, div.desert {
 			@include float-right;
-			margin-left: 1em;
+			margin-left: $padding_small;
 		}
 	}
 	#top_navigation {
-			@include top_nav;
+	  @include top-subnav;
 	}
 	#bottom_navigation {
-		@include bottom_nav;
+		@include bottom-subnav;
 	}
 }
 
@@ -106,12 +101,12 @@ a.feed {
 /* Call number map */
 a.map {
 	display: block;
-	margin-bottom: .75em;
+	margin-bottom: $padding_small * .75;
 }
 /* Results Header */
 .subscribe {
 	text-align: right;
-	margin-bottom: 1em;
+	margin-bottom: $padding_small;
 }
 
 #count { @include float-left; }
