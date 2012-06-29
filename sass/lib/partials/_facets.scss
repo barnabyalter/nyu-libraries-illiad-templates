@@ -1,7 +1,7 @@
-/* Facets */
-.results_with_facets {
-	@include clearfix;
-}
+/* 
+  Styles for facets in search results of bobcat
+*/
+.results_with_facets { @include clearfix; }
 #facets {
   @include float-left;
   margin-right: $padding_small;

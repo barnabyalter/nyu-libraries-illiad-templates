@@ -1,3 +1,7 @@
+/*
+  Styles for semantic naming of famfamfam icons
+*/
+
 @mixin icon-position {
   padding-left: 18px;
   padding-bottom: 5px;
@@ -181,5 +185,3 @@
 .nyulibrary_icons_photo {
 	background: url($famfamfam + 'photo.png') no-repeat;
 }
-
-

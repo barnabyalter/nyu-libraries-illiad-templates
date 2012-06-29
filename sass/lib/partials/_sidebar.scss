@@ -1,3 +1,6 @@
+/*
+  Sidebar styles
+*/
 @mixin sidebar {
 	font-family: $text_fonts;
 	.box {
@@ -63,7 +66,6 @@
       }
       li {
         h3 { text-align: center; }
-        @include inline-list;
         @include no-padding;
         @include no-margin;
         ul {

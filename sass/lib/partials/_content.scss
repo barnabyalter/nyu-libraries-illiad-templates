@@ -3,10 +3,7 @@
   considered a content section in HTML5, 
   but alternatively named #results when searching
 */
-#results_container {
-  padding-top: .5em;
-}
-/* Results */
+#results_container { padding-top: $padding_tiny; }
 #results {
   border: $border_medium;
 	ul#resultsList {

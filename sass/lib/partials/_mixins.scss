@@ -1,3 +1,6 @@
+/*
+  Mixins to reuse as includes in other styles
+*/
 @mixin page-header-text {
 	font-size: 100%;
 	line-height: 49px;
@@ -59,7 +62,7 @@
     content: "\0000a0\02022\0000a0";
   }
   &:last-child:after {
-    content: none;
+    content: "";
   }
 }
 
@@ -82,7 +85,7 @@
       .username { display: none; }
     }
   }
-  
+
 }
 
 @mixin narrow-layout-bobcat {
@@ -116,22 +119,20 @@
 
 @mixin narrow-layout-eshelf {
   @include compressed-header;
-  section.sidebar { 
+  .sidebar { 
     @include compressed-sidebar;   
   }
-  section.content { 
+  .content { 
     @include reset-float;
   }
 }
 
-@mixin selected {
-  font-weight: bold;
-}
+@mixin selected { font-weight: bold; }
 
 /*Alias Classes*/
 ul.nostyle {
-	@include no-style-list;
-	li { @include no-style-list-item; }
+  @include no-style-list;
+  li { @include no-style-list-item; }
 }
 .floatLeft { @include float-left; }
 .floatRight { @include float-right; }

@@ -5,28 +5,26 @@
 body.two-col.bp.bobcat.eshelf {
   
   // Change positioning of sidebar
-  section.sidebar {
+  .sidebar {
 		@include sidebar;
 		@include float-left;
 		margin-left: $padding_standard;
 		width: $sidebar-width * .75;
 	}
 	// Change padding of content 
-	section.content { 
+	.content { 
 		margin-right: $padding_standard;
 		padding: $padding_standard;
 	}
 	header { margin-bottom: 0; }
 
   /* Media Queries */
-  /* Smartphones (portrait and landscape) */
-  //@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Tablets, Smartphones (portrait and landscape) */
   @media only screen and 
     (min-device-width : 320px) and 
     (max-device-width : 768px) {
     @include narrow-layout-eshelf;
   }
-  //@media screen and (max-width: 480px) {  
   @media print, screen and (max-width: 768px) {
     @include narrow-layout-eshelf; 
   }
@@ -67,7 +65,6 @@ body.two-col.bp.bobcat.eshelf {
 	    #account { font-weight: bold; }
     }
   }
-
 
   #aleph_account {
   	width: 100%;

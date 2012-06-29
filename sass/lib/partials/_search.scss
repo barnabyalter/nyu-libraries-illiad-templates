@@ -1,8 +1,10 @@
+/*
+  Styles for search box on bobcat pages
+*/
 .search_container {
 	padding-bottom: $padding_small;
 	background: $box_bg_color url($box_bg_image) repeat-x 0 31px;
 }
-/* Search */
 .search {
 	margin: 20px;
 	form {
