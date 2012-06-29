@@ -57,14 +57,9 @@
       &#search_illiad {
         form {
           input[type='text'] {
-            width: 70%;
-            font-size: $base_font_size * 2;
-          }
-          input[type='submit'] {
             font-size: $base_font_size * 2;
           }
         }
-        padding-bottom: 0;
       }
       li {
         h3 { text-align: center; }

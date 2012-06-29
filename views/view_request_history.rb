@@ -4,15 +4,21 @@ class ViewRequestHistory < Table
   def filter_by
     true
   end
+  
+  def page_name
+    "Requests Completed"
+  end
 
   def tables
     [
     { 
       :class => "default-table",
       :name => "ViewRequestHistory",
-      :headerText => "Request History",
+      :headerText => "Requests Completed",
       :noDataAction => "ShowMessageRow",
-      :noDataMessage => "No Requests"
+      :noDataMessage => "No Requests",
+      :columns => ["TransactionNumber:Transaction Number (TN)", "DocumentType:Format Type", "Title", "Author", "DueDate: Due Date"],
+      :orderBy => "RequestType,DocumentType,TransactionNumber DESC"
     }
     ]
   end

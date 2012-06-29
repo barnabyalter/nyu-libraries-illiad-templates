@@ -4,16 +4,21 @@ class ViewAllRequests < Table
   def filter_by
     true
   end
+  
+  def page_name
+    "Request History"
+  end
 
   def tables
     [
     { 
       :class => "default-table",
       :name => "ViewAllRequests",
-      :headerText => "All Requests",
+      :headerText => "Request History",
       :noDataAction => "ShowMessageRow",
       :noDataMessage => "No Requests",
-      :columns => ["TransactionNumber:Transaction","DocumentType:Type","Title","Author","TransactionStatus:Status"]
+      :columns => ["TransactionNumber:Transaction Number (TN)", "DocumentType:Format Type", "Title", "Author", "TransactionStatus:Status"],
+      :orderBy => "RequestType,DocumentType,TransactionNumber DESC"
     }
     ]
   end

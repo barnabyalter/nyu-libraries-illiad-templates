@@ -4,6 +4,10 @@ class ViewOutstandingRequests < Table
   def filter_by
     true
   end
+  
+  def page_name
+    "Requests in Processing"
+  end
 
   def tables
     [

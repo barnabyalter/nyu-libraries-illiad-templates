@@ -1,5 +1,9 @@
 require File.join(File.dirname(__FILE__), 'table')
 class ElectronicDelivery < Table
+  
+  def page_name
+    "My Available Articles"
+  end
 
   def tables
     [

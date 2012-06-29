@@ -70,13 +70,18 @@ body.two-col.bp.bobcat {
 	h1, h2, h3, h4, h5, h6 { font-family: $header_fonts; }
 	
 	/* Media Queries */
-	@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	//@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  @media only screen and 
+    (min-device-width : 320px) and 
+    (max-device-width : 768px) {
     @include narrow-layout-bobcat;
   }
-	@media print, screen and (max-width: 480px) {
+  //@media print, screen and (max-width: 480px) {
+	@media print, screen and (max-width: 768px) {
     @include narrow-layout-bobcat;
   }
-}
+  
+} // close bobcat class
 
 /* Pagination */
 .pagination {

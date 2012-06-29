@@ -19,11 +19,11 @@ class Table < Layout
           :name => "filter_by",
           :title => "Filter by",
           :options => [
-            {:value => "Action%3D10%26Form%3D60", :title => "All Requests"},
-            {:value => "Action%3D10%26Form%3D62", :title => "Outstanding Requests"},
-            {:value => "Action%3D10%26Form%3D66", :title => "Checked Out Items"},
-            {:value => "Action%3D10%26Form%3D70", :title => "Cancelled Requests"},
-            {:value => "Action%3D10%26Form%3D68", :title => "Request History"}
+            {:value => "Action%3D10%26Form%3D60", :title => "Request History"},
+            {:value => "Action%3D10%26Form%3D62", :title => "Requests in Processing"},
+            {:value => "Action%3D10%26Form%3D66", :title => "Items Available to Check Out"},
+            {:value => "Action%3D10%26Form%3D70", :title => "Requests Cancelled"},
+            {:value => "Action%3D10%26Form%3D68", :title => "Requests Completed"}
           ]
         }
       ]

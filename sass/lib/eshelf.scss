@@ -20,12 +20,16 @@ body.two-col.bp.bobcat.eshelf {
 
   /* Media Queries */
   /* Smartphones (portrait and landscape) */
+  //@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   @media only screen and 
-      (min-device-width : 320px) and 
-      (max-device-width : 480px) {
+    (min-device-width : 320px) and 
+    (max-device-width : 768px) {
     @include narrow-layout-eshelf;
   }
-  @media screen and (max-width: 480px) {  @include narrow-layout-eshelf; }
+  //@media screen and (max-width: 480px) {  
+  @media print, screen and (max-width: 768px) {
+    @include narrow-layout-eshelf; 
+  }
 
   /* Set table styles for inside main content section */
   .content {

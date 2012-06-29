@@ -4,15 +4,21 @@ class ViewResubmitCancelledRequests < Table
   def filter_by
     true
   end
+  
+  def page_name
+    "Requests Cancelled"
+  end
 
   def tables
     [
     { 
       :class => "default-table",
       :name => "ViewResubmitCancelledItems",
-      :headerText => "Cancelled Requests",
+      :headerText => "Requests Cancelled",
       :noDataAction => "ShowMessageRow",
-      :noDataMessage => "No Cancelled Requests"
+      :noDataMessage => "No Requests",
+      :columns => ["TransactionNumber:Transaction Number (TN)", "DocumentType:Format Type", "Title", "Author", "ReasonForCancellation: Reason Cancelled"],
+      :orderBy => "RequestType,DocumentType,TransactionNumber DESC"
     }
     ]
   end
