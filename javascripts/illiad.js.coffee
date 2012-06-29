@@ -30,7 +30,7 @@ jQuery ($)->
   #Form actions
   $("form#IlliadForm").validate() if $("form#IlliadForm").length
   $("form .field:has(input#CitedIn)").hide() unless match_form_text($("form #ShippingOptions"), "Other NYU Global Site")
-  $("form #NotWantedAfter").datepicker()
+  $("form #NotWantedAfter").datepicker minDate: 0
   $("form #ShippingOptions").change -> 
     if match_form_text($(this), "Other NYU Global Site")
       $("form .field:has(input#CitedIn)").show()  
