@@ -11,6 +11,8 @@ class Table < Layout
   
   def actions
     {
+      :filter_action => "illiad.dll",
+      :filter_method => "get",
       :id => "service_action",
       :name => "service[action]",
       :title => "Actions",
@@ -33,4 +35,27 @@ class Table < Layout
   def filter_by
     false
   end
+  
+  def table_code
+    mustache = Kernel.const_get(self.class.name).new
+    mustache.template = '
+    {{#tables}}
+    {{#text_above}}
+    <div class="pre_table_text">
+      {{{text_above}}}
+    </div>
+    {{/text_above}}
+    <div class="{{class}}" id="{{name}}Table">			
+      <#TABLE{{#name}} name="{{name}}"{{/name}}{{#headerText}} headerText="{{headerText}}"{{/headerText}}{{#hideColumnHeaders}} hideColumnHeaders="{{hideColumnHeaders}}"{{/hideColumnHeaders}}{{#maxRows}} maxRows="{{maxRows}}"{{/maxRows}}{{#noDataAction}} noDataAction="{{noDataAction}}"{{/noDataAction}}{{#noDataMessage}} noDataMessage="{{noDataMessage}}"{{/noDataMessage}}{{#columns}} column="{{.}}"{{/columns}}{{#orderBy}} orderBy="{{orderBy}}"{{/orderBy}}>
+    </div>
+    {{#text_below}}
+    <div class="post_table_text">
+      {{{text_below}}}
+    </div>
+    {{/text_below}}
+    {{/tables}}
+    '
+    mustache.render
+  end
+  
 end

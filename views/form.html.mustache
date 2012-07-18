@@ -1,35 +1,35 @@
 {{#form}}
-<form action="<#DLL>" method="post" name="{{form_name}}" id="{{form_id}}">
+<form action="{{{form_action}}}" method="{{{form_method}}}" name="{{form_name}}" id="{{form_id}}">
             {{#hidden_fields}}
             <input type="hidden" name="{{name}}" value="{{{value}}}" />
             {{/hidden_fields}}
             <h2>{{{form_header}}}</h2>
-            <div><span class="req">*</span> Indicates required field</div>	
+            <div><span class="{{required_class}}">{{{required_indicator}}}</span> {{{required_text}}}</div>	
             <fieldset>
               <h3>{{sub_header}}</h3>
                   <div class="status_container">
-                  <#STATUS>
+                  {{{status}}}
                   </div>
                 {{#form_fields}}	
                 <div class="field">
                   <label for="{{field}}">
                   {{#required}}
-                  <span class="req">*</span>
+                  <span class="{{required_class}}">{{{required_indicator}}}</span>
                   {{/required}}
-                  <span class="<#ERROR name="ERROR{{field}}">">{{{field_title}}}</span><br />
+                  <span class="{{#error_tag}}{{field}}{{/error_tag}}">{{{field_title}}}</span><br />
                   {{#note}}
                   <span class="note">{{{note}}}</span><br />
                   {{/note}}
                   </label>
                   {{#textarea}}
-                  <textarea id="{{field}}" name="{{field}}" tabindex="{{count}}"><#PARAM name="{{field}}"></textarea>
+                  <textarea id="{{field}}" name="{{field}}" tabindex="{{count}}">{{#param_tag}}{{field}}{{/param_tag}}</textarea>
                   {{/textarea}}
                   {{#input_text}}
-                  <input type="text" id="{{field}}" name="{{field}}" class="text" tabindex="{{count}}" value="<#PARAM name="{{field}}">" />
+                  <input type="text" id="{{field}}" name="{{field}}" class="text" tabindex="{{count}}" value="{{#param_tag}}{{field}}{{/param_tag}}" />
                   {{/input_text}}
                   {{#select}}
                   <select id="{{field}}" name="{{field}}" tabindex="{{count}}">
-                    <option selected><#PARAM name="{{field}}"></option>
+                    <option selected>{{#param_tag}}{{field}}{{/param_tag}}"></option>
                   {{#options}}
                   {{#value}}
                     <option value="{{value}}">
@@ -53,7 +53,7 @@
                 </p>
                 </div>
                 {{/footer}} 
-              <#INCLUDE filename="include_request_buttons.html">
+              {{{request_buttons}}}
             </fieldset>
           </form>
 {{/form}}

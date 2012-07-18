@@ -37,7 +37,7 @@ class DetailedInformation < Table
   end
   
   def menu
-    '<#MENU name="transaction" separator="|">'
+    app_tag "MENU", 'name="transaction" separator="|"'
   end
   
 end

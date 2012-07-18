@@ -7,7 +7,7 @@ class EditGenericRequestMicroform < GenericRequestMicroform
   def form
     parent_hash = super
     child_hash = {
-      :hidden_fields => parent_hash[:hidden_fields].push({:name => "TransactionNumber", :value => '<#PARAM name="TransactionNumber">'})
+      :hidden_fields => parent_hash[:hidden_fields].push({:name => "TransactionNumber", :value => param_tag("TransactionNumber")})
     }
     parent_hash.merge!(child_hash)
   end

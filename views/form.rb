@@ -12,14 +12,34 @@ class Form < Layout
        :form_header => page_name,
        :form_name => self.class.name,
        :form_id => "IlliadForm",
+       :form_action => app_tag("DLL"),
+       :form_method => "post",
        :sub_header => "Describe the item you want",
        :count => lambda { return count += 1 },
+       :param_tag => lambda { |field| param_tag field },
+       :error_tag => lambda { |field| error_tag field },
        :hidden_fields => [
          {:name => "ILLiadForm", :value => self.class.name},
-         {:name => "Username", :value => '<#PARAM name="Username">'},
-         {:name => "SessionID", :value => '<#PARAM name="SessionID">'}
+         {:name => "Username", :value => param_tag("Username") },
+         {:name => "SessionID", :value => param_tag("SessionID") }
        ],
-       :footer => '<b>By submitting this request, you agree to adhere to all restrictions regarding this material expressed in <a href="http://library.nyu.edu/copyright/" target="_blank">U.S. Copyright Law</a>.</b>'
+       :footer => '<b>By submitting this request, you agree to adhere to all restrictions regarding this material expressed in <a href="http://library.nyu.edu/copyright/" target="_blank">U.S. Copyright Law</a>.</b>',
+       :required_text => "Indicates required field",
+       :required_class => "req",
+       :required_indicator => "*"
      }
   end
+ 
+  def request_buttons 
+    include_tag "include_request_buttons.html"
+  end
+  
+  def param_tag name
+    app_tag "PARAM", "name=\"#{name}\""
+  end
+  
+  def error_tag name
+    app_tag "ERROR", "name=\"ERROR#{name}\""
+  end
+  
 end

@@ -1,4 +1,4 @@
-require 'mustache'
+require "mustache"
 class Layout < Mustache
   
   def page_title
@@ -18,30 +18,42 @@ class Layout < Mustache
   end
   
   def header
-    '<#INCLUDE filename="include_header.html">'
+    include_tag "include_header.html"
   end
   
   def meta
-    '<#INCLUDE filename="include_meta.html">'
+    include_tag "include_meta.html"
   end
   
   def javascripts
-    '<#INCLUDE filename="include_javascripts.html">'    
+    include_tag "include_javascripts.html"
   end
   
   def stylesheets
-    '<#INCLUDE filename="include_stylesheets.html">'    
+    include_tag "include_stylesheets.html"
   end
   
   def sidebar
-    '<#INCLUDE filename="include_menu.html">'
+    include_tag "include_menu.html"
   end
   
   def content
   end
   
+  def status
+    app_tag "STATUS"
+  end
+  
   def footer
-    '<#INCLUDE filename="include_footer.html">'
+    include_tag "include_footer.html"
+  end
+  
+  def app_tag tag_name, params = nil
+    "<##{tag_name}#{' ' + params unless params.nil?}>"
+  end
+  
+  def include_tag filename
+    app_tag "INCLUDE", "filename=\"#{filename}\""
   end
   
 end

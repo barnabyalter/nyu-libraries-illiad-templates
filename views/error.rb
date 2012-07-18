@@ -10,7 +10,7 @@ class Error < TextPage
     {
       :text_class => "text_section", 
       :text_id => "status",
-      :text => '<#STATUS>'
+      :text => app_tag("STATUS")
     }
     ]
   end

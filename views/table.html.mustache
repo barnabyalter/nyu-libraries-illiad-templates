@@ -1,6 +1,6 @@
         {{#filter_by}}
         {{#actions}}
-        <form action="illiad.dll"  method="get">
+        <form action="{{filter_action}}" method="{{filter_method}}">
           <div class="actions">
           <label for="{{id}}">{{title}}</label>
           <select id="{{id}}" name="{{name}}"><option value=""></option>
@@ -19,20 +19,6 @@
         {{/filter_by}}
         {{{menu}}}
         <div class="status_container">
-        <#STATUS>
+        {{{status}}}
         </div>
-        {{#tables}}
-        {{#text_above}}
-        <div class="pre_table_text">
-          {{{text_above}}}
-        </div>
-        {{/text_above}}
-        <div class="{{class}}" id="{{name}}Table">			
-          <#TABLE{{#name}} name="{{name}}"{{/name}}{{#headerText}} headerText="{{headerText}}"{{/headerText}}{{#hideColumnHeaders}} hideColumnHeaders="{{hideColumnHeaders}}"{{/hideColumnHeaders}}{{#maxRows}} maxRows="{{maxRows}}"{{/maxRows}}{{#noDataAction}} noDataAction="{{noDataAction}}"{{/noDataAction}}{{#noDataMessage}} noDataMessage="{{noDataMessage}}"{{/noDataMessage}}{{#columns}} column="{{.}}"{{/columns}}{{#orderBy}} orderBy="{{orderBy}}"{{/orderBy}}>
-        </div>
-        {{#text_below}}
-        <div class="post_table_text">
-          {{{text_below}}}
-        </div>
-        {{/text_below}}
-        {{/tables}}
+        {{{table_code}}}
