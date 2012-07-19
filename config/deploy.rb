@@ -24,6 +24,13 @@ namespace :deploy do
     precompiler.compile
   end
   
+  desc "Update submodules from github in local project"
+  task :update_submodules do
+    system("cd sass/lib; git pull origin master")
+    system("cd javascripts/lib; git pull origin master")
+    #system("git submodule update")
+  end
+  
   desc "Copy release to application root"
   task :copy_release_to_application, :roles => :app do
    run "cp -R #{latest_release}/* #{deploy_to}"
@@ -45,6 +52,6 @@ namespace :deploy do
     puts "Skipping restart."
   end
 
-  before "deploy", "deploy:compile"
+  before "deploy", "deploy:update_submodules", "deploy:compile"
   after "deploy:update_code", "deploy:copy_release_to_application", "deploy:copy_views_to_root"
 end
