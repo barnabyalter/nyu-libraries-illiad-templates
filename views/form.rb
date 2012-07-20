@@ -14,7 +14,7 @@ class Form < Layout
        :form_id => "IlliadForm",
        :form_action => app_tag("DLL"),
        :form_method => "post",
-       :sub_header => "Describe the item you want",
+       #:sub_header => "Describe the item you want",
        :count => lambda { return count += 1 },
        :param_tag => lambda { |field| param_tag field },
        :error_tag => lambda { |field| error_tag field },
@@ -23,7 +23,7 @@ class Form < Layout
          {:name => "Username", :value => param_tag("Username") },
          {:name => "SessionID", :value => param_tag("SessionID") }
        ],
-       :footer => '<b>By submitting this request, you agree to adhere to all restrictions regarding this material expressed in <a href="http://library.nyu.edu/copyright/" target="_blank">U.S. Copyright Law</a>.</b>',
+       :footer => '<b>By submitting this request you agree to adhere to all restrictions regarding this material expressed in <a href="http://library.nyu.edu/copyright/" target="_blank">U.S. Copyright Law</a>.</b>',
        :required_text => "Indicates required field",
        :required_class => "req",
        :required_indicator => "*"
@@ -34,12 +34,15 @@ class Form < Layout
     include_tag "include_request_buttons.html"
   end
   
-  def param_tag name
-    app_tag "PARAM", "name=\"#{name}\""
+  def oclc_popup
+    icon_link "https://library.nyu.edu/info/illiad/oclc.html"
   end
   
-  def error_tag name
-    app_tag "ERROR", "name=\"ERROR#{name}\""
+  def isbn_popup
+    icon_link "https://library.nyu.edu/info/illiad/isbn.html"
   end
   
+  def issn_popup
+    icon_link "https://library.nyu.edu/info/illiad/issn.html"
+  end
 end

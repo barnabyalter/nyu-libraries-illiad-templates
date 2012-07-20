@@ -6,10 +6,11 @@
             <h2>{{{form_header}}}</h2>
             <div><span class="{{required_class}}">{{{required_indicator}}}</span> {{{required_text}}}</div>	
             <fieldset>
-              <h3>{{sub_header}}</h3>
+              {{#sub_header}}<h3>{{sub_header}}</h3>{{/sub_header}}
                   <div class="status_container">
                   {{{status}}}
                   </div>
+                {{{pre_form_text}}}
                 {{#form_fields}}	
                 <div class="field">
                   <label for="{{field}}">
@@ -25,11 +26,11 @@
                   <textarea id="{{field}}" name="{{field}}" tabindex="{{count}}">{{#param_tag}}{{field}}{{/param_tag}}</textarea>
                   {{/textarea}}
                   {{#input_text}}
-                  <input type="text" id="{{field}}" name="{{field}}" class="text" tabindex="{{count}}" value="{{#param_tag}}{{field}}{{/param_tag}}" />
+                  <input type="text" id="{{field}}" name="{{field}}" class="text{{#title}} defaultText{{/title}}" tabindex="{{count}}" value="{{#param_tag}}{{field}}{{/param_tag}}"{{#title}} title="{{title}}"{{/title}} />
                   {{/input_text}}
                   {{#select}}
                   <select id="{{field}}" name="{{field}}" tabindex="{{count}}">
-                    <option selected>{{#param_tag}}{{field}}{{/param_tag}}"></option>
+                    <option selected>{{#param_tag}}{{field}}{{/param_tag}}</option>
                   {{#options}}
                   {{#value}}
                     <option value="{{value}}">

@@ -1,6 +1,7 @@
 require 'mustache'
+require File.join(File.dirname(__FILE__), 'helper')
 class IncludeJavascripts < Mustache
-  
+	include Helper  
   def initialize
     @type = "text/javascript"
     @folder = "javascripts"

@@ -1,6 +1,7 @@
 require 'mustache'
+require File.join(File.dirname(__FILE__), 'helper')
 class IncludeStylesheets < Mustache
-  
+	include Helper  
   def initialize
     @type = "text/css"
     @rel = "stylesheet"

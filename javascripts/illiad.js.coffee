@@ -7,6 +7,7 @@ jQuery ($)->
   $('div.actions ul li a').live "click", (event)->
     url = "#{$(this).closest("form").attr "action"}?#{$.query.load($(this).attr "href").get("service[action]")}"
     $(this).attr "href": url
+    
   #Popup tips
   $(".nyulibrary_help").nyulibrary_popup_tip "init"
 
@@ -40,4 +41,19 @@ jQuery ($)->
       
   url = (anchor) -> anchor.attr "href"
   $(".default-table table tbody tr td a").each -> $(this).closest("tr").find(":nth-child(3)").html($("<a />").attr("href",url($(this))).html($(this).closest("tr").find(":nth-child(3)").text()))
-
+  
+  #Set title as for fields with defaultText
+  $(".defaultText").live "focus", (event) ->
+    if $(this).attr("value") == $(this).attr("title")
+      $(this).removeClass "defaultTextActive"
+      $(this).attr("value","")
+  $(".defaultText").live "blur", (event) ->
+    if $(this).attr("value") == "" or not $(this).attr("value")
+      $(this).addClass "defaultTextActive"
+      $(this).attr("value", $(this).attr "title")
+  		
+  $(".defaultText").focus()
+  $(".defaultText").blur()
+  
+  		
+      

@@ -1,11 +1,12 @@
 require 'mustache'
+require File.join(File.dirname(__FILE__), 'helper')
 class IncludeMenu < Mustache
-  
+	include Helper  
   def boxes
     [
       {
         :id => "shelf", 
-        :header => 'My Shelf <a href="http://library.nyu.edu/info/eshelf.html" class="nyulibrary_icons_help nyulibrary_help" style="text-decoration:none;" title="">&nbsp;</a>',
+        :header => "My Shelf #{icon_link("http://library.nyu.edu/info/eshelf.html")}",
         :option_groups => [
           { :id => "shelf_options", :header => nil, :options => 
             [
@@ -16,34 +17,28 @@ class IncludeMenu < Mustache
           },
           { :id => "request", :header => "Request", :options => 
             [
-              { :link => '<#ACTION action="10" form="22">', :id => "request_article", :title => "Article" },
-              { :link => '<#ACTION action="10" form="21">', :id => "request_book", :title => "Book" },
-              { :link => '<#ACTION action="10" form="23">', :id => "request_book_chapter", :title => "Book Chapter" },
-              { :link => '<#ACTION action="10" form="20" value="GenericRequestPeriodicalVolume">' , :id => "request_periodical_volume", :title => "Periodical Volume" },
-              { :link => '<#ACTION action="10" form="27">', :id => "request_dissertation_thesis", :title => "Dissertation/Thesis" },
-              { :link => '<#ACTION action="10" form="20" value="GenericRequestAudioVisual">', :id => "request_audio_visual", :title => "Audio/Visual" },
-              { :link => '<#ACTION action="10" form="20" value="GenericRequestMusicalScore">', :id => "request_musical_score", :title => "Musical Score" },
-              { :link => '<#ACTION action="10" form="20" value="GenericRequestMicroform">', :id => "request_microform", :title => "Microform" },
-              { :link => '<#ACTION action="10" form="29">', :id => "request_other", :title => "Other" }
+              { :link => action_tag({:action=>"10",:form=>"22"}), :id => "request_article", :title => "Article" },
+              { :link => action_tag({:action=>"10",:form=>"21"}), :id => "request_book", :title => "Book" },
+              { :link => action_tag({:action=>"10",:form=>"23"}), :id => "request_book_chapter", :title => "Book Chapter" },
+              { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestPeriodicalVolume"}) , :id => "request_periodical_volume", :title => "Journal" },
+              { :link => action_tag({:action=>"10",:form=>"27"}), :id => "request_dissertation_thesis", :title => "Dissertation/Thesis" },
+              { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestAudioVisual"}), :id => "request_audio_visual", :title => "Audio/Visual" },
+              { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestMusicalScore"}), :id => "request_musical_score", :title => "Musical Score" },
+              { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestMicroform"}), :id => "request_microform", :title => "Microform" },
+              { :link => action_tag({:action=>"10",:form=>"29"}), :id => "request_other", :title => "Other" }
             ]
           },
           { :id => "view", :header => "View", :options => 
             [
-              { :link => '<#ACTION action="10" form="60">' , :id => "view_all", :title => "Request History" },
-              #{ :link => '<#ACTION action="10" form="62">' , :id => "view_outstanding", :title => "Outstanding Requests" },
-              { :link => '<#ACTION action="10" form="64">' , :id => "view_electronic", :title => "My Available Articles" }
-              #{ :link => '<#ACTION action="10" form="66">' , :id => "view_checked_out", :title => "Checked Out Items" },
-              #{ :link => '<#ACTION action="10" form="70">' , :id => "view_cancelled", :title => "Cancelled Requests" },
-              #{ :link => '<#ACTION action="10" form="68">' , :id => "view_history", :title => "History Requests" },
-              #{ :link => '<#ACTION action="10" form="60">' , :id => "view_all", :title => "All Requests" },
-              #{ :link => '<#ACTION action="10" form="73">' , :id => "view_notifications", :title => "Notifications" }
+              { :link => action_tag({:action=>"10",:form=>"60"}) , :id => "view_all", :title => "Request History" },
+              { :link => action_tag({:action=>"10",:form=>"64"}) , :id => "view_electronic", :title => "My Available Articles" }
             ]
           },
           { :id => "search_illiad", :header => "Search", :content => 
             '
             <form action="illiad.dll" name="Search" method="post" id="Search">
               <input type="hidden" name="IlliadForm" value="Search"> 
-              <input id="SessionID" name="SessionID" type="hidden" value="<#PARAM name="SessionID">"> 
+              <input id="SessionID" name="SessionID" type="hidden" value="'+param_tag({:name=>"SessionID"})+'"> 
               <label for="SearchCriteria">
                 <input id="SearchCriteria" name="SearchCriteria" type="text" class="f-criteria">
               </label> 
