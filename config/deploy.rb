@@ -28,7 +28,8 @@ namespace :deploy do
   task :update_submodules do
     system("cd sass/lib; git pull origin master")
     system("cd javascripts/lib; git pull origin master")
-    #system("git submodule update")
+    system("git submodule init")
+    system("git submodule update")
   end
   
   desc "Copy release to application root"
@@ -38,8 +39,7 @@ namespace :deploy do
     
   desc "Move views files to root"
   task :copy_views_to_root do
-    run "mv #{deploy_to}/views/* #{deploy_to}/"
-    run "rm -rf #{deploy_to}/views"
+    run "cp #{deploy_to}/views/* #{deploy_to}/"
   end
 
   desc "No symlink creation necessary for ILLiad."
@@ -50,6 +50,12 @@ namespace :deploy do
   desc "Restarting is unnecessary for ILLiad."
   task :restart do
     puts "Skipping restart."
+  end
+  
+  desc "Rollback to previous revision"
+  task :rollback do
+     run "cp -R #{previous_release}/* #{deploy_to}"
+     run "cp #{deploy_to}/views/* #{deploy_to}/"
   end
 
   before "deploy", "deploy:update_submodules", "deploy:compile"
