@@ -1,5 +1,7 @@
 require "mustache"
+require File.join(File.dirname(__FILE__), 'helper')
 class Layout < Mustache
+	include Helper
   
   def page_title
     "BobCat - ILL - #{page_name}"
@@ -38,22 +40,6 @@ class Layout < Mustache
   end
   
   def content
-  end
-  
-  def status
-    app_tag "STATUS"
-  end
-  
-  def footer
-    include_tag "include_footer.html"
-  end
-  
-  def app_tag tag_name, params = nil
-    "<##{tag_name}#{' ' + params unless params.nil?}>"
-  end
-  
-  def include_tag filename
-    app_tag "INCLUDE", "filename=\"#{filename}\""
   end
   
 end

@@ -1,6 +1,7 @@
 require 'mustache'
+require File.join(File.dirname(__FILE__), 'helper')
 class IncludeHeader < Mustache
-  
+	include Helper  
   def application_name
     "Interlibrary Loan Request System"
   end
@@ -17,7 +18,7 @@ class IncludeHeader < Mustache
     '
     <ul class="login">
       <li>
-        <li><a href="<#ACTION action="99">" class="nyulibrary_icons_logout">Log-out <span class="logout_username"><#USER field="FirstName"></span> </a></li>
+        <li><a href="'+action_tag({:action=>"99"})+'" class="nyulibrary_icons_logout">Log-out <span class="logout_username">'+app_tag("USER",{:field=>"FirstName"})+'</span> </a></li>
       </li>
     </ul>
     '
@@ -26,7 +27,7 @@ class IncludeHeader < Mustache
   def head_group
     {
       :application_title => "e-Shelf",
-      :username_text =>'for <#USER field="FirstName"> <#USER field="LastName">',
+      :username_text =>'for '+app_tag("USER",{:field=>"FirstName"})+' '+app_tag("USER",{:field=>"LastName"}),
     }
   end
   

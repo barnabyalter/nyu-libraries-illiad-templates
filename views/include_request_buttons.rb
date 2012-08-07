@@ -1,6 +1,7 @@
 require 'mustache'
+require File.join(File.dirname(__FILE__), 'helper')
 class IncludeRequestButtons < Mustache
-  
+	include Helper  
   def request_buttons
     [
       {:type => "submit", :name => "SubmitButton", :value => "Submit Request", :class => "f-submit", :tabindex => "60"},
