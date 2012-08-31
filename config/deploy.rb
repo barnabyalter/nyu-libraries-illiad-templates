@@ -13,9 +13,6 @@ set :use_sudo, false
 
 set :application, "illiad"
 
-# if you want to clean up old releases on each deploy uncomment this:
-after "deploy:restart", "deploy:cleanup"
-
 namespace :deploy do
   desc "Run precompiler gem to create distribution package"
   task :compile do
@@ -52,12 +49,13 @@ namespace :deploy do
     puts "Skipping restart."
   end
   
-  desc "Rollback to previous revision"
-  task :rollback do
-     run "cp -R #{previous_release}/* #{deploy_to}"
-     run "cp #{deploy_to}/views/* #{deploy_to}/"
-  end
+#  desc "Rollback to previous revision"
+#  task :rollback do
+#     run "cp -R #{previous_release}/* #{deploy_to}"
+#     run "cp #{deploy_to}/views/* #{deploy_to}/"
+#  end
 
   before "deploy", "deploy:update_submodules", "deploy:compile"
-  after "deploy:update_code", "deploy:copy_release_to_application", "deploy:copy_views_to_root"
+  after "deploy:update_code", "deploy:copy_release_to_application", "deploy:copy_views_to_root", "deploy:cleanup"
+  after "deploy:rollback", "deploy:copy_release_to_application", "deploy:copy_views_to_root"
 end
