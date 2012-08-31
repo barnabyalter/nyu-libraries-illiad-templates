@@ -38,6 +38,8 @@ jQuery ($)->
       $("form .field input#CitedIn").addClass("required").focus()
     else
       $("form .field:has(input#CitedIn)").hide()    
+  
+  $("#NewAuthRegistration .username").hide()
       
   url = (anchor) -> anchor.attr "href"
   $(".default-table table tbody tr td a").each -> $(this).closest("tr").find(":nth-child(3)").html($("<a />").attr("href",url($(this))).html($(this).closest("tr").find(":nth-child(3)").text()))
