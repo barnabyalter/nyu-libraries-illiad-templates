@@ -9,7 +9,7 @@ class ThesisRequest < Form
     parent_hash.merge!({
        :hidden_fields => parent_hash[:hidden_fields].push({:name => "RequestType", :value => 'Loan'}),
        :form_fields => [
-        {:field => "LoanTitle", :field_title => "Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :textarea => true},
+        {:field => "LoanTitle", :field_title => "Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :input_text => true},
         {:field => "LoanAuthor", :field_title => "Author", :required => true, :input_text => true},         
         {:field => "LoanPublisher", :field_title => "University/Institution", :input_text => true},
         {:field => "LoanDate", :field_title => "Year", :input_text => true},

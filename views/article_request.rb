@@ -10,7 +10,7 @@ class ArticleRequest < Form
        :form_fields => [
         {:field => "PhotoArticleTitle", :field_title => "Article Title", :required => true, :input_text => true},
         {:field => "PhotoArticleAuthor", :field_title => "Article Author", :input_text => true},
-        {:field => "PhotoJournalTitle", :field_title => "Journal Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :textarea => true},
+        {:field => "PhotoJournalTitle", :field_title => "Journal Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :input_text => true},
         {:field => "PhotoJournalVolume", :field_title => "Volume Number", :required => true, :input_text => true},
         {:field => "PhotoJournalIssue", :field_title => "Issue Number", :input_text => true},
         {:field => "PhotoJournalYear", :field_title => "Year", :required => true, :input_text => true},
@@ -27,6 +27,6 @@ class ArticleRequest < Form
    end
    
    def pre_form_text
-     '<div class="linkout nyulibrary_icons_information">Need entire volume(s) or issue(s)? Use the <a href="'+action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestPeriodicalVolume"})+'">Journal</a> form.</div>'
+     '<div class="linkout nyulibrary_icons_information">Need entire volume(s) or issue(s)? Use the <a href="'+action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestJournal"})+'">Journal</a> form.</div>'
    end
 end

@@ -35,6 +35,10 @@
         border-top: $border_content_list;
         padding: $padding_tiny 0 0 0;
         margin: 0 0 $padding_tiny 0;
+       	input[type="text"], input[type="password"], textarea {
+      		max-width: 45%;
+      		width: 45%;
+      	}
         textarea {
           height: 18px;
           max-width: 300px;
@@ -96,13 +100,14 @@ body {
   &#LoanRequest, &#EditLoanRequest { section.sidebar a#request_book { @include selected; } }
   &#ArticleRequest, &#EditArticleRequest { section.sidebar a#request_article { @include selected; } }
   &#BookChapterRequest, &#EditBookChapterRequest { section.sidebar a#request_book_chapter { @include selected; } }
-  &#GenericRequestPeriodicalVolume, &#EditGenericRequestPeriodicalVolume { section.sidebar a#request_periodical_volume { @include selected; } }
+  &#GenericRequestJournal, &#EditGenericRequestJournal { section.sidebar a#request_journal { @include selected; } }
   &#ThesisRequest, &#EditThesisRequest { section.sidebar a#request_dissertation_thesis { @include selected; } }
   &#GenericRequestAudioVisual, &#EditGenericRequestAudioVisual { section.sidebar a#request_audio_visual { @include selected; } }
   &#GenericRequestMusicalScore, &#EditGenericRequestMusicalScore { section.sidebar a#request_musical_score { @include selected; } }
   &#GenericRequestMicroform, &#EditGenericRequestMicroform { section.sidebar a#request_microform { @include selected; } }
   &#OtherRequest, &#EditOtherRequest { section.sidebar a#request_other { @include selected; } }
 
+  &.view_home { section.sidebar a#view_in_processing { @include selected; } }
   &.view_requests { section.sidebar a#view_all { @include selected; } }
   &#ElectronicDelivery { section.sidebar a#view_electronic { @include selected; } }
   &#ViewNotifications { section.sidebar a#view_notifications { @include selected; } }

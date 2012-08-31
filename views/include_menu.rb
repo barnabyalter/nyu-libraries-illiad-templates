@@ -15,26 +15,27 @@ class IncludeMenu < Mustache
               { :link => "http://eshelf.library.nyu.edu" , :id => "records", :title => "All saved records" }
             ]
           },
-          { :id => "request", :header => "Request", :options => 
+          { :id => "request", :header => "Make a request", :options => 
             [
               { :link => action_tag({:action=>"10",:form=>"22"}), :id => "request_article", :title => "Article" },
               { :link => action_tag({:action=>"10",:form=>"21"}), :id => "request_book", :title => "Book" },
-              { :link => action_tag({:action=>"10",:form=>"23"}), :id => "request_book_chapter", :title => "Book Chapter" },
-              { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestPeriodicalVolume"}) , :id => "request_periodical_volume", :title => "Journal" },
+              { :link => action_tag({:action=>"10",:form=>"23"}), :id => "request_book_chapter", :title => "Book chapter" },
+              { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestJournal"}) , :id => "request_journal", :title => "Journal" },
               { :link => action_tag({:action=>"10",:form=>"27"}), :id => "request_dissertation_thesis", :title => "Dissertation/Thesis" },
               { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestAudioVisual"}), :id => "request_audio_visual", :title => "Audio/Visual" },
-              { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestMusicalScore"}), :id => "request_musical_score", :title => "Musical Score" },
+              { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestMusicalScore"}), :id => "request_musical_score", :title => "Musical score" },
               { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestMicroform"}), :id => "request_microform", :title => "Microform" },
               { :link => action_tag({:action=>"10",:form=>"29"}), :id => "request_other", :title => "Other" }
             ]
           },
           { :id => "view", :header => "View", :options => 
             [
-              { :link => action_tag({:action=>"10",:form=>"60"}) , :id => "view_all", :title => "Request History" },
-              { :link => action_tag({:action=>"10",:form=>"64"}) , :id => "view_electronic", :title => "My Available Articles" }
+              { :link => action_tag({:action=>"10",:form=>"62"}) , :id => "view_in_processing", :title => "Requests in processing" },
+              { :link => action_tag({:action=>"10",:form=>"60"}) , :id => "view_all", :title => "Request history" },
+              { :link => action_tag({:action=>"10",:form=>"64"}) , :id => "view_electronic", :title => "My available articles" }
             ]
           },
-          { :id => "search_illiad", :header => "Search", :content => 
+          { :id => "search_illiad", :header => "Search ILL Requests", :content => 
             '
             <form action="illiad.dll" name="Search" method="post" id="Search">
               <input type="hidden" name="IlliadForm" value="Search"> 
@@ -48,6 +49,11 @@ class IncludeMenu < Mustache
               </div>
             </form>
             '
+          },
+          { :id => "links", :header => "Additional Options", :options => 
+            [
+              { :link => "http://library.nyu.edu/services/ill.html", :target => "_blank" , :id => "ill_policies", :title => "Interlibrary Loan (ILL) info & Policies" }
+            ]
           }
         ]
       }

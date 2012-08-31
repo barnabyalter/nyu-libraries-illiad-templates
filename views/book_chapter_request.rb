@@ -10,7 +10,7 @@ class BookChapterRequest < Form
         {:field => "PhotoArticleTitle", :field_title => "Chapter Title", :required => true, :input_text => true},
         {:field => "PhotoArticleAuthor", :field_title => "Chapter Author", :input_text => true},
         {:field => "PhotoJournalInclusivePages", :field_title => "Pages", :required => true, :input_text => true, :title => "(e.g., 7-12; 5, 6-8, 10-15)"},
-        {:field => "PhotoJournalTitle", :field_title => "Book Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :textarea => true},
+        {:field => "PhotoJournalTitle", :field_title => "Book Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :input_text => true},
         {:field => "PhotoItemAuthor", :field_title => "Book Author/Editor", :input_text => true},
         {:field => "PhotoItemPlace", :field_title => "Place of Publication", :input_text => true},
         {:field => "PhotoItemPublisher", :field_title => "Publisher", :input_text => true},

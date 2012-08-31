@@ -7,7 +7,7 @@ class LoanRequest < Form
   def form 
     super.merge!({
        :form_fields => [
-        {:field => "LoanTitle", :field_title => "Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :textarea => true},
+        {:field => "LoanTitle", :field_title => "Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :input_text => true},
         {:field => "LoanAuthor", :field_title => "Author/Editors", :required => true, :input_text => true},         
         {:field => "LoanPlace", :field_title => "Place of Publication", :input_text => true},
         {:field => "LoanPublisher", :field_title => "Publisher", :input_text => true},

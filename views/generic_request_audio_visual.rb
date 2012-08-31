@@ -9,7 +9,7 @@ class GenericRequestAudioVisual < Form
     parent_hash.merge!({
        :hidden_fields => parent_hash[:hidden_fields].push({:name => "RequestType", :value => 'Loan'},{:name => "DocumentType", :value => 'Audio/Visual'}),
        :form_fields => [
-        {:field => "LoanTitle", :field_title => "Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :textarea => true},
+        {:field => "LoanTitle", :field_title => "Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :input_text => true},
         {:field => "LoanAuthor", :field_title => "Creator", :required => true, :input_text => true}, 
         {:field => "LoanPlace", :field_title => "Place of Recording/Production", :input_text => true},
         {:field => "LoanPublisher", :field_title => "Recording/Production Company", :input_text => true},

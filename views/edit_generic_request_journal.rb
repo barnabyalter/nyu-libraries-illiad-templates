@@ -1,5 +1,5 @@
-require File.join(File.dirname(__FILE__), 'generic_request_periodical_volume')
-class EditGenericRequestPeriodicalVolume < GenericRequestPeriodicalVolume
+require File.join(File.dirname(__FILE__), 'generic_request_journal')
+class EditGenericRequestJournal < GenericRequestJournal
   def page_name
     "Edit Periodical Volume Request"
   end

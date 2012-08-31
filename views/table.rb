@@ -19,7 +19,7 @@ class Table < Layout
       :optgroups => [
         {
           :name => "filter_by",
-          :title => "Filter by",
+          :title => "View",
           :options => [
             {:value => "Action%3D10%26Form%3D60", :title => "Request History"},
             {:value => "Action%3D10%26Form%3D62", :title => "Requests in Processing"},

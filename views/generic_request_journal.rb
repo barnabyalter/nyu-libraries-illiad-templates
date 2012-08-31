@@ -1,5 +1,5 @@
 require File.join(File.dirname(__FILE__), 'form')
-class GenericRequestPeriodicalVolume < Form
+class GenericRequestJournal < Form
   def page_name
     "Request a Journal"
   end
@@ -9,10 +9,9 @@ class GenericRequestPeriodicalVolume < Form
     parent_hash.merge!({
        :hidden_fields => parent_hash[:hidden_fields].push({:name => "RequestType", :value => 'Loan'},{:name => "DocumentType", :value => 'Periodical Vol'}),
        :form_fields => [
-        {:field => "LoanTitle", :field_title => "Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :textarea => true},
+        {:field => "LoanTitle", :field_title => "Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :input_text => true},
         {:field => "LoanPlace", :field_title => "Place of Publication", :input_text => true},
         {:field => "LoanPublisher", :field_title => "Publisher", :input_text => true},
-        {:field => "PhotoJournalYear", :field_title => "Publication Date", :required => true, :input_text => true},
         {:field => "LoanDate", :field_title => "Date Range Needed", :required => true, :input_text => true, :title => "(e.g., 1978-1982)"},
         {:field => "LoanEdition", :field_title => "Volume(s) or Issue(s) Needed", :required => true, :input_text => true},
         {:field => "ESPNumber", :field_title => "OCLC Number #{oclc_popup}", :note => 'Will speed processing.', :input_text => true},
