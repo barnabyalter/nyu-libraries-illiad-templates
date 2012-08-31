@@ -44,11 +44,11 @@ jQuery ($)->
   
   #Set title as for fields with defaultText
   $(".defaultText").live "focus", (event) ->
-    if $(this).val == $(this).attr("title")
+    if $(this).val() == $(this).attr("title")
       $(this).removeClass "defaultTextActive"
       $(this).val ""
   $(".defaultText").live "blur", (event) ->
-    if $(this).val == ""
+    if $(this).val() == ""
       $(this).addClass "defaultTextActive"
       $(this).val $(this).attr "title"
   		
