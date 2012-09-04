@@ -25,6 +25,7 @@ jQuery ($)->
   $(".status_container:has(span.statusError)").addClass "error"
   $(".status_container").children(":has(.success)").removeClass "success"
   $(".status_container").children(":has(.error)").removeClass "error"
+  $(".status_container").hide() if $(".status_container").is(":empty")
   
   match_form_text = (form_el, form_text) -> $.trim(form_el.children("option:selected").text()) is form_text
   
