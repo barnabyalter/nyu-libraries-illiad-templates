@@ -1,0 +1,6 @@
+[submodule "sass/lib"]
+	path = sass/lib
+	url = git@github.com:NYULibraries/nyu-libraries-stylesheets.git
+[submodule "javascripts/lib"]
+	path = javascripts/lib
+	url = git@github.com:NYULibraries/nyu-libraries-javascripts.git
