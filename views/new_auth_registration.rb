@@ -17,8 +17,8 @@ class NewAuthRegistration < TextPage
       :paragraphs => [
         "<p>This system allows you to place, track and receive interlibrary loan requests. </p> ",
         "<p>You may request material unavailable or checked out at NYU or consortium libraries, including journal or newspaper articles, books, book chapters, dissertations, videos, music, computer files and microforms. </p>",
-        "You will be notified by email at <strong> <#PARAM name=\"EMailAddress\"> </strong> when your request is ready. </p>",
-        "Please review the following copyright statement and press <strong>Go to Main Menu</strong> to place a request. </p>",
+        "<p>You will be notified by email at <strong> <#PARAM name=\"EMailAddress\"> </strong> when your request is ready. </p>",
+        "<p>Please review the following copyright statement and press <strong>Go to Main Menu</strong> to place a request. </p>",
         "<h2>Important Copyright Information</h2>",
         "<p>WARNING CONCERNING COPYRIGHT RESTRICTIONS</p>",
         "<p>The copyright law of the United States (Title 17, United States Code) governs the making of photocopies or other reproductions of copyrighted materials.</p>",
@@ -52,7 +52,7 @@ class NewAuthRegistration < TextPage
               <input id="SState" name="SState" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="SState">">
               <input id="SZip" name="SZip" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="SZip">">
               <input id="StatusGroup" name="StatusGroup" size="1" class="f-name" tabindex="4" style="display: none;">
-              <select>
+              <select id="StatusGroup" name="StatusGroup" size="1" style="display: none;">
                 <option selected><#PARAM name="StatusGroup"></option>
                 <option>Graduate</option>
                 <option>Faculty</option>

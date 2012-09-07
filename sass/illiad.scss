@@ -107,7 +107,7 @@ body {
   &#GenericRequestMicroform, &#EditGenericRequestMicroform { section.sidebar a#request_microform { @include selected; } }
   &#OtherRequest, &#EditOtherRequest { section.sidebar a#request_other { @include selected; } }
 
-  &.view_home { section.sidebar a#view_in_processing { @include selected; } }
+  &#ViewOutstandingRequests { section.sidebar a#view_in_processing { @include selected; } }
   &.view_requests { section.sidebar a#view_all { @include selected; } }
   &#ElectronicDelivery { section.sidebar a#view_electronic { @include selected; } }
   &#ViewNotifications { section.sidebar a#view_notifications { @include selected; } }

@@ -23,8 +23,4 @@ class ViewOutstandingRequests < Table
     ]
   end
   
-  def document_class
-    super() + " view_home"
-  end
-  
 end
