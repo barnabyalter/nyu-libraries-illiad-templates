@@ -55,7 +55,8 @@ namespace :deploy do
 #     run "cp #{deploy_to}/views/* #{deploy_to}/"
 #  end
 
-  before "deploy", "deploy:update_submodules", "deploy:compile"
+  before "deploy", "deploy:compile"
+  before "deploy:compile", "deploy:update_submodules"
   after "deploy:update_code", "deploy:copy_release_to_application", "deploy:copy_views_to_root", "deploy:cleanup"
   after "deploy:rollback", "deploy:copy_release_to_application", "deploy:copy_views_to_root"
 end
