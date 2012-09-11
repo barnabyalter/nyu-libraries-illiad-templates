@@ -18,7 +18,7 @@ class ViewAllRequests < Table
       :noDataAction => "ShowMessageRow",
       :noDataMessage => "No Requests",
       :columns => ["TransactionNumber:Transaction Number (TN)", "DocumentType:Format Type", "Title", "Author", "TransactionStatus:Status"],
-      :orderBy => "RequestType,DocumentType,TransactionNumber DESC"
+      :orderBy => "TransactionNumber DESC"
     }
     ]
   end

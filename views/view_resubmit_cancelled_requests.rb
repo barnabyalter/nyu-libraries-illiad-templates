@@ -18,7 +18,7 @@ class ViewResubmitCancelledRequests < Table
       :noDataAction => "ShowMessageRow",
       :noDataMessage => "No Requests",
       :columns => ["TransactionNumber:Transaction Number (TN)", "DocumentType:Format Type", "Title", "Author", "ReasonForCancellation: Reason Cancelled"],
-      :orderBy => "RequestType,DocumentType,TransactionNumber DESC"
+      :orderBy => "TransactionNumber DESC"
     }
     ]
   end

@@ -18,7 +18,7 @@ class ViewRenewCheckedOutItems < Table
       :noDataAction => "ShowMessageRow",
       :noDataMessage => "No Requests",
       :columns => ["TransactionNumber:Transaction Number (TN)", "DocumentType:Format Type", "Title", "Author", "DueDate:Due Date", "RenewalsAl:Can I renew?"],
-      :orderBy => "RequestType,DocumentType,TransactionNumber DESC"
+      :orderBy => "TransactionNumber DESC"
     }
     ]
   end

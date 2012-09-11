@@ -18,7 +18,7 @@ class ViewRequestHistory < Table
       :noDataAction => "ShowMessageRow",
       :noDataMessage => "No Requests",
       :columns => ["TransactionNumber:Transaction Number (TN)", "DocumentType:Format Type", "Title", "Author", "DueDate: Due Date"],
-      :orderBy => "RequestType,DocumentType,TransactionNumber DESC"
+      :orderBy => "TransactionNumber DESC"
     }
     ]
   end

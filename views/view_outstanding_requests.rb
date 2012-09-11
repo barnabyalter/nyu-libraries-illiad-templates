@@ -17,8 +17,8 @@ class ViewOutstandingRequests < Table
       :headerText => "Requests in Processing",
       :noDataAction => "ShowMessageRow",
       :noDataMessage => "No Requests",
-      :columns => ["ransactionNumber:Transaction Number (TN)","DocumentType:Format Type","Title","Author","CreationDate:Request Submitted"],
-      :orderBy => "RequestType,DocumentType,TransactionNumber ASC"
+      :columns => ["TransactionNumber:Transaction Number (TN)","DocumentType:Format Type","Title","Author","CreationDate:Request Submitted"],
+      :orderBy => "TransactionNumber ASC"
     }
     ]
   end

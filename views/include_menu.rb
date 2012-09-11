@@ -11,7 +11,7 @@ class IncludeMenu < Mustache
           { :id => "shelf_options", :header => nil, :options => 
             [
               { :link => "http://eshelf.library.nyu.edu/account" , :id => "account", :title => "My library account" },
-              { :link => "http://ill.library.nyu.edu/illiad/testweb/illiad.dll" , :id => "ill", :title => "My interlibrary loan (ILL)", :class => "selected" },
+              { :link => "http://ill.library.nyu.edu/illiad/illiad.dll" , :id => "ill", :title => "My interlibrary loan (ILL)", :class => "selected" },
               { :link => "http://eshelf.library.nyu.edu" , :id => "records", :title => "All saved records" }
             ]
           },
