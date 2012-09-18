@@ -13,7 +13,7 @@ class ViewDefaultDetailed < Table
   end
   
   def menu
-    nil
+    menu_tag
   end
   
 end
