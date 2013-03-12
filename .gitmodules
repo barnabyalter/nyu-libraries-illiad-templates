@@ -4,3 +4,6 @@
 [submodule "javascripts/lib"]
 	path = javascripts/lib
 	url = git@github.com:NYULibraries/nyu-libraries-javascripts.git
+[submodule "config/deploy"]
+	path = config/deploy
+	url = git@github.com:NYULibraries/illiad_settings.git
