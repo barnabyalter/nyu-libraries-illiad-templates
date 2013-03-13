@@ -1,16 +1,15 @@
-require 'capistrano/ext/multistage'
+# Load bundler-capistrano gem
+require "bundler/capistrano"
+# Load rvm-capistrano gem
+require "rvm/capistrano"
 require 'microservice_precompiler'
 
-set :stages, ["staging", "production"]
-set :default_stage, "staging"
+set :stages, ["development", "staging", "production"]
+set :default_stage, "development"
+require 'capistrano/ext/multistage'
 
-set :repository, "./dist" 
-set :scm, :none 
-set :deploy_via, :copy
-
-set :keep_releases, 5
-set :use_sudo, false
-
+# RVM  vars
+set :rvm_ruby_string, "1.9.3-p125"
 set :application, "illiad"
 
 namespace :deploy do
@@ -21,42 +20,16 @@ namespace :deploy do
     precompiler.compile
   end
   
-  desc "Update submodules from github in local project"
-  task :update_submodules do
-    system("cd sass/lib; git pull origin master")
-    system("cd javascripts/lib; git pull origin master")
-    system("git submodule init")
-    system("git submodule update")
+  desc "Deploy to server with FTP"
+  task :ftp_setup do
+    system "lftp -u #{login},#{password} -e \"cd #{app_path}; mkdir -p #{app_path}/javascripts; mkdir -p #{app_path}/stylesheets; exit;\" #{host}" 
   end
   
-  desc "Copy release to application root"
-  task :copy_release_to_application, :roles => :app do
-   run "cp -R #{latest_release}/* #{deploy_to}"
-  end
-    
-  desc "Move views files to root"
-  task :copy_views_to_root do
-    run "cp #{deploy_to}/views/* #{deploy_to}/"
-  end
-
-  desc "No symlink creation necessary for ILLiad."
-  task :symlink do
-    puts "Skipping symlink creation."
+  desc "Deploy to server with FTP"
+  task :ftp_sync do
+    system "lftp -u #{login},#{password} -e \"cd #{app_path}; mput ./dist/views/*.html; cd #{app_path}/javascripts; put ./dist/javascripts/illiad.js; cd #{app_path}/stylesheets; put ./dist/stylesheets/illiad.css; exit\" #{host}" 
   end
   
-  desc "Restarting is unnecessary for ILLiad."
-  task :restart do
-    puts "Skipping restart."
-  end
-  
-#  desc "Rollback to previous revision"
-#  task :rollback do
-#     run "cp -R #{previous_release}/* #{deploy_to}"
-#     run "cp #{deploy_to}/views/* #{deploy_to}/"
-#  end
-
-  before "deploy", "deploy:compile"
-  before "deploy:compile", "deploy:update_submodules"
-  after "deploy:update_code", "deploy:copy_release_to_application", "deploy:copy_views_to_root", "deploy:cleanup"
-  after "deploy:rollback", "deploy:copy_release_to_application", "deploy:copy_views_to_root"
 end
+
+before "deploy:ftp_sync", "deploy:compile"

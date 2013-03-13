@@ -17,7 +17,7 @@ class ArticleRequest < Form
         {:field => "PhotoJournalInclusivePages", :field_title => "Pages", :required => true, :input_text => true, :title => "(e.g., 7-12; 5, 6-8, 10-15)"},
         {:field => "ESPNumber", :field_title => "OCLC Number #{oclc_popup}", :note => 'Will speed processing.', :input_text => true},
         {:field => "ISSN", :field_title => "ISSN #{issn_popup}", :note => "Will speed processing.", :input_text => true},
-        {:field => "NotWantedAfter", :field_title => "I need this material by:", :required => true, :note => "Expect 3-5 days for electronic delivery.", :input_text => true},
+        {:field => "NotWantedAfter", :field_title => "I need this material by:", :required => true, :note => "Plan ahead when requesting materials, if the \"not wanted after date\" is sooner than 7 days than the request will be canceled.", :input_text => true},
         {:field => "AcceptNonEnglish", :field_title => "Accept article in languages other than English? ", :note => "If yes, specify languages in \"Notes\" below.", :select => {:options => [{:value => "No"},{:value => "Yes"}] }},
         {:field => "ShippingOptions", :field_title => 'Are you an NYU student at a global site? Request a scan of an NYU item by indicating your location:', :note => "Request must be within <a href=\"http://nyu.libguides.com/content.php?pid=133679&sid=1146824\" target=\"_blank\">fair use guidleines</a>.", :select => {:options => [{:value => "Abu Dhabi", :title => "Abu Dhabi"},{:value => "Other NYU Global Site", :title => "Other NYU Global Site"}]} },
         {:field => "CitedIn", :field_title => 'Please specify "Other" global site', :input_text => true},
