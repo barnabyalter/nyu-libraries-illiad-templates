@@ -20,6 +20,14 @@ namespace :deploy do
     precompiler.compile
   end
   
+  desc "Update submodules from github in local project"
+  task :update_submodules do
+    system("cd sass/lib; git pull origin master")
+    system("cd javascripts/lib; git pull origin master")
+    system("git submodule init")
+    system("git submodule update")
+  end
+  
   desc "Deploy to server with FTP"
   task :ftp_setup do
     system "lftp -u #{login},#{password} -e \"cd #{app_path}; mkdir -p #{app_path}/javascripts; mkdir -p #{app_path}/stylesheets; exit;\" #{host}" 
@@ -30,6 +38,11 @@ namespace :deploy do
     system "lftp -u #{login},#{password} -e \"cd #{app_path}; mput ./dist/views/*.html; cd #{app_path}/javascripts; put ./dist/javascripts/illiad.js; cd #{app_path}/stylesheets; put ./dist/stylesheets/illiad.css; exit\" #{host}" 
   end
   
+  task :ftp do
+    puts "Deploying through FTP..."
+  end
+  
 end
 
-before "deploy:ftp_sync", "deploy:compile"
+before "deploy:compile", "deploy:update_submodules"
+before "deploy:ftp", "deploy:ftp_sync", "deploy:compile"
