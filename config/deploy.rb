@@ -22,10 +22,10 @@ namespace :deploy do
   
   desc "Update submodules from github in local project"
   task :update_submodules do
-    system("cd sass/lib; git pull origin master")
-    system("cd javascripts/lib; git pull origin master")
     system("git submodule init")
     system("git submodule update")
+    system("cd sass/lib; git pull origin master")
+    system("cd javascripts/lib; git pull origin master")
   end
   
   desc "Deploy to server with FTP"
