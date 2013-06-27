@@ -1,6 +1,6 @@
 # ILLiad templates
 
-[![Build Status](http://jenkins1.bobst.nyu.edu/job/ILLiad%20Production/badge/icon)](http://jenkins1.bobst.nyu.edu/job/ILLiad%20Production/)
+[![Build Status](http://jenkins1.bobst.nyu.edu/buildStatus/icon?job=ILLiad Production)](http://jenkins1.bobst.nyu.edu/job/ILLiad%20Production/)
 [![Dependency Status](https://gemnasium.com/NYULibraries/illiad-templates.png)](https://gemnasium.com/NYULibraries/illiad-templates)
 
 This project contains the logic for templating ILLiad (Interlibrary Loan software) with Mustache, stylesheets in SASS and scripts in CoffeeScript.
