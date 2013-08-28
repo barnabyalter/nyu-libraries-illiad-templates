@@ -9,7 +9,7 @@ set :default_stage, "development"
 require 'capistrano/ext/multistage'
 
 # RVM  vars
-set :rvm_ruby_string, "1.9.3-p125"
+set :rvm_ruby_string, "1.9.3-p448"
 set :application, "illiad"
 
 namespace :deploy do

@@ -80,4 +80,8 @@ class NewAuthRegistration < TextPage
     ]
   end
   
+  def sidebar
+    
+  end
+  
 end
