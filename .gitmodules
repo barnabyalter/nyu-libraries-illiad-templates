@@ -4,6 +4,3 @@
 [submodule "config/deploy"]
 	path = config/deploy
 	url = git@github.com:NYULibraries/illiad_settings.git
-[submodule "sass/lib"]
-	path = sass/lib
-	url = git@github.com:NYULibraries/nyu-libraries-stylesheets.git
