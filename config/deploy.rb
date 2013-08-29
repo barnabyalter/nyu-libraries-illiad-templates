@@ -12,6 +12,8 @@ require 'capistrano/ext/multistage'
 set :rvm_ruby_string, "1.9.3-p448"
 set :application, "illiad"
 
+set :git_enable_submodules, 1
+
 namespace :deploy do
   desc "Run precompiler gem to create distribution package"
   task :compile do
