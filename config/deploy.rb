@@ -46,6 +46,6 @@ namespace :deploy do
   
 end
 
-before "deploy:compile", "deploy:update_submodules"
 before "deploy:ftp", "deploy:compile"
+before "deploy:compile", "deploy:update_submodules"
 after "deploy:compile", "deploy:ftp_sync"
