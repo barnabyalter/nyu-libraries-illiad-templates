@@ -31,7 +31,7 @@ class NewAuthRegistration < TextPage
           <input type="hidden" name="ILLiadForm" value="NewAuthRegistration">
           <fieldset>			
             <div style="display:none">
-              <input type="hidden" name="NVTGC" value="ILL">
+              <input type="hidden" name="NVTGC" value="ZYU">
               <input type="hidden" name="DeliveryGroup" value="Hold for Pickup">
               <input type="hidden" name="LoanDeliveryGroup" value="Hold for Pickup">
               <input type="hidden" name="WebDeliveryGroup" value="Yes">
