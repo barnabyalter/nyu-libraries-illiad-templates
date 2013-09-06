@@ -26,7 +26,7 @@ class NewAuthRegistration < TextPage
 				"<p>NYU Interlibrary Loan reserves the right to refuse to accept a copying order if, in its judgment, fulfillment of the order would involve violation of copyright law.</p>",
 		    "<h4>Questions?</h4>",
         "<p>Contact NYU Interlibrary Loan at (212) 998-2511 Monday - Friday, 9 a.m. - 5 p.m. EST, or email <a href=\"mailto:ill@library.nyu.edu\">ill@library.nyu.edu</a> at any time.",
-        "<p>hank you for using Interlibrary Loan.</p>",
+        "<p>Thank you for using Interlibrary Loan.</p>",
       	'<form style="background-color: #EFF0E8;" action="illiad.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
           <input type="hidden" name="ILLiadForm" value="NewAuthRegistration">
           <fieldset>			
