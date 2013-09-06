@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), 'text_page')
 class NewAuthRegistration < TextPage
 
   def page_header
-    "Welcome to Bobst Library's Interlibrary Loan Request System!"
+    "Welcome to NYU Interlibrary Loan Request System"
   end
   
   def page_name
@@ -15,7 +15,7 @@ class NewAuthRegistration < TextPage
       :text_class => "text_section", 
       :text_id => "status",
       :paragraphs => [
-        "<p>This system allows you to place, track and receive interlibrary loan requests. </p> ",
+        "<p>This system allows you to request material not available at NYU or consortium libraries and track the progress of your requests.</p> ",
         "<p>You may request material unavailable or checked out at NYU or consortium libraries, including journal or newspaper articles, books, book chapters, dissertations, videos, music, computer files and microforms. </p>",
         "<p>You will be notified by email at <strong> <#PARAM name=\"EMailAddress\"> </strong> when your request is ready. </p>",
         "<p>Please review the following copyright statement and press <strong>Go to Main Menu</strong> to place a request. </p>",
@@ -25,8 +25,8 @@ class NewAuthRegistration < TextPage
 				"<p>Under certain conditions specified in the law, libraries and archives are authorized to furnish a photocopy or other reproduction. One of these specified conditions is that the photocopy or reproduction is not to be &quot;used for any purpose other than private study, scholarship, or research&quot;. If a user makes a request for, or later uses, a photocopy or reproduction for purposes in excess of &quot;fair use&quot;, that user may be liable for copyright infringement.</p>",
 				"<p>NYU Interlibrary Loan reserves the right to refuse to accept a copying order if, in its judgment, fulfillment of the order would involve violation of copyright law.</p>",
 		    "<h4>Questions?</h4>",
-        "<p>Contact Bobst Library Interlibrary Loan at (212) 998-2511 Monday - Friday, 9 a.m. - 5 p.m. or email ill@library.nyu.edu.",
-        "<p>Thank you for using Bobst Library Interlibrary Loan. </p>",
+        "<p>Contact NYU Interlibrary Loan at (212) 998-2511 Monday - Friday, 9 a.m. - 5 p.m. EST, or email <a href=\"mailto:ill@library.nyu.edu\">ill@library.nyu.edu</a> at any time.",
+        "<p>hank you for using Interlibrary Loan.</p>",
       	'<form style="background-color: #EFF0E8;" action="illiad.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
           <input type="hidden" name="ILLiadForm" value="NewAuthRegistration">
           <fieldset>			
