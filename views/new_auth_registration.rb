@@ -15,8 +15,7 @@ class NewAuthRegistration < TextPage
       :text_class => "text_section", 
       :text_id => "status",
       :paragraphs => [
-        "<p>This system allows you to request material not available at NYU or consortium libraries and track the progress of your requests.</p> ",
-        "<p>You may request material unavailable or checked out at NYU or consortium libraries, including journal or newspaper articles, books, book chapters, dissertations, videos, music, computer files and microforms. </p>",
+        "<p>This system allows you to request material that is not available at NYU or consortium libraries and to track the progress of your requests. You may request books, book chapters, journal or newspaper articles, dissertations, videos, music, computer files and microforms. </p>",
         "<p>You will be notified by email at <strong> <#PARAM name=\"EMailAddress\"> </strong> when your request is ready. </p>",
         "<p>Please review the following copyright statement and press <strong>Go to Main Menu</strong> to place a request. </p>",
         "<h2>Important Copyright Information</h2>",
