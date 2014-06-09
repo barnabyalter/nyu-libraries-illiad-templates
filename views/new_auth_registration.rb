@@ -4,20 +4,20 @@ class NewAuthRegistration < TextPage
   def page_header
     "Welcome to NYU Interlibrary Loan Request System"
   end
-  
+
   def page_name
     page_header
   end
-  
+
   def text_sections
     [
     {
-      :text_class => "text_section", 
+      :text_class => "text_section",
       :text_id => "status",
       :paragraphs => [
         "<div class=\"status_container\"><#STATUS></div>",
         "<p>This system allows you to request material that is not available at NYU or consortium libraries and to track the progress of your requests. You may request books, book chapters, journal or newspaper articles, dissertations, videos, music, computer files and microforms. </p>",
-        "<p>You will be notified by email at <strong> <#PARAM name=\"EMailAddress\"> </strong> when your request is ready. </p>",
+        "<p>You will be notified by email at <strong> <#USER name=\"EMailAddress\"> </strong> when your request is ready. </p>",
         "<p>Please review the following copyright statement and press <strong>Go to Main Menu</strong> to place a request. </p>",
         "<h2>Important Copyright Information</h2>",
         "<p>WARNING CONCERNING COPYRIGHT RESTRICTIONS</p>",
@@ -29,24 +29,24 @@ class NewAuthRegistration < TextPage
         "<p>Thank you for using Interlibrary Loan.</p>",
       	'<form style="background-color: #EFF0E8;" action="illiad.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
           <input type="hidden" name="ILLiadForm" value="NewAuthRegistration">
-          <fieldset>			
+          <fieldset>
             <div style="display:none">
               <input type="hidden" name="NVTGC" value="ZYU">
               <input type="hidden" name="DeliveryGroup" value="Hold for Pickup">
               <input type="hidden" name="LoanDeliveryGroup" value="Hold for Pickup">
               <input type="hidden" name="WebDeliveryGroup" value="Yes">
               <input type="hidden" name="NotifyGroup" value="E-Mail">
-              <input id="FirstName" name="FirstName" type="hidden" size="40" class="f-name" tabindex="2" value="<#PARAM name="FirstName">">	
-              <input id="LastName" name="LastName" type="hidden" size="40" class="f-name" tabindex="2" value="<#PARAM name="LastName">">						
-              <input id="SSN" name="SSN" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="SSN">">						
-              <input id="EMailAddress" name="EMailAddress" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="EMailAddress">">						
-              <input id="Phone" name="Phone" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="Phone">">						
-              <input id="Address" name="Address" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="Address">">						
+              <input id="FirstName" name="FirstName" type="hidden" size="40" class="f-name" tabindex="2" value="<#PARAM name="FirstName">">
+              <input id="LastName" name="LastName" type="hidden" size="40" class="f-name" tabindex="2" value="<#PARAM name="LastName">">
+              <input id="SSN" name="SSN" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="SSN">">
+              <input id="EMailAddress" name="EMailAddress" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="EMailAddress">">
+              <input id="Phone" name="Phone" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="Phone">">
+              <input id="Address" name="Address" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="Address">">
               <input id="Address2" name="Address2" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="Address2">">
               <input id="City" name="City" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="City">">
               <input id="State" name="State" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="State">">
               <input id="Zip" name="Zip" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="Zip">">
-              <input id="SAddress" name="SAddress" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="SAddress">">						
+              <input id="SAddress" name="SAddress" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="SAddress">">
               <input id="SAddress2" name="SAddress2" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="SAddress2">">
               <input id="SCity" name="SCity" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="SCity">">
               <input id="SState" name="SState" type="hidden" size="40" class="f-name" tabindex="3" value="<#PARAM name="SState">">
@@ -79,9 +79,9 @@ class NewAuthRegistration < TextPage
     }
     ]
   end
-  
+
   def sidebar
-    
+
   end
-  
+
 end
