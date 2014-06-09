@@ -17,7 +17,7 @@ class NewAuthRegistration < TextPage
       :paragraphs => [
         "<div class=\"status_container\"><#STATUS></div>",
         "<p>This system allows you to request material that is not available at NYU or consortium libraries and to track the progress of your requests. You may request books, book chapters, journal or newspaper articles, dissertations, videos, music, computer files and microforms. </p>",
-        "<p>You will be notified by email at <strong> <#USER name=\"EMailAddress\"> </strong> when your request is ready. </p>",
+        "<p>You will be notified by email at <strong> <#PARAM name=\"EMailAddress\"> </strong> when your request is ready. </p>",
         "<p>Please review the following copyright statement and press <strong>Go to Main Menu</strong> to place a request. </p>",
         "<h2>Important Copyright Information</h2>",
         "<p>WARNING CONCERNING COPYRIGHT RESTRICTIONS</p>",
