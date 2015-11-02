@@ -1,11 +1,11 @@
+# Load figs
+require 'figs'
+Figs.load()
 # Load bundler-capistrano gem
 require "bundler/capistrano"
 # Load rvm-capistrano gem
 require "rvm/capistrano"
 require 'microservice_precompiler'
-# Load figs
-require 'figs'
-Figs.load()
 
 set :stages, ["development", "staging", "production"]
 set :default_stage, "development"
