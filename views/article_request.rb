@@ -8,7 +8,7 @@ class ArticleRequest < Form
   def form
      super.merge!({
        :form_fields => [
-        {:field => "PhotoArticleTitle", :field_title => "Article Title (1)", :required => true, :input_text => true},
+        {:field => "PhotoArticleTitle", :field_title => "Article Title", :required => true, :input_text => true},
         {:field => "PhotoArticleAuthor", :field_title => "Article Author", :input_text => true},
         {:field => "PhotoJournalTitle", :field_title => "Journal Title", :required => true, :note => "Please do not abbreviate unless your citation is abbreviated", :input_text => true},
         {:field => "PhotoJournalVolume", :field_title => "Volume Number", :required => true, :input_text => true},
