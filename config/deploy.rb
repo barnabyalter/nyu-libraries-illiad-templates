@@ -21,7 +21,7 @@ namespace :deploy do
   desc "Run precompiler gem to create distribution package"
   task :compile do
     precompiler = MicroservicePrecompiler::Builder.new
-    precompiler.mustaches_config = "mustaches.yml"
+    precompiler.mustaches_filename = "mustaches.yml"
     precompiler.compile
   end
 
