@@ -11,3 +11,8 @@ This project contains the logic for templating ILLiad (Interlibrary Loan softwar
 ## Documented Changes
 
 * Changed NVTGC value in NewAuthRegistration from ILL to ZYU. [Change log](https://github.com/NYULibraries/illiad-templates/commit/c43c9debea9056c3da046edbcbd422a79ba2f7ca)
+
+## Road Map
+
+- Upgrade to [Bootstrap 3](http://getbootstrap.com/), using [nyulibraries-assets](https://github.com/NYULibraries/nyulibraries-assets)
+- Add specs
