@@ -40,7 +40,7 @@ namespace :deploy do
 
   desc "Deploy to server with FTP"
   task :ftp_sync do
-    system "lftp -u #{login},#{password} -e \"cd #{app_path}; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd #{app_path}/javascripts; put ./dist/javascripts/illiad.js; cd #{app_path}/stylesheets; put ./dist/stylesheets/illiad.css; exit\" #{host}"
+    system "lftp -u #{login},#{password} -e \"cd #{app_path}; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd #{app_path}/javascripts; put ./dist/javascripts/illiad.js; cd #{app_path}/stylesheets; put ./dist/stylesheets/illiad.css; exit\" #{host}"
   end
 
   task :ftp do
