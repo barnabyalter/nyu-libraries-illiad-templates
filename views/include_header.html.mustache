@@ -1,32 +1,32 @@
 <header>
   <a href="https://library.nyu.edu" target="_blank">
-    <img src="/images/nyulibraries-logo.svg" alt="NYU Libraries" width="233" height="30" />
+    <img src="/illiad/images/nyulibraries-logo.svg" alt="NYU Libraries" width="233" height="30" />
   </a>
   <h1><span>{{application_name}}</span></h1>
-  <nav>
-    <ul class="breadcrumbs">
-    {{#breadcrumbs}}
-      {{#link}}
-      <li><a href="{{link}}">{{title}}</a></li>
-      {{/link}}
-      {{^link}}
-      <li class="last">{{title}}</li>
-      {{/link}}
-    {{/breadcrumbs}}
-    </ul>
-    {{{login}}}
-  </nav>
-  {{#head_group}}
-  <hgroup>
-    <h1>
-      <span>{{application_title}}</span>
-    </h1>
-    <div class="username">
-      {{{username_text}}}
-    </div>
-    <div class="back-to-results">
-      {{{back_to_results}}}
-    </div>
-  </hgroup>
-  {{/head_group}}
 </header>
+<nav>
+  <ul class="breadcrumbs">
+  {{#breadcrumbs}}
+    {{#link}}
+    <li><a href="{{link}}">{{title}}</a></li>
+    {{/link}}
+    {{^link}}
+    <li class="last">{{title}}</li>
+    {{/link}}
+  {{/breadcrumbs}}
+  </ul>
+  {{{login}}}
+</nav>
+{{#head_group}}
+<hgroup>
+  <h1>
+    <span>{{application_title}}</span>
+  </h1>
+  <div class="username">
+    {{{username_text}}}
+  </div>
+  <div class="back-to-results">
+    {{{back_to_results}}}
+  </div>
+</hgroup>
+{{/head_group}}
