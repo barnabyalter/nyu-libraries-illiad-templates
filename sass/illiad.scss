@@ -1,5 +1,7 @@
+$images_url: "/illiad/images/";
 // Import base variables and mixins which bobcat and sub layouts use
 @import "lib/eshelf";
+@import "lib/nyulibraries_gray/jquery-ui";
 
 // Styles specific to ILLiad sub styles of eshelf and bobcat
 
@@ -30,8 +32,8 @@
       margin-left: 0;
       padding-left: 0;
       border: 0;
-      .field { 
-        @include clearfix; 
+      .field {
+        @include clearfix;
         border-top: $border_content_list;
         padding: $padding_tiny 0 0 0;
         margin: 0 0 $padding_tiny 0;
@@ -63,7 +65,7 @@
       }
       .request_buttons {
     	  text-align: right;
-    	  @include clearfix; 
+    	  @include clearfix;
       }
     }
   }
@@ -79,7 +81,7 @@
     .statusInformation { color: black; }
   }
   .validationError { color: red; }
-  #transactionMenu { 
+  #transactionMenu {
     border-top: $border_thin;
     border-bottom: $border_thin;
     font-weight: bold;
@@ -112,4 +114,3 @@ body {
   &#ElectronicDelivery { section.sidebar a#view_electronic { @include selected; } }
   &#ViewNotifications { section.sidebar a#view_notifications { @include selected; } }
 }
-

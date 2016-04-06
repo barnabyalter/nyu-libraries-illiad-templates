@@ -4,14 +4,14 @@ class ViewAllRequests < Table
   def filter_by
     true
   end
-  
+
   def page_name
     "Request History"
   end
 
   def tables
     [
-    { 
+    {
       :class => "default-table",
       :name => "ViewAllRequests",
       :headerText => "Request History",
@@ -22,9 +22,9 @@ class ViewAllRequests < Table
     }
     ]
   end
-  
+
   def document_class
     super() + " view_requests"
   end
-  
+
 end
