@@ -6,7 +6,7 @@ class Form < Layout
     mustache.render
   end
   
-  def form 
+  def form
     count = 0
     {
        :form_header => page_name,
@@ -29,20 +29,20 @@ class Form < Layout
        :required_indicator => "*"
      }
   end
- 
-  def request_buttons 
+
+  def request_buttons
     include_tag "include_request_buttons.html"
   end
   
   def oclc_popup
-    icon_link "https://library.nyu.edu/info/illiad/oclc.html"
+    icon_link "http://nyu.beta.libanswers.com/faq/134617"
   end
   
   def isbn_popup
-    icon_link "https://library.nyu.edu/info/illiad/isbn.html"
+    icon_link "http://nyu.beta.libanswers.com/faq/134616"
   end
   
   def issn_popup
-    icon_link "https://library.nyu.edu/info/illiad/issn.html"
+    icon_link "http://nyu.beta.libanswers.com/faq/134616"
   end
 end

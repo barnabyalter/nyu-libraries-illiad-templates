@@ -36,7 +36,7 @@ module Helper
     app_tag "ERROR", { :name => "ERROR#{name}" }
   end
   
-  def icon_link url, css_classes = ["nyulibrary_icons_help", "nyulibrary_help", "iconlink"], title = nil
+  def icon_link url, css_classes = ["nyulibrary_icons_help", "iconlink"], title = nil
     "<a href=\"#{url}\" class=\"#{css_classes.join(" ")}\" title=\"#{title}\">&nbsp;</a>"
   end
 end
