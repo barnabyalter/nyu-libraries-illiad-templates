@@ -6,7 +6,7 @@ class IncludeMenu < Mustache
     [
       {
         :id => "shelf", 
-        :header => "My Shelf #{icon_link("http://library.nyu.edu/info/eshelf.html")}",
+        :header => "My Shelf",
         :option_groups => [
           { :id => "shelf_options", :header => nil, :options => 
             [
