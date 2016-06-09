@@ -5,7 +5,7 @@ class Form < Layout
     mustache.template_file = File.join(File.dirname(__FILE__), "form.html.mustache")
     mustache.render
   end
-  
+
   def form
     count = 0
     {
@@ -23,7 +23,7 @@ class Form < Layout
          {:name => "Username", :value => param_tag("Username") },
          {:name => "SessionID", :value => param_tag("SessionID") }
        ],
-       :footer => '<b>By submitting this request you agree to adhere to all restrictions regarding this material expressed in <a href="http://library.nyu.edu/copyright/" target="_blank">U.S. Copyright Law</a>.</b>',
+       :footer => '<b>By submitting this request you agree to adhere to all restrictions regarding this material expressed in <a href="http://guides.nyu.edu/friendly.php?s=copyright" target="_blank">U.S. Copyright Law</a>.</b>',
        :required_text => "Indicates required field",
        :required_class => "req",
        :required_indicator => "*"
@@ -33,15 +33,15 @@ class Form < Layout
   def request_buttons
     include_tag "include_request_buttons.html"
   end
-  
+
   def oclc_popup
     icon_link "http://nyu.beta.libanswers.com/faq/134617"
   end
-  
+
   def isbn_popup
     icon_link "http://nyu.beta.libanswers.com/faq/134616"
   end
-  
+
   def issn_popup
     icon_link "http://nyu.beta.libanswers.com/faq/134616"
   end
