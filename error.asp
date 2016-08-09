@@ -8,7 +8,7 @@
 
 	'Prepend this absolute path to links and images
 	'for when page is called from non-local server
-	absolutePath = "https://dev.library.nyu.edu"
+	absolutePath = "https://library.nyu.edu"
 
 	'The file base for the error page wrapper
 	If not IsEmpty(errorType) and errorType = 500 Then
