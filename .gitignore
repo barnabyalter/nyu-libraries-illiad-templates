@@ -1,3 +1,5 @@
 .sass-cache
 dist
 stylesheets
+wiki
+*.wiki
