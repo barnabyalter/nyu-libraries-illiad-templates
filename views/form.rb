@@ -47,6 +47,16 @@ class Form < Layout
   end
 
   def pickup_options
-    [{:value => "NYU Bobst"},{:value => "NYU Abu Dhabi"},{:value => "NYU Shanghai"},{:value => "NYU Bern Dibner"},{:value => "NYU Courant"},{:value => "NYU Institute of Fine Arts"},{:value => "NYU Inst Study Ancient World"},{:value => "NYU Jack Brause"},{:value => "NYU Lapidus Health Sciences"}]
+    [
+      {:value => "NYU Bobst"},
+      {:value => "NYU Abu Dhabi"},
+      {:value => "NYU Shanghai"},
+      {:value => "NYU Bern Dibner"},
+      {:value => "NYU Courant"},
+      {:value => "NYU Institute of Fine Arts"},
+      {:value => "NYU Inst Study Ancient World"},
+      {:value => "NYU Jack Brause"},
+      {:value => "NYU Lapidus Health Sciences"}
+    ]
   end
 end
