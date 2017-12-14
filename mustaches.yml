@@ -4,7 +4,6 @@ views:
     - ArticleRequest
     - BookChapterRequest
     - LoanRequest
-    - ThesisRequest
     - GenericRequestAudioVisual
     - GenericRequestMusicalScore
     - GenericRequestMicroform
@@ -12,7 +11,6 @@ views:
     - EditArticleRequest
     - EditBookChapterRequest
     - EditLoanRequest
-    - EditThesisRequest
     - EditGenericRequestAudioVisual
     - EditGenericRequestMusicalScore
     - EditGenericRequestMicroform
