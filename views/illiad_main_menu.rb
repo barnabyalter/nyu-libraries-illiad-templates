@@ -30,10 +30,10 @@ class IlliadMainMenu < Table
       :columns => ["TransactionNumber:Transaction Number (TN)","DocumentType:Format Type","Title","Author","CreationDate:Request Submitted"],
       :orderBy => "TransactionNumber ASC",
       :text_below => '
-      <p>Please contact ILL with questions or concerns:</p>
-      <p><a href="mailto:lib-ill@nyu.edu">lib-ill@nyu.edu</a></p>
-      <p>(212) 998-2511</p>
-      <p>Monday-Friday: 9-5</p>
+      <p>Please contact ILL with questions or concerns:<br />
+      <a href="mailto:lib-ill@nyu.edu">lib-ill@nyu.edu</a><br />
+      (212) 998-2511<br />
+      Monday-Friday: 9-5</p>
       '
     }
     ]
