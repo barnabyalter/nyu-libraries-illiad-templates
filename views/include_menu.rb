@@ -20,7 +20,6 @@ class IncludeMenu < Mustache
               { :link => action_tag({:action=>"10",:form=>"22"}), :id => "request_article", :title => "Article" },
               { :link => action_tag({:action=>"10",:form=>"21"}), :id => "request_book", :title => "Book" },
               { :link => action_tag({:action=>"10",:form=>"23"}), :id => "request_book_chapter", :title => "Book chapter" },
-              { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestAudioVisual"}), :id => "request_audio_visual", :title => "Audio/Visual" },
               { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestMusicalScore"}), :id => "request_musical_score", :title => "Musical score" },
               { :link => action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestMicroform"}), :id => "request_microform", :title => "Microform" },
               { :link => action_tag({:action=>"10",:form=>"29"}), :id => "request_other", :title => "Other" }
