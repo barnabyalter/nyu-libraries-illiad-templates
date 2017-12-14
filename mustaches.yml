@@ -4,7 +4,6 @@ views:
     - ArticleRequest
     - BookChapterRequest
     - LoanRequest
-    - GenericRequestJournal
     - ThesisRequest
     - GenericRequestAudioVisual
     - GenericRequestMusicalScore
@@ -13,7 +12,6 @@ views:
     - EditArticleRequest
     - EditBookChapterRequest
     - EditLoanRequest
-    - EditGenericRequestJournal
     - EditThesisRequest
     - EditGenericRequestAudioVisual
     - EditGenericRequestMusicalScore
