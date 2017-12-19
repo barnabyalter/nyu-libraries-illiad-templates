@@ -25,9 +25,7 @@ class IncludeMenu < Mustache
           },
           { :id => "view", :header => "View", :options =>
             [
-              { :link => action_tag({:action=>"10",:form=>"62"}) , :id => "view_in_processing", :title => "Requests in processing" },
-              { :link => action_tag({:action=>"10",:form=>"60"}) , :id => "view_all", :title => "Request history" },
-              { :link => action_tag({:action=>"10",:form=>"64"}) , :id => "view_electronic", :title => "My available articles" }
+              { :link => action_tag({:action=>"10",:form=>"60"}) , :id => "view_all", :title => "Request history" }
             ]
           },
           { :id => "search_illiad", :header => "Search ILL Requests", :content =>
