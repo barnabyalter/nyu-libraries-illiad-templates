@@ -25,7 +25,4 @@ class ArticleRequest < Form
      })
    end
 
-   def pre_form_text
-     '<div class="linkout nyulibrary_icons_information">Need entire volume(s) or issue(s)? Use the <a href="'+action_tag({:action=>"10",:form=>"20",:value=>"GenericRequestJournal"})+'">Journal</a> form.</div>'
-   end
 end

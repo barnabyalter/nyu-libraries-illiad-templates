@@ -25,8 +25,7 @@ class LoanRequest < Form
 
    def pre_form_text
       '<div class="linkout nyulibrary_icons_information">
-        Just need a chapter? Use the <a href="'+action_tag({:action=>"10",:form=>"23"})+'">Book Chapter</a> form.<br />
-        <a href="'+action_tag({:action=>"10",:form=>"27"})+'">Request a Dissertation or Thesis</a>
+        Just need a chapter? Use the <a href="'+action_tag({:action=>"10",:form=>"23"})+'">Book Chapter</a> form.
       </div>'
     end
 end
