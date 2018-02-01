@@ -1,3 +1,9 @@
+<%@Language=VBScript CodePage = 65001%>
+<%
+Session.CodePage = 65001
+Response.charset ="utf-8"
+Session.LCID     = 1033 'en-US
+%>
 <%
 	'setup variables
 	dim errorType, fileBase, absolutePath
