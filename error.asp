@@ -18,7 +18,7 @@ Session.LCID = 1033 'en-US
 
 	'The file base for the error page wrapper
 	If not IsEmpty(errorType) and errorType = 500 Then
-	  fileBase = absolutePath & "/500.html"
+	  fileBase = absolutePath & "/500-illiad.html"
 	ElseIf not IsEmpty(errorType) and errorType = 403 Then
 	  fileBase = absolutePath & "/403.html"
 	Else
