@@ -6,6 +6,24 @@
 This project contains the logic for templating ILLiad (Interlibrary Loan software) with Mustache, stylesheets in SASS and scripts in CoffeeScript.
 
 * Uses [https://github.com/barnabyalter/microservice_precompiler](https://github.com/barnabyalter/microservice_precompiler) to render, compile and compress this project.
-* Uses [Capistrano](https://github.com/capistrano/capistrano) and [LFTP](http://lftp.yar.ru/) to deploy after compile to Windows NT servers.
+* Uses [Capistrano](https://github.com/capistrano/capistrano) and [LFTP](http://lftp.yar.ru/) to deploy after compile to Windows Servers.
 
-## Read the [wiki](/NYULibraries/illiad-templates/wiki) for more information
+## Usage
+
+### Compile and deploy
+
+Assuming credentials are configured by Figs the following will build the distribution and deploy to the staging ILLiad:
+
+```
+bundle exec cap development deploy:ftp
+```
+
+### Compile without deploy
+
+If you just want to build the distribution without attempting to ftp remotely:
+
+```
+bundle exec cap deploy:compile -S local=true
+```
+
+## Read the [wiki](https://github.com/NYULibraries/illiad-templates/wiki) for more information
