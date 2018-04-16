@@ -49,6 +49,6 @@ namespace :deploy do
 
 end
 
-before "deploy:ftp", "deploy:compile"
+before "deploy:ftp", "deploy:compile" unless fetch(:local, true)
 before "deploy:compile", "deploy:update_submodules"
-after "deploy:compile", "deploy:ftp_sync"
+after "deploy:compile", "deploy:ftp_sync" unless fetch(:local, true)
