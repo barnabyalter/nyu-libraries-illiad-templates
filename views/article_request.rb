@@ -21,7 +21,7 @@ class ArticleRequest < Form
         {:field => "ShippingOptions", :field_title => "Pickup Location", :required => true, :select => {:options => pickup_options} },
         {:field => "CitedIn", :field_title => 'Please specify "Other" global site', :input_text => true},
         {:field => "Notes", :field_title => 'Notes', :textarea => true}
-       ]
+       ].map {|field| field.merge(Hash[form_fields_maxlength.find{|f| f[:field] == field[:field]}.to_a]) }
      })
    end
 

@@ -59,4 +59,29 @@ class Form < Layout
       {:value => "NYU Lapidus Health Sciences"}
     ]
   end
+
+  def form_fields_maxlength
+    [
+      { field: "PhotoArticleTitle", maxlength: "250" },
+      { field: "PhotoArticleAuthor", maxlength: "100" },
+      { field: "PhotoJournalTitle", maxlength: "255" },
+      { field: "PhotoJournalVolume", maxlength: "30" },
+      { field: "PhotoJournalIssue", maxlength: "30" },
+      { field: "PhotoJournalYear", maxlength: "30" },
+      { field: "PhotoJournalInclusivePages", maxlength: "30" },
+      { field: "ESPNumber", maxlength: "32" },
+      { field: "ISSN", maxlength: "20" },
+      { field: "Notes", maxlength: "200" },
+      { field: "LoanTitle", maxlength: "255" },
+      { field: "LoanAuthor", maxlength: "100" },
+      { field: "LoanPlace", maxlength: "30" },
+      { field: "LoanPublisher", maxlength: "50" },
+      { field: "LoanDate", maxlength: "30" },
+      { field: "LoanEdition", maxlength: "30" },
+      { field: "PhotoItemAuthor", maxlength: "100" },
+      { field: "PhotoItemPlace", maxlength: "40" },
+      { field: "PhotoItemPublisher", maxlength: "40" },
+      { field: "PhotoItemEdition", maxlength: "40" }
+    ]
+  end
 end
