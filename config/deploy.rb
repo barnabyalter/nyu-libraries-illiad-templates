@@ -18,7 +18,7 @@ set :application, "illiad"
 set :git_enable_submodules, 1
 
 namespace :deploy do
-  desc "Run precompiler gem to create distribution package"
+  desc "Run precompiler gem to create distribution package, include -s local=true to skip deploy"
   task :compile do
     precompiler = MicroservicePrecompiler::Builder.new
     precompiler.mustaches_filename = "mustaches.yml"
