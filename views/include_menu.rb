@@ -10,9 +10,9 @@ class IncludeMenu < Mustache
         :option_groups => [
           { :id => "shelf_options", :header => nil, :options =>
             [
-              { :link => "http://eshelf.library.nyu.edu/account" , :id => "account", :title => "My library account" },
-              { :link => "http://ill.library.nyu.edu/illiad/illiad.dll" , :id => "ill", :title => "My interlibrary loan (ILL)", :class => "selected" },
-              { :link => "http://eshelf.library.nyu.edu" , :id => "records", :title => "All saved records" }
+              { :link => "https://eshelf.library.nyu.edu/account" , :id => "account", :title => "My library account" },
+              { :link => "https://ill.library.nyu.edu/illiad/illiad.dll" , :id => "ill", :title => "My interlibrary loan (ILL)", :class => "selected" },
+              { :link => "https://eshelf.library.nyu.edu" , :id => "records", :title => "All saved records" }
             ]
           },
           { :id => "request", :header => "Make a request", :options =>
@@ -45,7 +45,7 @@ class IncludeMenu < Mustache
           },
           { :id => "links", :header => "Additional Options", :options =>
             [
-              { :link => "http://library.nyu.edu/services/borrowing/from-non-nyu-libraries/interlibrary-loan/", :target => "_blank" , :id => "ill_policies", :title => "Interlibrary Loan (ILL) info & Policies" }
+              { :link => "https://library.nyu.edu/services/borrowing/from-non-nyu-libraries/interlibrary-loan/", :target => "_blank" , :id => "ill_policies", :title => "Interlibrary Loan (ILL) info & Policies" }
             ]
           }
         ]
