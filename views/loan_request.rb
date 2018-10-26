@@ -17,7 +17,7 @@ class LoanRequest < Form
         {:field => "ISSN", :field_title => "ISBN #{isbn_popup}", :note => 'Will speed processing', :input_text => true},
         {:field => "AcceptNonEnglish", :field_title => "Accept book in languages other than English?", :note => "If yes, specify languages in \"Notes\" below.", :select => {:options => [{:value => "No"},{:value => "Yes"}] }},
         {:field => "AcceptAlternateEdition", :field_title => "Accept an alternate edition?", :select => {:options => [{:value => "No"},{:value => "Yes"}] }},
-        {:field => "Ariel", :field_title => "Would you prefer a print copy of this book, if available?", :select => {:options => [{:value => "No"},{:value => "Yes"}] }},
+        {:field => "Ariel", :field_title => "Would you prefer a print copy of this book, if available?", :required => true, :select => {:options => [{:value => "No"},{:value => "Yes"}] }},
         {:field => "ShippingOptions", :field_title => "Pickup Location", :required => true, :select => {:options => pickup_options} },
         {:field => "Notes", :field_title => 'Notes', :textarea => true}
        ].map {|field| field.merge(Hash[form_fields_maxlength.find{|f| f[:field] == field[:field]}.to_a]) }
