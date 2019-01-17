@@ -1,0 +1,15 @@
+version: '3.7'
+x-build: &build
+  build:
+    context: .
+  image: illiad-templates
+x-dev-env: &dev-env
+  <<: *build
+  env_file:
+    - test.env
+
+services:
+  dev:
+    <<: *dev-env
+    tty: true
+    stdin_open: true
