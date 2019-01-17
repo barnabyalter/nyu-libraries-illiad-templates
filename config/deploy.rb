@@ -7,7 +7,7 @@ require "bundler/capistrano"
 require "rvm/capistrano"
 require 'microservice_precompiler'
 
-set :stages, ["development", "staging", "production"]
+set :stages, ["development", "production"]
 set :default_stage, "development"
 require 'capistrano/ext/multistage'
 
