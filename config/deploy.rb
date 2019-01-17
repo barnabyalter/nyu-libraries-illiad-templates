@@ -35,12 +35,12 @@ namespace :deploy do
 
   desc "Deploy to server with FTP"
   task :ftp_setup do
-    system "lftp -u #{login},#{password} -e \"cd #{app_path}; mkdir -p #{app_path}/javascripts; mkdir -p #{app_path}/stylesheets; mkdir -p #{app_path}/images; exit;\" #{host}"
+    system "lftp -u #{login},#{password} -e \"mkdir -p ./javascripts; mkdir -p ./stylesheets; mkdir -p ./images; exit;\" #{host}"
   end
 
   desc "Deploy to server with FTP"
   task :ftp_sync do
-    system "lftp -u #{login},#{password} -e \"cd #{app_path}; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd #{app_path}/javascripts; put ./dist/javascripts/illiad.js; cd #{app_path}/stylesheets; put ./dist/stylesheets/illiad.css; exit\" #{host}"
+    system "lftp -u #{login},#{password} -e \"put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; exit\" #{host}"
   end
 
   task :ftp do
