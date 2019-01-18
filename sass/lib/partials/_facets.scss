@@ -1,0 +1,42 @@
+/* 
+  Styles for facets in search results of bobcat
+*/
+.results_with_facets { @include clearfix; }
+#facets {
+  @include float-left;
+  margin-right: $padding_small;
+	width: $sidebar-width * .75;
+	border: $border_content_list;
+	div {
+  	margin: $padding_small 0;
+	}
+	ul li {
+  	background-image: none;
+	  margin: auto; 
+	  padding: auto; 
+	  margin-bottom: auto; 
+	  line-height: auto; 
+	}
+	h2 {
+	  @include no-margin;
+		background: $header_bg_color url($header_bg_image) repeat-x top left;
+		padding: 5px 5px 5px 10px !important;
+		font-size: 110%;
+		font-weight: normal;
+	}
+	.box {
+		border-bottom: $border_content_list;
+		margin: $padding_tiny $padding_small;
+ 		h3 {
+			font-size: $base_font_size;
+		}
+		ul {
+			padding: ($padding_small * .25) 0;
+			font-size: $base_font_size;
+			li {
+				padding: ($padding_small * .25) 0;
+				font-size: $base_font_size;
+			}
+		}
+	}
+}

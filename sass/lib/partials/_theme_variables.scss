@@ -1,0 +1,58 @@
+// Base variables
+$padding_standard: 1.5em;
+$padding_small: $padding_standard * .6666;
+$padding_tiny: $padding_standard * .3333;
+$sidebar_width: 23em;
+$thin_size: 1px;
+$medium_size: $thin_size * 2;
+$thick_size: $thin_size * 3;
+$base_color: #ccc;
+
+//Tabs
+$tab_width: 30em;
+$tab_height: 31px;
+$tabs_count: 5;
+
+//Borders
+$border_thin: $thin_size solid $base_color;
+$border_thin_dark: $thin_size solid scale-lightness($base_color, -30%); //#B4B4B5;
+$border_medium: $medium_size solid scale-lightness($base_color, 30%);
+$border_thick: $thick_size solid scale-lightness($base_color, 30%);
+$border_content_list: $border_medium;
+$border_tabs: $thin_size solid white;
+$border_light: $border_tabs;
+
+//Colors (gray theme)
+$link_color: #0000cc;
+$link_color_over: saturate($link_color, 10%);
+$link_color_visited: desaturate($link_color, 20%);
+$breadcrumb_bg: scale-lightness($base_color, 70%);//#efefef;
+$breadcrumb_text: scale-lightness($base_color, -50%);//#666666;
+$hr_color: scale-lightness($base_color, 50%);
+$top_logo_color: #623e24;
+$box_bg_color: #dcddde;
+$header_bg_color: $base-color;
+$footer_text_color: scale-lightness($base_color, -50%);
+$active_tab_color: #eeeeef;
+$required_field: #c00;
+$available_color: green;
+$check_availability_color: #d64516;
+$nyu_purple: #57068c;
+
+//Images
+$images_url: "/images/" !default;
+$header_bg_image: $images_url + "header_bg_dark.gif";
+$header_bg_image_light: $images_url + "header_bg_light.gif";
+$eshelf_image: $images_url + "eshelf.gif";
+$ajax_loader_image: $images_url + "ajax-loader.gif";
+$magnifier_image: $images_url + "magnifier.png";
+$box_bg_image: $images_url + "box_bg_short.gif";
+$bobcat_logo: $images_url + "bobcat_logo.png";
+$tip_icon_image: $images_url + "tip_icon.png";
+$no_cover_image: $images_url + "no_cover.gif";
+$famfamfam: $images_url + "famfamfam/";
+
+//Fonts
+$base_font_size: 12px;
+$text_fonts: Verdana, Arial, Geneva, Helvetica, sans-serif;
+$header_fonts: Arial, Verdana, Genevea, Helvetica, sans-serif;

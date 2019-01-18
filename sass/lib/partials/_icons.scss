@@ -1,0 +1,187 @@
+/*
+  Styles for semantic naming of famfamfam icons
+*/
+
+@mixin icon-position {
+  padding-left: 18px;
+  padding-bottom: 5px;
+}
+
+.nyulibrary_icons_login {
+	@include icon-position;
+	background: url($famfamfam + 'lock_open.png') no-repeat;
+}
+
+.nyulibrary_icons_logout {
+	@include icon-position;
+	background: url($famfamfam + 'lock.png') no-repeat;
+}
+
+.nyulibrary_icons_stop {
+	@include icon-position;
+	background: url($famfamfam + 'stop.png') no-repeat;
+}
+
+.nyulibrary_icons_pencil {
+	@include icon-position;
+	background: url($famfamfam + 'pencil.png') no-repeat;
+}
+
+.nyulibrary_icons_information {
+	@include icon-position;
+	background: url($famfamfam + 'information.png') no-repeat;
+}
+
+.nyulibrary_icons_exclamation {
+	@include icon-position;
+	background: url($famfamfam + 'exclamation.png') no-repeat;
+}
+
+.nyulibrary_icons_error {
+	@include icon-position;
+	background: url($famfamfam + 'error.png') no-repeat;
+}
+
+.nyulibrary_icons_time {
+	@include icon-position;
+	background: url($famfamfam + 'time.png') no-repeat;
+}
+
+.nyulibrary_icons_clock {
+	@include icon-position;
+	background: url($famfamfam + 'clock.png') no-repeat;
+}
+
+.nyulibrary_icons_report_disk {
+	@include icon-position;
+	background: url($famfamfam + 'report_disk.png') no-repeat;
+}
+
+.nyulibrary_icons_asterisk_orange {
+	@include icon-position;
+	background: url($famfamfam + 'asterisk_orange.png') no-repeat;
+}
+
+.nyulibrary_icons_feed {
+	@include icon-position;
+	background: url($famfamfam + 'feed.png') no-repeat;
+}
+
+.nyulibrary_icons_email {
+	@include icon-position;
+	background: url($famfamfam + 'email.png') no-repeat;
+}
+
+.nyulibrary_icons_email_go {
+	@include icon-position;
+	background: url($famfamfam + 'email_go.png') no-repeat;
+}
+
+.nyulibrary_icons_delete {
+	@include icon-position;
+	background: url($famfamfam + 'delete.png') no-repeat;
+}
+
+.nyulibrary_icons_cross {
+	@include icon-position;
+	background: url($famfamfam + 'cross.png') no-repeat;
+}
+
+.nyulibrary_icons_cog {
+	@include icon-position;
+	background: url($famfamfam + 'cog.png') no-repeat;
+}
+
+.nyulibrary_icons_cancel {
+	@include icon-position;
+	background: url($famfamfam + 'cancel.png') no-repeat;
+}
+
+.nyulibrary_icons_date {
+	@include icon-position;
+	background: url($famfamfam + 'date.png') no-repeat;
+}
+
+.nyulibrary_icons_add {
+	@include icon-position;
+	background: url($famfamfam + 'add.png') no-repeat;
+}
+
+.nyulibrary_icons_accept {
+	@include icon-position;
+	background: url($famfamfam + 'accept.png') no-repeat;
+}
+
+.nyulibrary_icons_wrench {
+	@include icon-position;
+	background: url($famfamfam + 'wrench.png') no-repeat;
+}
+
+.nyulibrary_icons_wrench_orange {
+	@include icon-position;
+	background: url($famfamfam + 'wrench_orange.png') no-repeat;
+}
+
+.nyulibrary_icons_magnifier {
+	@include icon-position;
+	background: url($famfamfam + 'magnifier.png') no-repeat;
+}
+
+.nyulibrary_icons_new {
+	@include icon-position;
+	background: url($famfamfam + 'new.png') no-repeat;
+}
+
+.nyulibrary_icons_tick {
+	@include icon-position;
+	background: url($famfamfam + 'tick.png') no-repeat;
+}
+
+.nyulibrary_icons_help {
+	@include icon-position;
+	background: url($famfamfam + 'help.png') no-repeat;
+}
+
+.nyulibrary_icons_arrow_undo {
+	@include icon-position;
+	background: url($famfamfam + 'arrow_undo.png') no-repeat;
+}
+
+.nyulibrary_icons_rss {
+	@include icon-position;
+	background: url($famfamfam + 'rss.png') no-repeat;
+}
+
+.nyulibrary_icons_bullet_add {
+	@include icon-position;
+	background: url($famfamfam + 'bullet_add.png') no-repeat;
+}
+
+.nyulibrary_icons_bullet_wrench {
+	@include icon-position;
+	background: url($famfamfam + 'bullet_wrench.png') no-repeat;
+}
+
+.nyulibrary_icons_bullet_disk {
+	@include icon-position;
+	background: url($famfamfam + 'bullet_disk.png') no-repeat;
+}
+
+.nyulibrary_icons_pencil_add {
+	@include icon-position;
+	background: url($famfamfam + 'pencil_add.png') no-repeat;
+}
+
+.nyulibrary_icons_disk {
+	@include icon-position;
+	background: url($famfamfam + 'disk.png') no-repeat;
+}
+
+.nyulibrary_icons_arrow_refresh_small {
+	@include icon-position;
+	background: url($famfamfam + 'arrow_refresh_small.png') no-repeat;
+}
+
+.nyulibrary_icons_photo {
+	background: url($famfamfam + 'photo.png') no-repeat;
+}
