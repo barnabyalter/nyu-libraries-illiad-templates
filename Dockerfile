@@ -26,6 +26,5 @@ RUN apk add --no-cache --update $RUN_PACKAGES $BUILD_PACKAGES \
 COPY --chown=docker:docker . .
 RUN ruby compile.rb
 
-ENV FTP_CMD "put ./index-dev.html -o index.html; exit"
 # CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "set ftp:proxy ${FTP_PROXY}; ${FTP_CMD}" ${FTP_HOST}
 CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST}
