@@ -1,6 +1,6 @@
 FROM ruby:2.3.7-alpine
 
-ENV HOST USERNAME PASSWORD 
+ENV HOST USERNAME PASSWORD FTP_PROXY FTP_CMD
 ENV INSTALL_PATH /app
 ENV BUNDLER_VERSION "2.0.1"
 
@@ -26,4 +26,5 @@ RUN apk add --no-cache --update $RUN_PACKAGES $BUILD_PACKAGES \
 COPY --chown=docker:docker . .
 RUN ruby compile.rb
 
-CMD lftp -u ${USERNAME},"${PASSWORD}" -e "put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; exit" ${HOST}
+# CMD lftp -u ${USERNAME},"${PASSWORD}" -e "set ftp:proxy ${FTP_PROXY}; ${FTP_CMD}" ${HOST}
+CMD lftp -u ${USERNAME},"${PASSWORD}" -e "${FTP_CMD}" ${HOST}
