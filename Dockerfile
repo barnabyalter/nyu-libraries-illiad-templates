@@ -1,6 +1,6 @@
 FROM ruby:2.3.7-alpine
 
-ENV HOST USERNAME PASSWORD FTP_PROXY FTP_CMD
+ENV FTP_HOST FTP_USERNAME FTP_PASSWORD FTP_CMD FTP_PROXY
 ENV INSTALL_PATH /app
 ENV BUNDLER_VERSION "2.0.1"
 
@@ -26,5 +26,6 @@ RUN apk add --no-cache --update $RUN_PACKAGES $BUILD_PACKAGES \
 COPY --chown=docker:docker . .
 RUN ruby compile.rb
 
-# CMD lftp -u ${USERNAME},"${PASSWORD}" -e "set ftp:proxy ${FTP_PROXY}; ${FTP_CMD}" ${HOST}
-CMD lftp -u ${USERNAME},"${PASSWORD}" -e "${FTP_CMD}" ${HOST}
+ENV FTP_CMD "put ./index-dev.html -o index.html; exit"
+# CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "set ftp:proxy ${FTP_PROXY}; ${FTP_CMD}" ${FTP_HOST}
+CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST}

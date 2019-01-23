@@ -1,14 +1,9 @@
 version: '3.7'
-x-build: &build
-  build:
-    context: .
-  image: illiad-templates
 
 services:
   dev-deploy: &dev-deploy
-    <<: *build
-    tty: true
-    stdin_open: true
+    image: quay.io/nyulibraries/illiad-templates:development
+    build: .
     environment:
       FTP_CMD: "put ./index-dev.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; exit"
     env_file:
@@ -16,23 +11,22 @@ services:
 
   dev-setup:
     <<: *dev-deploy
+    build: .
     environment:
       FTP_CMD: "mkdir -p ./javascripts; mkdir -p ./stylesheets; mkdir -p ./images; exit;"
-    env_file:
-      - test.env
 
   prod-deploy: &prod-deploy
-    <<: *build
-    tty: true
-    stdin_open: true
+    image: quay.io/nyulibraries/illiad-templates:master
+    build: .        
     environment:
       FTP_CMD: "put ./index-prod.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; exit"
-    env_file:
-      - test.env
+      FTP_USERNAME:
+      FTP_PASSWORD:
+      FTP_HOST:
+      FTP_PROXY:
 
   prod-setup:
     <<: *prod-deploy
+    build: .
     environment:
       FTP_CMD: "mkdir -p ./javascripts; mkdir -p ./stylesheets; mkdir -p ./images; exit;"
-    env_file:
-      - test.env
