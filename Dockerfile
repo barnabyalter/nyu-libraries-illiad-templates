@@ -24,7 +24,8 @@ RUN apk add --no-cache --update $RUN_PACKAGES $BUILD_PACKAGES \
 && chown -R docker:docker /usr/local/bundle
 
 COPY --chown=docker:docker . .
+USER docker
 RUN ruby compile.rb
 
-# CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "set ftp:proxy ${FTP_PROXY}; ${FTP_CMD}" ${FTP_HOST}
-CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST}
+CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "set ftp:proxy ${FTP_PROXY}; ${FTP_CMD}" ${FTP_HOST}
+# CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST}
