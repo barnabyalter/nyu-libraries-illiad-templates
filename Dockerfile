@@ -25,7 +25,8 @@ RUN apk add --no-cache --update $RUN_PACKAGES $BUILD_PACKAGES \
 
 COPY --chown=docker:docker . .
 USER docker
-RUN ruby compile.rb
 
-CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "set ftp:proxy ${FTP_PROXY}; ${FTP_CMD}" ${FTP_HOST}
-# CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST}
+RUN mkdir -p /home/docker/.lftp \
+    && ruby compile.rb
+
+CMD echo "set ftp:proxy ${FTP_PROXY}" > /home/docker/.lftp/rc && lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST}
