@@ -23,6 +23,13 @@ RUN apk add --no-cache --update $RUN_PACKAGES $BUILD_PACKAGES \
   && apk del $BUILD_PACKAGES \
 && chown -R docker:docker /usr/local/bundle
 
+# run microscanner
+ARG AQUA_MICROSCANNER_TOKEN
+RUN wget -O /microscanner https://get.aquasec.com/microscanner && \
+  chmod +x /microscanner && \
+  /microscanner ${AQUA_MICROSCANNER_TOKEN} && \
+rm -rf /microscanner
+
 COPY --chown=docker:docker . .
 USER docker
 
