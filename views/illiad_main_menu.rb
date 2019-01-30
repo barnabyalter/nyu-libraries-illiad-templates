@@ -16,7 +16,7 @@ class IlliadMainMenu < Table
       :columns => ["TransactionNumber:Transaction Number (TN)","View:Click here to view your document","DocumentType:Format Type","Size","PhotoArticleTitle:Article/Chapter Title","PhotoArticleAuthor:Author","PhotoJournalTitle:Journal/Book Title","Expires","Delete"],
       :orderBy => "TransactionNumber DESC",
       :text_above => '
-        <p>Articles posted to this page will remain accessible for <strong>90 days from the date of posting</strong>. You are encouraged to print or save the document for your future use.</p>
+        <p>TEST - Articles posted to this page will remain accessible for <strong>90 days from the date of posting</strong>. You are encouraged to print or save the document for your future use.</p>
         <p>If, prior to this time, you no longer require the use of an article, you may delete it using the "Delete" link to the right of the article information. Deleted articles cannot be recovered or re-requested.</p>
         <p>If you have trouble viewing your document, please contact the Interlibrary Loan Office at 212-998-2511 or <a href="mailto:lib-ill@nyu.edu">lib-ill@nyu.edu</a></p>
       '
