@@ -1,23 +1,35 @@
 version: '3.7'
+x-build-image: &build-image
+  build:
+    context: .
+    cache_from:
+      - illiad-templates
+      - quay.io/nyulibraries/illiad-templates
+      - quay.io/nyulibraries/illiad-templates:$BRANCH_NO_SLASH
+    args:
+      AQUA_MICROSCANNER_TOKEN:
+  environment:
+    BRANCH_NO_SLASH:
 
 services:
   dev-deploy: &dev-deploy
-    image: quay.io/nyulibraries/illiad-templates:development
-    build: .
+    <<: *build-image
     environment:
       FTP_CMD: "put ./index-dev.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; exit"
-    env_file:
-      - test.env
+      FTP_USERNAME:
+      FTP_PASSWORD:
+      FTP_HOST:
+      FTP_PROXY:
+    # env_file:
+    #   - test.env
 
   dev-setup:
     <<: *dev-deploy
-    build: .
     environment:
       FTP_CMD: "mkdir -p ./javascripts; mkdir -p ./stylesheets; mkdir -p ./images; exit;"
 
   prod-deploy: &prod-deploy
-    image: quay.io/nyulibraries/illiad-templates:master
-    build: .        
+    <<: *build-image
     environment:
       FTP_CMD: "put ./index-prod.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; exit"
       FTP_USERNAME:
@@ -27,6 +39,5 @@ services:
 
   prod-setup:
     <<: *prod-deploy
-    build: .
     environment:
       FTP_CMD: "mkdir -p ./javascripts; mkdir -p ./stylesheets; mkdir -p ./images; exit;"
