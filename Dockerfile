@@ -1,4 +1,4 @@
-FROM ruby:2.3.7-alpine
+FROM ruby:2.3-alpine
 
 ENV FTP_HOST FTP_USERNAME FTP_PASSWORD FTP_CMD FTP_PROXY
 ENV INSTALL_PATH /app
@@ -14,7 +14,7 @@ RUN chown docker:docker .
 COPY Gemfile Gemfile.lock ./
 ARG RUN_PACKAGES="ca-certificates lftp nodejs tzdata openjdk7-jre"
 ARG BUILD_PACKAGES="ruby-dev build-base libffi-dev"
-RUN apk add --no-cache --update $RUN_PACKAGES $BUILD_PACKAGES \
+RUN apk update && apk add --no-cache --update $RUN_PACKAGES $BUILD_PACKAGES \
   && gem install bundler \
   && bundle config --local github.https true \
   && bundle install --jobs 20 --retry 5 \
@@ -27,7 +27,7 @@ RUN apk add --no-cache --update $RUN_PACKAGES $BUILD_PACKAGES \
 ARG AQUA_MICROSCANNER_TOKEN
 RUN wget -O /microscanner https://get.aquasec.com/microscanner && \
   chmod +x /microscanner && \
-  /microscanner ${AQUA_MICROSCANNER_TOKEN} && \
+  /microscanner ${AQUA_MICROSCANNER_TOKEN} --continue-on-failure && \
 rm -rf /microscanner
 
 COPY --chown=docker:docker . .
