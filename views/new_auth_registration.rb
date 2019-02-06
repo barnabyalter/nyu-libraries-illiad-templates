@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), 'text_page')
 class NewAuthRegistration < TextPage
 
   def page_header
-    "TESTING - Welcome to NYU Interlibrary Loan Request System"
+    "Welcome to NYU Interlibrary Loan Request System"
   end
 
   def page_name
