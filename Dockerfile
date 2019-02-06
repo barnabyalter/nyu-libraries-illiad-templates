@@ -36,6 +36,5 @@ USER docker
 RUN mkdir -p /home/docker/.lftp \
     && ruby compile.rb
 
-# CMD echo "set ftp:proxy ${FTP_PROXY}" > /home/docker/.lftp/rc \
-    # && lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST} 2>&1
-CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST} 2>&1
+CMD echo "set ftp:proxy ${FTP_PROXY}" > /home/docker/.lftp/rc \
+    && lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST} 2>&1
