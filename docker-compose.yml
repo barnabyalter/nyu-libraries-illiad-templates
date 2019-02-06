@@ -20,8 +20,8 @@ services:
       FTP_PASSWORD:
       FTP_HOST:
       FTP_PROXY:
-    env_file:
-      - test.env
+    # env_file:
+    #   - test.env
 
   dev-setup:
     <<: *dev-deploy

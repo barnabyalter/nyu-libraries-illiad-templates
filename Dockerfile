@@ -34,7 +34,9 @@ COPY --chown=docker:docker . .
 USER docker
 
 RUN mkdir -p /home/docker/.lftp \
+    && echo "set log:enabled true\nset log:file ''\n" >> /home/docker/.lftp/rc \
     && ruby compile.rb
 
-CMD echo "set ftp:proxy ${FTP_PROXY}" > /home/docker/.lftp/rc \
+CMD echo "set ftp:proxy ${FTP_PROXY}" >> /home/docker/.lftp/rc \
     && lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST} 2>&1
+# CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST} 2>&1
