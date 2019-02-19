@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), 'table')
 class IlliadMainMenu < Table
 
   def page_header
-    "TEST- Interlibrary Loan (ILL)"
+    "Interlibrary Loan (ILL)"
   end
 
   def tables
