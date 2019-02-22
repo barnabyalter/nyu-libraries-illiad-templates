@@ -1,0 +1,32 @@
+version: '3.7'
+x-build-image: &build-image
+  build:
+    context: .
+    cache_from:
+      - illiad-templates
+      - quay.io/nyulibraries/illiad-templates
+      - quay.io/nyulibraries/illiad-templates:$BRANCH_NO_SLASH
+    args:
+      AQUA_MICROSCANNER_TOKEN:
+  environment:
+    BRANCH_NO_SLASH:
+
+services:
+  illiad-templates_1:
+    <<: *build-image
+    image: illiad-templates
+  illiad-templates_2:
+    <<: *build-image
+    image: "quay.io/nyulibraries/illiad-templates:latest"
+    depends_on:
+      - illiad-templates_1
+  illiad-templates_3:
+    <<: *build-image
+    image: "quay.io/nyulibraries/illiad-templates:${BRANCH_NO_SLASH}"
+    depends_on:
+      - illiad-templates_2
+  illiad-templates_4:
+    <<: *build-image
+    image: "quay.io/nyulibraries/illiad-templates:${BRANCH_NO_SLASH}-${CIRCLE_SHA1}"
+    depends_on:
+      - illiad-templates_3

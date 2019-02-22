@@ -1,8 +1,6 @@
 #= require ./lib/jquery/plugins/jquery.nyulibrary.bobcat.js
 #= require ./lib/jquery/plugins/jquery.url.min.js
 #= require ./lib/jquery/plugins/jquery.query.min.js
-#= require ./lib/jquery/plugins/jquery.poshytip.min.js
-#= require ./lib/jquery/plugins/jquery.nyulibrary.popuptip.js
 #= require ./lib/jquery/plugins/jquery.form.min.js
 #= require ./lib/jquery/plugins/jquery.validate.min.js
 jQuery ($)->
@@ -13,9 +11,6 @@ jQuery ($)->
   $('div.actions ul li a').live "click", (event)->
     url = "#{$(this).closest("form").attr "action"}?#{$.query.load($(this).attr "href").get("service[action]")}"
     $(this).attr "href": url
-
-  #Popup tips
-  $(".nyulibrary_help").nyulibrary_popup_tip "init"
 
   #Properly capitalize usernames
   capitalize = (phrase) -> phrase.replace /\B[A-Z]/g, (letter) -> letter.toLowerCase()
