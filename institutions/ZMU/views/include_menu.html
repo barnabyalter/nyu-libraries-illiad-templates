@@ -1,0 +1,59 @@
+<section id="sidebar" class="sidebar">
+  <menu id="shelf" class="box">
+      <h2>My Shelf</h2>
+      <ul id="shelf_options">
+            <li><a href="https://eshelf.library.nyu.edu/account" id="account" name="account">My library account</a></li>
+            <li><a href="https://ill.library.nyu.edu/illiad/illiad.dll" id="ill" name="ill">My interlibrary loan (ILL)</a></li>
+            <li><a href="https://eshelf.library.nyu.edu" id="records" name="records">All saved records</a></li>
+      </ul>
+      <ul id="request">
+        <li>
+        <h3>Make a request</h3>
+          <ul>
+            <li><a href="<#ACTION action="10" form="22">" id="request_article" name="request_article">Article</a></li>
+            <li><a href="<#ACTION action="10" form="21">" id="request_book" name="request_book">Book</a></li>
+            <li><a href="<#ACTION action="10" form="23">" id="request_book_chapter" name="request_book_chapter">Book chapter</a></li>
+            <li><a href="<#ACTION action="10" form="29">" id="request_other" name="request_other">Other</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul id="view">
+        <li>
+        <h3>View</h3>
+          <ul>
+            <li><a href="<#ACTION action="10" form="60">" id="view_all" name="view_all">Request history</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul id="search_illiad">
+        <li>
+        <h3>Search ILL Requests</h3>
+          <ul>
+        <li>
+        
+            <form action="illiad.dll" name="Search" method="post" id="Search">
+              <input type="hidden" name="IlliadForm" value="Search">
+              <input id="SessionID" name="SessionID" type="hidden" value="<#PARAM name="{:name=>"SessionID"}">">
+              <label for="SearchCriteria">
+                <input id="SearchCriteria" name="SearchCriteria" type="text" class="f-criteria">
+              </label>
+              <input type="submit" name="SubmitButton" value="Search" class="f-submit">
+              <div id="searchType">
+                <input name="SearchType" type="hidden" id="SearchTypeAll" value="All">
+              </div>
+            </form>
+            
+        </li>
+          </ul>
+        </li>
+      </ul>
+      <ul id="links">
+        <li>
+        <h3>Additional Options</h3>
+          <ul>
+            <li><a href="https://library.nyu.edu/services/borrowing/from-non-nyu-libraries/interlibrary-loan/" id="ill_policies" target="_blank" name="ill_policies">Interlibrary Loan (ILL) info & Policies</a></li>
+          </ul>
+        </li>
+      </ul>
+  </menu>
+</section>

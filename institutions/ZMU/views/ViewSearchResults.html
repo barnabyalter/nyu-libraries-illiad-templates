@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - View Search Results
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="ViewSearchResults" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+                
+        
+        <div class="status_container">
+        <#STATUS>
+        </div>
+        
+    <div class="default-table" id="ViewSearchResultsTable">			
+      <#TABLE name="ViewSearchResults" headerText="Search Results" noDataAction="ShowMessageRow" noDataMessage="No Results" column="TransactionNumber:Transaction" column="DocumentType:Type" column="Title" column="Author" column="TransactionStatus:Status">
+    </div>
+    
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+

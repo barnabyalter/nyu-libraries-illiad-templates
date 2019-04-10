@@ -1,0 +1,184 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - Request a Book Chapter
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="BookChapterRequest" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+        <form action="<#DLL>" method="post" name="BookChapterRequest" id="IlliadForm">
+            <input type="hidden" name="ILLiadForm" value="BookChapterRequest" />
+            <input type="hidden" name="Username" value="<#PARAM name="Username">" />
+            <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">" />
+            <h2>Request a Book Chapter</h2>
+            <div><span class="req">*</span> Indicates required field</div>
+            <fieldset>
+              
+                  <div class="status_container">
+                  <#STATUS>
+                  </div>
+                <div class="linkout nyulibrary_icons_information">Need the whole book? Use the <a href="<#ACTION action="10" form="21">">Book</a> form.</div>
+                <div class="field">
+                  <label for="PhotoArticleTitle">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhotoArticleTitle">">Chapter Title</span><br />
+                  </label>
+                  <input type="text" id="PhotoArticleTitle" name="PhotoArticleTitle" class="text" tabindex="1" value="<#PARAM name="PhotoArticleTitle">" maxlength="250" />
+                </div>
+                <div class="field">
+                  <label for="PhotoArticleAuthor">
+                  <span class="<#ERROR name="ERRORPhotoArticleAuthor">">Chapter Author</span><br />
+                  </label>
+                  <input type="text" id="PhotoArticleAuthor" name="PhotoArticleAuthor" class="text" tabindex="2" value="<#PARAM name="PhotoArticleAuthor">" maxlength="100" />
+                </div>
+                <div class="field">
+                  <label for="PhotoJournalInclusivePages">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhotoJournalInclusivePages">">Pages</span><br />
+                  </label>
+                  <input type="text" id="PhotoJournalInclusivePages" name="PhotoJournalInclusivePages" class="text defaultText" tabindex="3" value="<#PARAM name="PhotoJournalInclusivePages">" title="(e.g., 7-12; 5, 6-8, 10-15)" maxlength="30" />
+                </div>
+                <div class="field">
+                  <label for="PhotoJournalTitle">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhotoJournalTitle">">Book Title</span><br />
+                  <span class="note">Please do not abbreviate unless your citation is abbreviated</span><br />
+                  </label>
+                  <input type="text" id="PhotoJournalTitle" name="PhotoJournalTitle" class="text" tabindex="4" value="<#PARAM name="PhotoJournalTitle">" maxlength="255" />
+                </div>
+                <div class="field">
+                  <label for="PhotoItemAuthor">
+                  <span class="<#ERROR name="ERRORPhotoItemAuthor">">Book Author/Editor</span><br />
+                  </label>
+                  <input type="text" id="PhotoItemAuthor" name="PhotoItemAuthor" class="text" tabindex="5" value="<#PARAM name="PhotoItemAuthor">" maxlength="100" />
+                </div>
+                <div class="field">
+                  <label for="PhotoItemPlace">
+                  <span class="<#ERROR name="ERRORPhotoItemPlace">">Place of Publication</span><br />
+                  </label>
+                  <input type="text" id="PhotoItemPlace" name="PhotoItemPlace" class="text" tabindex="6" value="<#PARAM name="PhotoItemPlace">" maxlength="40" />
+                </div>
+                <div class="field">
+                  <label for="PhotoItemPublisher">
+                  <span class="<#ERROR name="ERRORPhotoItemPublisher">">Publisher</span><br />
+                  </label>
+                  <input type="text" id="PhotoItemPublisher" name="PhotoItemPublisher" class="text" tabindex="7" value="<#PARAM name="PhotoItemPublisher">" maxlength="40" />
+                </div>
+                <div class="field">
+                  <label for="PhotoJournalYear">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhotoJournalYear">">Publication Date</span><br />
+                  </label>
+                  <input type="text" id="PhotoJournalYear" name="PhotoJournalYear" class="text" tabindex="8" value="<#PARAM name="PhotoJournalYear">" maxlength="30" />
+                </div>
+                <div class="field">
+                  <label for="PhotoItemEdition">
+                  <span class="<#ERROR name="ERRORPhotoItemEdition">">Edition</span><br />
+                  </label>
+                  <input type="text" id="PhotoItemEdition" name="PhotoItemEdition" class="text" tabindex="9" value="<#PARAM name="PhotoItemEdition">" maxlength="40" />
+                </div>
+                <div class="field">
+                  <label for="ESPNumber">
+                  <span class="<#ERROR name="ERRORESPNumber">">OCLC Number <a href="https://library.answers.nyu.edu/website/faq/134617" class="nyulibrary_icons_help iconlink" title="" target="_blank">&nbsp;</a></span><br />
+                  <span class="note">Will speed processing.</span><br />
+                  </label>
+                  <input type="text" id="ESPNumber" name="ESPNumber" class="text" tabindex="10" value="<#PARAM name="ESPNumber">" maxlength="32" />
+                </div>
+                <div class="field">
+                  <label for="ISSN">
+                  <span class="<#ERROR name="ERRORISSN">">ISBN <a href="https://library.answers.nyu.edu/website/faq/134616" class="nyulibrary_icons_help iconlink" title="" target="_blank">&nbsp;</a></span><br />
+                  <span class="note">Will speed processing.</span><br />
+                  </label>
+                  <input type="text" id="ISSN" name="ISSN" class="text" tabindex="11" value="<#PARAM name="ISSN">" maxlength="20" />
+                </div>
+                <div class="field">
+                  <label for="AcceptNonEnglish">
+                  <span class="<#ERROR name="ERRORAcceptNonEnglish">">Accept chapter in languages other than English? </span><br />
+                  <span class="note">If yes, specify languages in "Notes" below.</span><br />
+                  </label>
+                  <select id="AcceptNonEnglish" name="AcceptNonEnglish" tabindex="12">
+                    <option selected><#PARAM name="AcceptNonEnglish"></option>
+                    <option value="No">
+                      No
+                    </option>
+                    <option value="Yes">
+                      Yes
+                    </option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ShippingOptions">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORShippingOptions">">Pickup Location</span><br />
+                  </label>
+                  <select id="ShippingOptions" name="ShippingOptions" tabindex="13">
+                    <option selected><#PARAM name="ShippingOptions"></option>
+                    <option value="NYU Bobst">
+                      NYU Bobst
+                    </option>
+                    <option value="NYU Abu Dhabi">
+                      NYU Abu Dhabi
+                    </option>
+                    <option value="NYU Shanghai">
+                      NYU Shanghai
+                    </option>
+                    <option value="NYU Bern Dibner">
+                      NYU Bern Dibner
+                    </option>
+                    <option value="NYU Courant">
+                      NYU Courant
+                    </option>
+                    <option value="NYU Institute of Fine Arts">
+                      NYU Institute of Fine Arts
+                    </option>
+                    <option value="NYU Inst Study Ancient World">
+                      NYU Inst Study Ancient World
+                    </option>
+                    <option value="NYU Jack Brause">
+                      NYU Jack Brause
+                    </option>
+                    <option value="NYU Lapidus Health Sciences">
+                      NYU Lapidus Health Sciences
+                    </option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="CitedIn">
+                  <span class="<#ERROR name="ERRORCitedIn">">Please specify "Other" global site</span><br />
+                  </label>
+                  <input type="text" id="CitedIn" name="CitedIn" class="text" tabindex="14" value="<#PARAM name="CitedIn">" />
+                </div>
+                <div class="field">
+                  <label for="Notes">
+                  <span class="<#ERROR name="ERRORNotes">">Notes</span><br />
+                  </label>
+                  <textarea id="Notes" name="Notes" tabindex="15" maxlength="200"><#PARAM name="Notes"></textarea>
+                </div>
+                <div class="field">
+                <p>
+                  <b>By submitting this request you agree to adhere to all restrictions regarding this material expressed in <a href="http://guides.nyu.edu/friendly.php?s=copyright" target="_blank">U.S. Copyright Law</a>.</b>
+                </p>
+                </div>
+              <#INCLUDE filename="include_request_buttons.html">
+            </fieldset>
+          </form>
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+

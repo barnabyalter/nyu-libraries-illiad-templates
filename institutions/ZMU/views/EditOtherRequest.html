@@ -1,0 +1,205 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - Request Other Material
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="EditOtherRequest" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+        <form action="<#DLL>" method="post" name="EditOtherRequest" id="IlliadForm">
+            <input type="hidden" name="ILLiadForm" value="EditOtherRequest" />
+            <input type="hidden" name="Username" value="<#PARAM name="Username">" />
+            <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">" />
+            <input type="hidden" name="RequestType" value="Loan" />
+            <input type="hidden" name="TransactionNumber" value="<#PARAM name="TransactionNumber">" />
+            <h2>Request Other Material</h2>
+            <div><span class="req">*</span> Indicates required field</div>
+            <fieldset>
+              
+                  <div class="status_container">
+                  <#STATUS>
+                  </div>
+                
+                <div class="field">
+                  <label for="DocumentType">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORDocumentType">">Material Type</span><br />
+                  </label>
+                  <select id="DocumentType" name="DocumentType" tabindex="1">
+                    <option selected><#PARAM name="DocumentType"></option>
+                    <option value="Conference">
+                      Conference
+                    </option>
+                    <option value="Journal">
+                      Journal
+                    </option>
+                    <option value="Audio/Visual">
+                      Audio/Visual
+                    </option>
+                    <option value="Musical Score">
+                      Musical Score
+                    </option>
+                    <option value="Microform">
+                      Microform
+                    </option>
+                    <option value="Dissertation/Thesis">
+                      Dissertation/Thesis
+                    </option>
+                    <option value="Other">
+                      Other
+                    </option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="LoanTitle">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORLoanTitle">">Title</span><br />
+                  <span class="note">Please do not abbreviate unless your citation is abbreviated</span><br />
+                  </label>
+                  <input type="text" id="LoanTitle" name="LoanTitle" class="text" tabindex="2" value="<#PARAM name="LoanTitle">" maxlength="255" />
+                </div>
+                <div class="field">
+                  <label for="LoanAuthor">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORLoanAuthor">">Author/Editors</span><br />
+                  </label>
+                  <input type="text" id="LoanAuthor" name="LoanAuthor" class="text" tabindex="3" value="<#PARAM name="LoanAuthor">" maxlength="100" />
+                </div>
+                <div class="field">
+                  <label for="LoanPlace">
+                  <span class="<#ERROR name="ERRORLoanPlace">">Place of Publication</span><br />
+                  </label>
+                  <input type="text" id="LoanPlace" name="LoanPlace" class="text" tabindex="4" value="<#PARAM name="LoanPlace">" maxlength="30" />
+                </div>
+                <div class="field">
+                  <label for="LoanPublisher">
+                  <span class="<#ERROR name="ERRORLoanPublisher">">Publisher</span><br />
+                  </label>
+                  <input type="text" id="LoanPublisher" name="LoanPublisher" class="text" tabindex="5" value="<#PARAM name="LoanPublisher">" maxlength="50" />
+                </div>
+                <div class="field">
+                  <label for="LoanDate">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORLoanDate">">Publication Date</span><br />
+                  </label>
+                  <input type="text" id="LoanDate" name="LoanDate" class="text" tabindex="6" value="<#PARAM name="LoanDate">" maxlength="30" />
+                </div>
+                <div class="field">
+                  <label for="LoanEdition">
+                  <span class="<#ERROR name="ERRORLoanEdition">">Edition</span><br />
+                  </label>
+                  <input type="text" id="LoanEdition" name="LoanEdition" class="text" tabindex="7" value="<#PARAM name="LoanEdition">" maxlength="30" />
+                </div>
+                <div class="field">
+                  <label for="ESPNumber">
+                  <span class="<#ERROR name="ERRORESPNumber">">OCLC Number <a href="https://library.answers.nyu.edu/website/faq/134617" class="nyulibrary_icons_help iconlink" title="" target="_blank">&nbsp;</a></span><br />
+                  <span class="note">Will speed  processing.</span><br />
+                  </label>
+                  <input type="text" id="ESPNumber" name="ESPNumber" class="text" tabindex="8" value="<#PARAM name="ESPNumber">" maxlength="32" />
+                </div>
+                <div class="field">
+                  <label for="ISSN">
+                  <span class="<#ERROR name="ERRORISSN">">ISBN <a href="https://library.answers.nyu.edu/website/faq/134616" class="nyulibrary_icons_help iconlink" title="" target="_blank">&nbsp;</a></span><br />
+                  <span class="note">Will speed processing</span><br />
+                  </label>
+                  <input type="text" id="ISSN" name="ISSN" class="text" tabindex="9" value="<#PARAM name="ISSN">" maxlength="20" />
+                </div>
+                <div class="field">
+                  <label for="AcceptNonEnglish">
+                  <span class="<#ERROR name="ERRORAcceptNonEnglish">">Accept book in languages other than English?</span><br />
+                  <span class="note">If yes, specify languages in "Notes" below.</span><br />
+                  </label>
+                  <select id="AcceptNonEnglish" name="AcceptNonEnglish" tabindex="10">
+                    <option selected><#PARAM name="AcceptNonEnglish"></option>
+                    <option value="No">
+                      No
+                    </option>
+                    <option value="Yes">
+                      Yes
+                    </option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="AcceptAlternateEdition">
+                  <span class="<#ERROR name="ERRORAcceptAlternateEdition">">Accept an alternate edition?</span><br />
+                  </label>
+                  <select id="AcceptAlternateEdition" name="AcceptAlternateEdition" tabindex="11">
+                    <option selected><#PARAM name="AcceptAlternateEdition"></option>
+                    <option value="No">
+                      No
+                    </option>
+                    <option value="Yes">
+                      Yes
+                    </option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ShippingOptions">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORShippingOptions">">Pickup Location</span><br />
+                  </label>
+                  <select id="ShippingOptions" name="ShippingOptions" tabindex="12">
+                    <option selected><#PARAM name="ShippingOptions"></option>
+                    <option value="NYU Bobst">
+                      NYU Bobst
+                    </option>
+                    <option value="NYU Abu Dhabi">
+                      NYU Abu Dhabi
+                    </option>
+                    <option value="NYU Shanghai">
+                      NYU Shanghai
+                    </option>
+                    <option value="NYU Bern Dibner">
+                      NYU Bern Dibner
+                    </option>
+                    <option value="NYU Courant">
+                      NYU Courant
+                    </option>
+                    <option value="NYU Institute of Fine Arts">
+                      NYU Institute of Fine Arts
+                    </option>
+                    <option value="NYU Inst Study Ancient World">
+                      NYU Inst Study Ancient World
+                    </option>
+                    <option value="NYU Jack Brause">
+                      NYU Jack Brause
+                    </option>
+                    <option value="NYU Lapidus Health Sciences">
+                      NYU Lapidus Health Sciences
+                    </option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="Notes">
+                  <span class="<#ERROR name="ERRORNotes">">Notes</span><br />
+                  </label>
+                  <textarea id="Notes" name="Notes" tabindex="13" maxlength="200"><#PARAM name="Notes"></textarea>
+                </div>
+                <div class="field">
+                <p>
+                  <b>By submitting this request you agree to adhere to all restrictions regarding this material expressed in <a href="http://guides.nyu.edu/friendly.php?s=copyright" target="_blank">U.S. Copyright Law</a>.</b>
+                </p>
+                </div>
+              <#INCLUDE filename="include_request_buttons.html">
+            </fieldset>
+          </form>
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+

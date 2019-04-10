@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - View Detailed Information
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="ViewDetailedInformation" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+                
+        <#MENU name="transaction" separator="|">
+        <div class="status_container">
+        <#STATUS>
+        </div>
+        
+    <div class="default-table" id="DetailedInformationTable">			
+      <#TABLE name="DetailedInformation" headerText="Transaction Information" hideColumnHeaders="true">
+    </div>
+    
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+
