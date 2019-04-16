@@ -1,6 +1,6 @@
 # ILLiad templates
 
-[![Build Status](http://jenkins.library.nyu.edu/buildStatus/icon?job=ILLiad_Production_Deploy)](http://jenkins.library.nyu.edu:8080/view/ILLiad/job/ILLiad_Production_Deploy/)
+[![CircleCI](https://circleci.com/gh/NYULibraries/illiad-templates.svg?style=svg)](https://circleci.com/gh/NYULibraries/illiad-templates)
 [![Docker Repository on Quay](https://quay.io/repository/nyulibraries/illiad-templates/status "Docker Repository on Quay")](https://quay.io/repository/nyulibraries/illiad-templates)
 
 This project contains the logic for templating ILLiad (Interlibrary Loan software) with Mustache, stylesheets in SASS and scripts in CoffeeScript.
