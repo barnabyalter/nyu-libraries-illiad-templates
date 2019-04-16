@@ -4,3 +4,4 @@ dist
 wiki
 *.wiki
 test.env
+.DS_Store
