@@ -8,6 +8,7 @@ x-build-image: &build-image
       - quay.io/nyulibraries/illiad-templates:$BRANCH_NO_SLASH
     args:
       AQUA_MICROSCANNER_TOKEN:
+  image: illiad-templates
   environment:
     BRANCH_NO_SLASH:
 

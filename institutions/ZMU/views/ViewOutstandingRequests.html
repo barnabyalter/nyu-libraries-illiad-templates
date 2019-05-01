@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>
+      BobCat - ILL - Requests in Processing
+    </title> 
+    <#INCLUDE filename="include_meta.html">
+    <#INCLUDE filename="include_stylesheets.html">
+    <#INCLUDE filename="include_javascripts.html">
+  </head>
+  <body id="ViewOutstandingRequests" class="bp two-col bobcat eshelf illiad">
+    <div id="container">
+      <#INCLUDE filename="include_header.html">
+      
+      <div class="clearBoth"></div>
+      
+      <#INCLUDE filename="include_menu.html">     
+      
+      <section id="content" class="content">
+                
+        <form action="illiad.dll" method="get">
+          <div class="actions">
+          <label for="service_action">Actions</label>
+          <select id="service_action" name="service[action]"><option value=""></option>
+            <optgroup label="View">
+                <option value="Action%3D10%26Form%3D60">Request History</option>
+                <option value="Action%3D10%26Form%3D62">Requests in Processing</option>
+                <option value="Action%3D10%26Form%3D66">Items Available to Check Out</option>
+                <option value="Action%3D10%26Form%3D70">Requests Cancelled</option>
+                <option value="Action%3D10%26Form%3D68">Requests Completed</option>
+            </optgroup>
+          </select>
+          <input id="user_submit" name="commit" type="submit" value="Submit" />
+          </div>
+        </form>
+        
+        <div class="status_container">
+        <#STATUS>
+        </div>
+        
+    <div class="default-table" id="ViewOutstandingRequestsTable">			
+      <#TABLE name="ViewOutstandingRequests" headerText="Requests in Processing" noDataAction="ShowMessageRow" noDataMessage="No Requests" column="TransactionNumber:Transaction Number (TN)" column="DocumentType:Format Type" column="Title" column="Author" column="CreationDate:Request Submitted" orderBy="TransactionNumber ASC">
+    </div>
+    
+
+      </section>
+      
+      <#INCLUDE filename="include_footer.html">
+    </div>
+  </body>
+</html>
+
