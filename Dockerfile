@@ -35,7 +35,11 @@ USER docker
 
 # Compile from Ruby templates for NYU (i.e. ZYU aka default) institution
 RUN mkdir -p /home/docker/.lftp \
-    && echo "set log:enabled true\nset log:file ''\n" >> /home/docker/.lftp/rc \
+    && echo "set log:enabled true\n \
+set log:file ''\n\
+set net:timeout 10\n\
+set net:max-retries 2\n\
+set net:reconnect-interval-base 5\n" >> /home/docker/.lftp/rc \
     && ruby compile.rb
 
 # Copy prebuilt ILLiad HTML templates for TNS (i.e. ZMU) institution
@@ -45,6 +49,6 @@ RUN mkdir -p ./ZMU \
     && cp -R institutions/ZMU/stylesheets ZMU/ \
     && cp institutions/ZMU/views/*.html ZMU/
 
-CMD echo "set ftp:proxy ${FTP_PROXY}" >> /home/docker/.lftp/rc \
+CMD echo "set ftp:proxy ${FTP_PROXY}\n" >> /home/docker/.lftp/rc \
     && lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST} 2>&1
 # CMD lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST} 2>&1
