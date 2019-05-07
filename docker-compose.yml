@@ -16,7 +16,7 @@ services:
   dev-deploy: &dev-deploy
     <<: *build-image
     environment:
-      FTP_CMD: "put ./index-dev.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; exit"
+      FTP_CMD: "put ./index-dev.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; cd ../ZMU; mput ./ZMU/*.html; cd ./javascripts; put ./ZMU/javascripts/illiad.js; cd ../stylesheets; put ./ZMU/stylesheets/illiad.css; cd ../images; mput ./ZMU/images/*; exit"
       FTP_USERNAME:
       FTP_PASSWORD:
       FTP_HOST:
@@ -27,12 +27,12 @@ services:
   dev-setup:
     <<: *dev-deploy
     environment:
-      FTP_CMD: "mkdir -p ./javascripts; mkdir -p ./stylesheets; mkdir -p ./images; exit;"
+      FTP_CMD: "mkdir -p ./javascripts; mkdir -p ./stylesheets; mkdir -p ./images; mkdir -p ./ZMU/images; mkdir -p ./ZMU/stylesheets; mkdir -p ./ZMU/javascripts; exit;"
 
   prod-deploy: &prod-deploy
     <<: *build-image
     environment:
-      FTP_CMD: "put ./index-prod.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; exit"
+      FTP_CMD: "put ./index-prod.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; cd ../ZMU; mput ./ZMU/*.html; cd ./javascripts; put ./ZMU/javascripts/illiad.js; cd ../stylesheets; put ./ZMU/stylesheets/illiad.css; cd ../images; mput ./ZMU/images/*; exit"
       FTP_USERNAME:
       FTP_PASSWORD:
       FTP_HOST:
@@ -41,4 +41,4 @@ services:
   prod-setup:
     <<: *prod-deploy
     environment:
-      FTP_CMD: "mkdir -p ./javascripts; mkdir -p ./stylesheets; mkdir -p ./images; exit;"
+      FTP_CMD: "mkdir -p ./javascripts; mkdir -p ./stylesheets; mkdir -p ./images; mkdir -p ./ZMU/images; mkdir -p ./ZMU/stylesheets; mkdir -p ./ZMU/javascripts; exit;"
