@@ -22,13 +22,9 @@
 	input[type="text"] {
 		@include form_els;
 		background-color: white;
-		background-image: url($magnifier_image);
-		background-position: 6px 50%;
-		background-repeat: no-repeat;
 		height: 24px;
 		line-height: 24px;
 		vertical-align: middle;
-		padding-left: 24px;
 		width: 80%;
 		max-width: $tab_width;
 	}

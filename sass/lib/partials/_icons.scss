@@ -122,11 +122,6 @@
 	background: url($famfamfam + 'wrench_orange.png') no-repeat;
 }
 
-.nyulibrary_icons_magnifier {
-	@include icon-position;
-	background: url($famfamfam + 'magnifier.png') no-repeat;
-}
-
 .nyulibrary_icons_new {
 	@include icon-position;
 	background: url($famfamfam + 'new.png') no-repeat;
