@@ -83,38 +83,11 @@ h1, h2, h3, h4, h5, h6 { font-family: $header_fonts; }
 	}
 }
 
-/* Content types */
-.no_cover {
-	background: white url($no_cover_image) no-repeat 0 0;
-	width: 40px;
-	height: 60px;
-}
-
-/* Styles for tip link, not popup */
-.tip {
-	background: transparent url($tip_icon_image) no-repeat;
-	padding: 0 0 10px 35px;
-	font-size: $base_font_size - 1;
-	p { margin: 0; }
-}
-
 /* Default Text style */
 .defaultTextActive { color: #666; font-style: italic; }
 
 /* ThemeRoller overrides */
 .ui-widget-content a { color: blue !important; }
-
-/* CMS Link */
-a.cmslink {
-  @include clearfix;
-  @include reset-float;
-	width: 20px;
-	height: 20px;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	border: 1px solid transparent;
-}
 
 a.iconlink:hover {
   text-decoration: none !important;
