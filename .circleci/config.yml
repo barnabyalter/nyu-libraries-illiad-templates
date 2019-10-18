@@ -60,8 +60,7 @@ jobs:
           name: Compile and copy CSS and JS assets 
           command: |
             docker-compose run compile
-            docker ps -a
-            # docker cp illiad-templates_compile_run_1:/app/dist .
+            docker cp `docker ps -a --filter "name=illiad-templates_compile_run_" --format "{{.Names}}"`:/app/dist .
       # - run:
       #     name: Export AWS Dev env vars
       #     command: |
