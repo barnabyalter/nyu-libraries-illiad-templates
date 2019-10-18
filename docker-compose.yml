@@ -6,13 +6,15 @@ x-build-image: &build-image
       - illiad-templates
       - quay.io/nyulibraries/illiad-templates
       - quay.io/nyulibraries/illiad-templates:$BRANCH_NO_SLASH
-    args:
-      AQUA_MICROSCANNER_TOKEN:
   image: illiad-templates
   environment:
     BRANCH_NO_SLASH:
 
 services:
+  compile:
+    <<: *build-image
+    command: ["ruby", "compile.rb"]
+
   dev-deploy: &dev-deploy
     <<: *build-image
     environment:
