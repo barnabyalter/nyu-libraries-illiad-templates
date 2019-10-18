@@ -144,8 +144,6 @@ workflows:
   version: 2.1
   deploy:
     jobs:
-      - build-image-dev
-      - build-image-prod
       - deploy-dev:
           requires:
             - build-image-dev
