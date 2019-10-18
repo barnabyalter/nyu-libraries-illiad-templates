@@ -75,7 +75,7 @@ aws_prod_env: &aws_prod_env
       echo 'export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_PROD}' >> $BASH_ENV
       echo 'export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_PROD}' >> $BASH_ENV
 
-s3_prod_deploy: &p
+s3_prod_deploy: &s3_prod_deploy
   aws-s3/sync:
     from: dist
     to: 's3://cdn.library.nyu.edu/illiad'
