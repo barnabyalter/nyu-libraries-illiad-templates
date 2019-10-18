@@ -144,6 +144,16 @@ workflows:
   version: 2.1
   deploy:
     jobs:
+      - build-image-dev:
+          filters:
+            branches:
+              ignore:
+                - master
+      - build-image-prod:
+          filters:
+            branches:
+              only:
+                - master
       - deploy-dev:
           requires:
             - build-image-dev
