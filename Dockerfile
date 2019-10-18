@@ -36,11 +36,11 @@ set net:reconnect-interval-base 5\n" >> /home/docker/.lftp/rc \
     && ruby compile.rb
 
 # Copy prebuilt ILLiad HTML templates for TNS (i.e. ZMU) institution
-# RUN mkdir -p ./ZMU \
-#     && cp -R institutions/ZMU/images ZMU/ \
-#     && cp -R institutions/ZMU/javascripts ZMU/ \
-#     && cp -R institutions/ZMU/stylesheets ZMU/ \
-#     && cp institutions/ZMU/views/*.html ZMU/
+RUN mkdir -p ./ZMU \
+    && cp -R institutions/ZMU/images ZMU/ \
+    && cp -R institutions/ZMU/javascripts ZMU/ \
+    && cp -R institutions/ZMU/stylesheets ZMU/ \
+    && cp institutions/ZMU/views/*.html ZMU/
 
 CMD echo "set ftp:proxy ${FTP_PROXY}\n" >> /home/docker/.lftp/rc \
     && lftp -u ${FTP_USERNAME},"${FTP_PASSWORD}" -e "${FTP_CMD}" ${FTP_HOST} 2>&1
