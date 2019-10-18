@@ -4,7 +4,7 @@ class IncludeJavascripts < Mustache
 	include Helper
   def initialize
     @type = "text/javascript"
-    @folder = "javascripts"
+    @folder = "https://cdn-dev.library.nyu.edu/illiad/javascripts"
   end
 
   def javascripts

@@ -5,7 +5,7 @@ class IncludeStylesheets < Mustache
   def initialize
     @type = "text/css"
     @rel = "stylesheet"
-    @folder = "stylesheets"
+    @folder = "https://cdn-dev.library.nyu.edu/illiad/stylesheets"
   end
   
   def stylesheets
