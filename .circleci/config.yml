@@ -56,6 +56,25 @@ jobs:
       - <<: *pull_docker
       - <<: *build_docker
       - <<: *push_docker
+      - run:
+          name: Compile and copy CSS and JS assets 
+          command: |
+            docker-compose run compile
+            docker cp illiad-templates_compile_run_1:/app/dist .
+      # - run:
+      #     name: Export AWS Dev env vars
+      #     command: |
+      #       echo 'export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_DEV}' >> $BASH_ENV
+      #       echo 'export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_DEV}' >> $BASH_ENV
+      - aws-s3/sync:
+          from: dist
+          to: 's3://cdn-dev.library.nyu.edu/illiad'
+          arguments: |
+            --exclude "*" \
+            --include "javascripts/illiad.js" \
+            --include "stylesheets/illiad.css" \
+            --delete
+          overwrite: true
 
   deploy-dev:
     <<: *docker-defaults
@@ -81,42 +100,14 @@ jobs:
             echo 'export HERMES_SECRET=$HERMES_SECRET_PROD' >> $BASH_ENV
       - <<: *hermes_deploy
 
-  deploy-dev-s3:
-    <<: *docker-defaults
-    steps:
-      - setup_remote_docker
-      - run:
-          name: Compile and copy CSS and JS assets 
-          command: |
-            docker-compose run compile
-            docker cp illiad-templates_compile_run_1:/app/dist .
-      - run:
-          name: Export AWS Dev env vars
-          command: |
-            echo 'export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_DEV}' >> $BASH_ENV
-            echo 'export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_DEV}' >> $BASH_ENV
-      - aws-s3/sync:
-          from: dist
-          to: 's3://cdn-dev.library.nyu.edu/illiad'
-          arguments: |
-            --exclude "*" \
-            --include "javascripts/illiad.js" \
-            --include "stylesheets/illiad.css" \
-            --delete
-          overwrite: true
-
 workflows:
   version: 2.1
   deploy:
     jobs:
       - build-image
-      - deploy-dev-s3:
-          requires: 
-            - build-image
       - deploy-dev:
           requires:
             - build-image
-            - deploy-dev-s3
           filters:
             branches:
               ignore:
