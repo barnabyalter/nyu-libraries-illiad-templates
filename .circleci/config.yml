@@ -110,6 +110,7 @@ workflows:
   deploy:
     jobs:
       - build-image
+      - deploy-dev-s3
       - deploy-dev:
           requires:
             - build-image
