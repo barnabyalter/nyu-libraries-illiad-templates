@@ -5,7 +5,7 @@ class IncludeStylesheets < Mustache
   def initialize
     @type = "text/css"
     @rel = "stylesheet"
-    @folder = "https://cdn-dev.library.nyu.edu/illiad/stylesheets"
+    @folder = (ENV['ILLIAD_ENV'] == "production") ? "https://cdn.library.nyu.edu/illiad/stylesheets" : "https://cdn-dev.library.nyu.edu/illiad/stylesheets"
   end
   
   def stylesheets

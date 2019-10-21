@@ -14,6 +14,8 @@ services:
   compile:
     <<: *build-image
     command: ["ruby", "compile.rb"]
+    environment:
+      ILLIAD_ENV:
 
   dev-deploy: &dev-deploy
     <<: *build-image
