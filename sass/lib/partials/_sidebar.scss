@@ -13,12 +13,8 @@
 			font-weight: bold;
 		}
 		input[type="text"], #js_search_tags input[type="text"] {
-			background-image: url($magnifier_image);
-			background-position: 6px 50%;
-			background-repeat: no-repeat;
 			width: 80%;
 			border: $border_thin;
-			padding: 5px 0 5px 24px;
 		}
 		ul { @include no-style-list; }
 		> ul {

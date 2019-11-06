@@ -11,7 +11,7 @@ class IncludeMeta < Mustache
   end
   
   def shortcut_icon
-    '<link rel="SHORTCUT ICON" href="https://library.nyu.edu/favicon.ico" />'
+    '<link rel="SHORTCUT ICON" href="https://cdn.library.nyu.edu/images/favicon.ico" />'
   end
   
   def charset

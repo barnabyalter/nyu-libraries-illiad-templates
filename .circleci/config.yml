@@ -43,9 +43,56 @@ hermes_deploy: &hermes_deploy
       docker run -e HERMES_HOST -e HERMES_SECRET quay.io/nyulibraries/hermesclient:master createJob -job=illiad-templates -tag=$TAG
       docker run -e HERMES_HOST -e HERMES_SECRET -e HERMES_WAIT_TIMEOUT=6m quay.io/nyulibraries/hermesclient:master jobStatus -job=illiad-templates
 
-version: 2
+compile: &compile
+  run:
+    name: Compile and copy CSS and JS assets 
+    command: |
+      docker-compose run compile
+      docker cp `docker ps -a --filter "name=illiad-templates_compile_run_" --format "{{.Names}}"`:/app/dist .
+
+aws_dev_env: &aws_dev_env
+  run:
+    name: Export AWS Dev env vars
+    command: |
+      echo 'export ILLIAD_ENV=development' >> $BASH_ENV
+      echo 'export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_DEV}' >> $BASH_ENV
+      echo 'export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_DEV}' >> $BASH_ENV
+
+s3_dev_deploy: &s3_dev_deploy
+  aws-s3/sync:
+    from: dist
+    to: 's3://cdn-dev.library.nyu.edu/illiad'
+    arguments: |
+      --exclude "*" \
+      --include "javascripts/illiad.js" \
+      --include "stylesheets/illiad.css" \
+      --delete
+    overwrite: true
+
+aws_prod_env: &aws_prod_env
+  run:
+    name: Export AWS Dev env vars
+    command: |
+      echo 'export ILLIAD_ENV=production' >> $BASH_ENV
+      echo 'export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_PROD}' >> $BASH_ENV
+      echo 'export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_PROD}' >> $BASH_ENV
+
+s3_prod_deploy: &s3_prod_deploy
+  aws-s3/sync:
+    from: dist
+    to: 's3://cdn.library.nyu.edu/illiad'
+    arguments: |
+      --exclude "*" \
+      --include "javascripts/illiad.js" \
+      --include "stylesheets/illiad.css" \
+      --delete
+    overwrite: true
+
+version: 2.1
+orbs:
+  aws-s3: circleci/aws-s3@1.0.11
 jobs:
-  build-image:
+  build-image-dev:
     <<: *docker-defaults
     steps:
       - checkout
@@ -54,6 +101,22 @@ jobs:
       - <<: *pull_docker
       - <<: *build_docker
       - <<: *push_docker
+      - <<: *compile
+      - <<: *aws_dev_env
+      - <<: *s3_dev_deploy
+  
+  build-image-prod:
+    <<: *docker-defaults
+    steps:
+      - checkout
+      - setup_remote_docker
+      - <<: *auth_quay
+      - <<: *pull_docker
+      - <<: *build_docker
+      - <<: *push_docker
+      - <<: *compile
+      - <<: *aws_prod_env
+      - <<: *s3_prod_deploy
 
   deploy-dev:
     <<: *docker-defaults
@@ -80,20 +143,29 @@ jobs:
       - <<: *hermes_deploy
 
 workflows:
-  version: 2
+  version: 2.1
   deploy:
     jobs:
-      - build-image
+      - build-image-dev:
+          filters:
+            branches:
+              ignore:
+                - master
+      - build-image-prod:
+          filters:
+            branches:
+              only:
+                - master
       - deploy-dev:
           requires:
-            - build-image
+            - build-image-dev
           filters:
             branches:
               ignore:
                 - master
       - deploy-prod:
           requires:
-            - build-image
+            - build-image-prod
           filters:
             branches:
               only:

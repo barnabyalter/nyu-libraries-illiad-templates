@@ -119,12 +119,6 @@
   	margin-top: 7px;
   }
 
-  h3.spinner_search_tags {
-  	background-image: url($ajax_loader_image);
-  	background-repeat: no-repeat;
-  	background-position: 80%;
-  }
-
   .row-even { @extend .even !optional; }
   .row-odd { @extend .odd !optional; }
 

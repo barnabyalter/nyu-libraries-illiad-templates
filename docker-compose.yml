@@ -6,17 +6,21 @@ x-build-image: &build-image
       - illiad-templates
       - quay.io/nyulibraries/illiad-templates
       - quay.io/nyulibraries/illiad-templates:$BRANCH_NO_SLASH
-    args:
-      AQUA_MICROSCANNER_TOKEN:
   image: illiad-templates
   environment:
     BRANCH_NO_SLASH:
 
 services:
+  compile:
+    <<: *build-image
+    command: ["ruby", "compile.rb"]
+    environment:
+      ILLIAD_ENV:
+
   dev-deploy: &dev-deploy
     <<: *build-image
     environment:
-      FTP_CMD: "put ./index-dev.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; cd ../ZMU; mput ./ZMU/*.html; cd ./javascripts; put ./ZMU/javascripts/illiad.js; cd ../stylesheets; put ./ZMU/stylesheets/illiad.css; cd ../images; mput ./ZMU/images/*; exit"
+      FTP_CMD: "put ./index-dev.html -o index.html; put ./error.asp; mput ./dist/views/*.html; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; cd ../ZMU; mput ./ZMU/*.html; cd ./javascripts; put ./ZMU/javascripts/illiad.js; cd ../stylesheets; put ./ZMU/stylesheets/illiad.css; cd ../images; mput ./ZMU/images/*; exit"
       FTP_USERNAME:
       FTP_PASSWORD:
       FTP_HOST:
@@ -32,7 +36,7 @@ services:
   prod-deploy: &prod-deploy
     <<: *build-image
     environment:
-      FTP_CMD: "put ./index-prod.html -o index.html; put ./error.asp; mput ./dist/views/*.html; mirror -R ./sass/lib/images; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; cd ../ZMU; mput ./ZMU/*.html; cd ./javascripts; put ./ZMU/javascripts/illiad.js; cd ../stylesheets; put ./ZMU/stylesheets/illiad.css; cd ../images; mput ./ZMU/images/*; exit"
+      FTP_CMD: "put ./index-prod.html -o index.html; put ./error.asp; mput ./dist/views/*.html; cd ./javascripts; put ./dist/javascripts/illiad.js; cd ../stylesheets; put ./dist/stylesheets/illiad.css; cd ../ZMU; mput ./ZMU/*.html; cd ./javascripts; put ./ZMU/javascripts/illiad.js; cd ../stylesheets; put ./ZMU/stylesheets/illiad.css; cd ../images; mput ./ZMU/images/*; exit"
       FTP_USERNAME:
       FTP_PASSWORD:
       FTP_HOST:

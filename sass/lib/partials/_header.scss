@@ -44,15 +44,6 @@ hgroup {
 		margin-right: $padding_standard;
 	}
 }
-div#bobcat_logo {
-	@include no-padding;
-	@include float-right;
-	width: 130px;
-	height: 67px;
-	line-height: 67px;
-	background: transparent url($bobcat_logo) no-repeat center center;
-	margin: 0 $padding_tiny;
-}
 #hd_link_to_home {
 	height: 38px;
 	width: 147px;

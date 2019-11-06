@@ -5,14 +5,12 @@ class IncludeStylesheets < Mustache
   def initialize
     @type = "text/css"
     @rel = "stylesheet"
-    @folder = "stylesheets"
+    @folder = (ENV['ILLIAD_ENV'] == "production") ? "https://cdn.library.nyu.edu/illiad/stylesheets" : "https://cdn-dev.library.nyu.edu/illiad/stylesheets"
   end
   
   def stylesheets
     [
       {:type => @type, :rel => @rel, :href => "#{@folder}/illiad.css", :media => "screen,projector"},
-      {:type => @type, :rel => @rel, :href => "#{@folder}/print.css", :media => "print"},
-      {:ie => true, :type => @type, :rel => @rel, :href => "#{@folder}/ie.css", :media => "screen,projector"}
     ]
   end
 
