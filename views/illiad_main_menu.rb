@@ -17,9 +17,8 @@ class IlliadMainMenu < Table
       :orderBy => "TransactionNumber DESC",
       :text_above => '
         <div class="alert" style="color: black;">
-          <h3>The ILL webpages will be unavailable from 10-11 AM on Thursday, November 14th, for a planned upgrade.</h3>
-          <p>Patrons with documents available to save/print will no longer be able to use the direct links emailed before update. The pdfs will still be available here. Direct links compatible with the upgrade will be emailed on delivery to patrons whose requests are filled going forward.</p> 
-          <p style="margin-bottom: 0;">Please watch <a href="https://library.nyu.edu">https://library.nyu.edu</a> for status updates. </p>
+          <p>The ILL webpages will be unavailable from 10-11 AM on Thursday, November 14th, for a planned upgrade. Please watch <a href="https://library.nyu.edu">https://library.nyu.edu</a> for status updates.</p>
+          <p style="margin-bottom: 0;">Patrons with documents available to save/print will no longer be able to use the direct links emailed before update. The pdfs will still be available here. Direct links compatible with the upgrade will be emailed on delivery to patrons whose requests are filled going forward.</p> 
         </div>
         <p>Articles posted to this page will remain accessible for <strong>60 days from the date of posting</strong>. You are encouraged to print or save the document for your future use.</p>
         <p>If, prior to this time, you no longer require the use of an article, you may delete it using the "Delete" link to the right of the article information. Deleted articles cannot be recovered or re-requested.</p>
