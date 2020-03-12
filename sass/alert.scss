@@ -1,0 +1,19 @@
+.top_banner_alert {
+  background-color: #F89763;
+}
+.top_banner_alert > div {
+  padding: 1em;
+  text-align: left;
+}
+.orange_alert {
+  padding: 1em;
+}
+.orange_alert, .orange_alert a {
+  color:#333333 !important;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: verdana, arial, geneva, sans-serif;
+}
+.orange_alert a {
+  text-decoration: underline;
+}

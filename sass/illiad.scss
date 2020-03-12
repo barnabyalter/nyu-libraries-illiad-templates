@@ -2,6 +2,7 @@ $images_url: "https://cdn.library.nyu.edu/illiad/images/";
 // Import base variables and mixins which bobcat and sub layouts use
 @import "lib/eshelf";
 @import "lib/nyulibraries_gray/jquery-ui";
+@import "alert";
 
 // Styles specific to ILLiad sub styles of eshelf and bobcat
 
