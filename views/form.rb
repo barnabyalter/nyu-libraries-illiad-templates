@@ -46,19 +46,26 @@ class Form < Layout
     icon_link "https://library.answers.nyu.edu/website/faq/134614"
   end
 
+  # Temporarily no physical pickup locations
   def pickup_options
     [
-      {:value => "NYU Bobst"},
-      {:value => "NYU Abu Dhabi"},
-      {:value => "NYU Shanghai"},
-      {:value => "NYU Bern Dibner"},
-      {:value => "NYU Courant"},
-      {:value => "NYU Institute of Fine Arts"},
-      {:value => "NYU Inst Study Ancient World"},
-      {:value => "NYU Jack Brause"},
-      {:value => "NYU Lapidus Health Sciences"}
+      {value: "Scan Request"}
     ]
   end
+
+  # def pickup_options
+  #   [
+  #     {:value => "NYU Bobst"},
+  #     {:value => "NYU Abu Dhabi"},
+  #     {:value => "NYU Shanghai"},
+  #     {:value => "NYU Bern Dibner"},
+  #     {:value => "NYU Courant"},
+  #     {:value => "NYU Institute of Fine Arts"},
+  #     {:value => "NYU Inst Study Ancient World"},
+  #     {:value => "NYU Jack Brause"},
+  #     {:value => "NYU Lapidus Health Sciences"}
+  #   ]
+  # end
 
   def form_fields_maxlength
     [
