@@ -6,6 +6,11 @@ $images_url: "https://cdn.library.nyu.edu/illiad/images/";
 
 // Styles specific to ILLiad sub styles of eshelf and bobcat
 
+.pre-form-text {
+  color: black;
+  margin-top:10px;
+}
+
 .content {
   .actions { display: none; }
   table {
