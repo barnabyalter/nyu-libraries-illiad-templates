@@ -9,6 +9,10 @@ $images_url: "https://cdn.library.nyu.edu/illiad/images/";
 .pre-form-text {
   color: black;
   margin-top:10px;
+  p:last-child {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
 }
 
 .content {
