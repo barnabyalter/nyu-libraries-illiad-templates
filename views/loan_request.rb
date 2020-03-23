@@ -24,11 +24,7 @@ class LoanRequest < Form
      })
    end
 
-   def pre_form_text
-      '<div class="alert" style="color: black;margin-top:10px;">
-        <p>The ILL system is currently being used to collect and vet requests.  We are currently unable to fill requests for physical items. We are exploring all digital fulfillment options for requested materials. </p>
-        <p style="margin-bottom: 0; font-weight: bold;">If a scan of a portion of a book can help meet your current research needs, please include chapter/page information in the "Notes" field.</p> 
-      </div>'+
+   def pre_fields_text
       '<div class="linkout nyulibrary_icons_information">
         Just need a chapter? Use the <a href="'+action_tag({:action=>"10",:form=>"23"})+'">Book Chapter</a> form.
       </div>'

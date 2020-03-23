@@ -1,4 +1,5 @@
 {{#form}}
+{{{pre_form_text}}}
 <form action="{{{form_action}}}" method="{{{form_method}}}" name="{{form_name}}" id="{{form_id}}">
             {{#hidden_fields}}
             <input type="hidden" name="{{name}}" value="{{{value}}}" />
@@ -10,7 +11,7 @@
                   <div class="status_container">
                   {{{status}}}
                   </div>
-                {{{pre_form_text}}}
+                {{{pre_fields_text}}}
                 {{#form_fields}}
                 <div class="field">
                   <label for="{{field}}">

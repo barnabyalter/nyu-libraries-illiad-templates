@@ -26,7 +26,7 @@ class BookChapterRequest < Form
      })
    end
 
-   def pre_form_text
+   def pre_fields_text
      '<div class="linkout nyulibrary_icons_information">Need the whole book? Use the <a href="'+action_tag({:action=>"10",:form=>"21"})+'">Book</a> form.</div>'
    end
 end
