@@ -95,7 +95,13 @@ class Form < Layout
   def pre_form_text
   '<div class="alert pre-form-text" id="pre-form-text">
     <p>We are doing everything we can to enable access to library collections in this extraordinary moment. The ILL pages are being used to collect requests for all materials. </p>
-    <p>At present requests can only be filled digitally. We are exploring all sourcing options as they become available in a rapidly changing landscape. </p>
+    <p><strong>At present requests can only be filled digitally. We are exploring all sourcing options as they become available in a rapidly changing landscape. </strong></p>
+    <p><strong>If this item is for a Course: </strong>
+    <ul>
+      <li>Instructors make your course item request using the <a href="https://ares.library.nyu.edu" target="_blank">Course Reserves System</a></li>
+      <li>Students email your course item request to <a href="mailto:lib-bobst-reserve@nyu.edu">lib-bobst-reserve@nyu.edu</a></li>
+    </ul>
+    </p>
   </div>'
   end
 end
