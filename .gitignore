@@ -1,6 +1,6 @@
 .sass-cache
 dist
-./stylesheets
+stylesheets/
 wiki
 *.wiki
 test.env
