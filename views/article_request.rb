@@ -17,6 +17,7 @@ class ArticleRequest < Form
         {:field => "PhotoJournalInclusivePages", :field_title => "Pages", :required => true, :input_text => true, :title => "(e.g., 7-12; 5, 6-8, 10-15)"},
         {:field => "ESPNumber", :field_title => "OCLC Number #{oclc_popup}", :note => 'Will speed processing.', :input_text => true},
         {:field => "ISSN", :field_title => "ISSN #{issn_popup}", :note => "Will speed processing.", :input_text => true},
+        {:field => "DOI", :field_title => "DOI", :input_text => true},
         {:field => "NotWantedAfter", :field_title => "I need this material by:", :required => true, :note => "Plan ahead when requesting materials, if the \"not wanted after date\" is sooner than 7 days than the request will be canceled.", :input_text => true},
         {:field => "AcceptNonEnglish", :field_title => "Accept article in languages other than English? ", :note => "If yes, specify languages in \"Notes\" below.", :select => {:options => [{:value => "No"},{:value => "Yes"}] }},
         {:field => "ShippingOptions", :field_title => "Pickup Location", :required => true, :select => {:options => pickup_options} },
