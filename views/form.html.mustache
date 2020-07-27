@@ -32,6 +32,7 @@
                   {{#select}}
                   <select id="{{field}}" name="{{field}}" tabindex="{{count}}">
                     <option selected>{{#param_tag}}{{field}}{{/param_tag}}</option>
+                  {{#options_group}}{{options_group}}{{/options_group}}
                   {{#options}}
                   {{#value}}
                     <option value="{{value}}">
