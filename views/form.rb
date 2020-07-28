@@ -93,7 +93,12 @@ class Form < Layout
       { field: "Address2", maxlength: "40" },
       { field: "City", maxlength: "40" },
       { field: "State", maxlength: "40" },
-      { field: "Zip", maxlength: "40" }
+      { field: "Zip", maxlength: "40" },
+      { field: "SAddress", maxlength: "40" },
+      { field: "SAddress2", maxlength: "40" },
+      { field: "SCity", maxlength: "40" },
+      { field: "SState", maxlength: "40" },
+      { field: "SZip", maxlength: "40" }
     ]
   end
 

@@ -31,9 +31,9 @@
                   {{/input_text}}
                   {{#select}}
                   <select id="{{field}}" name="{{field}}" tabindex="{{count}}">
-                    <option selected>{{#param_tag}}{{field}}{{/param_tag}}</option>
-                  {{#options_group}}{{options_group}}{{/options_group}}
+                  {{#options_group}}{{{options_group}}}{{/options_group}}
                   {{#options}}
+                  <option selected>{{#param_tag}}{{field}}{{/param_tag}}</option>
                   {{#value}}
                     <option value="{{value}}">
                     {{#title}}
