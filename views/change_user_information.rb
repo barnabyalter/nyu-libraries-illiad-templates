@@ -7,6 +7,7 @@ class ChangeUserInformation < Form
   def form
      super.merge!({
       form_id: "IlliadForm",
+      footer: nil,
       hidden_fields: [
          {name: "ILLiadForm", value: self.class.name},
          {name: "Username", value: param_tag("Username") },
@@ -26,6 +27,16 @@ class ChangeUserInformation < Form
         {field: "SZip", field_title: "Secondary Address Zip", input_text: true},
       ].map {|field| field.merge(Hash[form_fields_maxlength.find{|f| f[:field] == field[:field]}.to_a]) }
      })
+   end
+
+   def request_buttons
+    '
+    <div class="request_buttons">
+      <input type="submit" name="SubmitButton" value="Update Patron Address" class="f-submit" tabindex="60" />
+      <input type="submit" name="ResetButton" value="Reset Form" class="f-submit" tabindex="61" />
+      <input type="submit" name="SubmitButton" value="Cancel - Return to Main Menu" class="f-submit" tabindex="62" />
+    </div>
+    '
    end
 
 end
