@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), 'form')
 class ChangeUserInformation < Form
   def page_name
-    "Update Patron Address"
+    "Update My Profile"
   end
 
   def form
@@ -32,7 +32,7 @@ class ChangeUserInformation < Form
    def request_buttons
     '
     <div class="request_buttons">
-      <input type="submit" name="SubmitButton" value="Update Patron Address" class="f-submit" tabindex="60" />
+      <input type="submit" name="SubmitButton" value="Update" class="f-submit" tabindex="60" />
       <input type="submit" name="ResetButton" value="Reset Form" class="f-submit" tabindex="61" />
       <input type="submit" name="SubmitButton" value="Cancel - Return to Main Menu" class="f-submit" tabindex="62" />
     </div>
