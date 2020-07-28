@@ -12,7 +12,8 @@ class IncludeMenu < Mustache
             [
               { :link => "https://eshelf.library.nyu.edu/account" , :id => "account", :title => "My library account" },
               { :link => "/" , :id => "ill", :title => "My interlibrary loan (ILL)", :class => "selected" },
-              { :link => "https://eshelf.library.nyu.edu" , :id => "records", :title => "All saved records" }
+              { :link => "https://eshelf.library.nyu.edu" , :id => "records", :title => "All saved records" },
+              { :link => action_tag({:action=>"10",:form=>"81"}), :id => "change_user_information", :title => "Update My Address" }
             ]
           },
           { :id => "request", :header => "Make a request", :options =>
