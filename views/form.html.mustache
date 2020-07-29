@@ -27,7 +27,7 @@
                   <textarea id="{{field}}" name="{{field}}" tabindex="{{count}}"{{#maxlength}} maxlength="{{maxlength}}"{{/maxlength}}>{{#param_tag}}{{field}}{{/param_tag}}</textarea>
                   {{/textarea}}
                   {{#input_text}}
-                  <input type="text" id="{{field}}" name="{{field}}" class="text{{#title}} defaultText{{/title}}" tabindex="{{count}}" value="{{#param_tag}}{{field}}{{/param_tag}}"{{#title}} title="{{title}}"{{/title}}{{#maxlength}} maxlength="{{maxlength}}"{{/maxlength}} />
+                  <input {{#readonly}}readonly aria-readonly="true" {{/readonly}}type="text" id="{{field}}" name="{{field}}" class="text{{#title}} defaultText{{/title}}" tabindex="{{count}}" value="{{#param_tag}}{{field}}{{/param_tag}}"{{#title}} title="{{title}}"{{/title}}{{#maxlength}} maxlength="{{maxlength}}"{{/maxlength}} />
                   {{/input_text}}
                   {{#select}}
                   <select id="{{field}}" name="{{field}}" tabindex="{{count}}">
