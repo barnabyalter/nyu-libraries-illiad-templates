@@ -15,7 +15,7 @@ class ChangeUserInformation < Form
         #  {name: "EMailAddress", value: param_tag("EMailAddress") },
        ],
       form_fields: [
-        {field: "EMailAddress", value: param_tag("EMailAddress"), input_type: true, required: true, readonly: true },
+        {field: "EMailAddress", value: param_tag("EMailAddress"), input_text: true, required: true, readonly: true },
         {field: "Address", value: param_tag("Address"), field_title: "Primary Address Line 1", required: true, input_text: true},
         {field: "Address2", value: param_tag("Address2"), field_title: "Primary Address Line 2", input_text: true},
         {field: "City", value: param_tag("City"), field_title: "Primary Address City", required: true, input_text: true},
