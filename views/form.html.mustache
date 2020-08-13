@@ -5,13 +5,13 @@
             <input type="hidden" name="{{name}}" value="{{{value}}}" />
             {{/hidden_fields}}
             <h2>{{{form_header}}}</h2>
+            {{{pre_fields_text}}}
             <div><span class="{{required_class}}">{{{required_indicator}}}</span> {{{required_text}}}</div>
             <fieldset>
               {{#sub_header}}<h3>{{sub_header}}</h3>{{/sub_header}}
                   <div class="status_container">
                   {{{status}}}
                   </div>
-                {{{pre_fields_text}}}
                 {{#form_fields}}
                 <div class="field">
                   <label for="{{field}}">
