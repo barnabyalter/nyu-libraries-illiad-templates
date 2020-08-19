@@ -88,7 +88,17 @@ class Form < Layout
       { field: "PhotoItemAuthor", maxlength: "100" },
       { field: "PhotoItemPlace", maxlength: "40" },
       { field: "PhotoItemPublisher", maxlength: "40" },
-      { field: "PhotoItemEdition", maxlength: "40" }
+      { field: "PhotoItemEdition", maxlength: "40" },
+      { field: "Address", maxlength: "40" },
+      { field: "Address2", maxlength: "40" },
+      { field: "City", maxlength: "30" },
+      { field: "State", maxlength: "2" },
+      { field: "Zip", maxlength: "10" },
+      { field: "SAddress", maxlength: "40" },
+      { field: "SAddress2", maxlength: "40" },
+      { field: "SCity", maxlength: "30" },
+      { field: "SState", maxlength: "2" },
+      { field: "SZip", maxlength: "10" }
     ]
   end
 

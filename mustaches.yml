@@ -26,6 +26,7 @@ views:
     - ViewSearchResults
     - ElectronicDeliveryUndelete
     - Error
+    - ChangeUserInformation
     # - NewAuthRegistration
   - include_header
   - include_menu
