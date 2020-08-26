@@ -28,7 +28,7 @@ class IlliadMainMenu < Table
         
         <h3>Documents Available to Save/Print</h3>
         <ul>
-          <li><strong>Documents are accessible for 60 days from the date of posting.</strong> You can print or save the document for future use.</li>
+          <li><strong>Documents are accessible for 30 days from the date of posting.</strong> You can print or save the document for future use.</li>
           <li>To delete documents you no longer need, select the "Delete" link in the far right column for that item. <strong>Deleted documents can't be recovered or re-requested.</strong></li>
         </ul>
 
