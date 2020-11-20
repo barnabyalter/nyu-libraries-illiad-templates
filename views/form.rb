@@ -49,7 +49,7 @@ class Form < Layout
   # Temporarily no physical pickup locations
   def pickup_options
     [
-      {value: "Electronic delivery"}
+      {value: "Scan Request", title: "Electronic delivery"}
     ]
   end
 
