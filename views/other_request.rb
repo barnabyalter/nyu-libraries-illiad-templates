@@ -38,4 +38,9 @@ class OtherRequest < Form
       { value: :Other }
     ]
    end
+   def pre_fields_text
+    '<div>
+      <div>NYU Libraries will pursue a digital first fulfillment approach for all requests for materials not available in our collection. If we are unable to source an electronic version, we will try to borrow a print copy on your behalf. Different sourcing options may apply based on your current location.</div>
+    </div>'
+  end
 end

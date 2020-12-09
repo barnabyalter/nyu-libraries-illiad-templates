@@ -25,8 +25,9 @@ class LoanRequest < Form
    end
 
    def pre_fields_text
-      '<div class="linkout nyulibrary_icons_information">
-        Just need a chapter? Use the <a href="'+action_tag({:action=>"10",:form=>"23"})+'">Book Chapter</a> form.
+      '<div>
+        <div>NYU Libraries will pursue a digital first fulfillment approach for all requests for materials not available in our collection. If we are unable to source an electronic version, we will try to borrow a print copy on your behalf. Different sourcing options may apply based on your current location.</div>
+        <div class="linkout nyulibrary_icons_information">Just need a chapter? Use the <a href="'+action_tag({:action=>"10",:form=>"23"})+'">Book Chapter</a> form.</div>
       </div>'
     end
 end
