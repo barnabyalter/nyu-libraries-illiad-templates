@@ -46,6 +46,10 @@ class Form < Layout
     icon_link "https://library.answers.nyu.edu/website/faq/134614"
   end
 
+  def faq_popup
+    icon_link "https://library.answers.nyu.edu/faq/331018"
+  end
+
   # Temporarily no physical pickup locations
   def pickup_options
     [
