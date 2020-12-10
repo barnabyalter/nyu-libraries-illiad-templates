@@ -50,8 +50,23 @@ class Form < Layout
     icon_link "https://library.answers.nyu.edu/faq/331018"
   end
 
-  # Temporarily no physical pickup locations
   def pickup_options
+    [
+      {value: "BOBLK", title: "NYU New York (Bobst Locker pickup)"},
+      {value: "DIBLK", title: "NYU New York (Dibner Locker Pickup)"},
+      {value: "HOMED", title: "NYU New York (Home Delivery)"},
+      {value: "HOMED", title: "Continental US (Home Delivery)"},
+      {value: "NY-GLOBAL", title: "NYU  Remote (Global)"},
+      {value: "NYUAB", title: "NYU Abu Dhabi Campus"},
+      {value: "NYUSH-MAIN", title: "NYU Shanghai (Academic Building)"},
+      {value: "NYUSH-SHINMAY", title: "NYU Shanghai (Go Local - Shinmay)"},
+      {value: "NYUSH-FUHUI", title: "NYU Shanghai (Go Local - Fuhui)"},
+      {value: "NYUSH-REMOTE", title: "NYU Shanghai Remote"},
+      {value: "OTHER", title: "Other"},
+    ]
+  end
+
+  def scan_option
     [
       {value: "Scan Request"}
     ]
