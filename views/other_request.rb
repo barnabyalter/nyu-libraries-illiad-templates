@@ -21,7 +21,7 @@ class OtherRequest < Form
         {:field => "NotWantedAfter", :field_title => "I need this material by:", :required => true, :note => "Please pick a date that gives us time to fill the request, taking into account shipping and processing. This date will not affect the speed or priority of request processing.", :input_text => true},
         {:field => "AcceptNonEnglish", :field_title => "Accept book in languages other than English?", :note => "If yes, specify languages in \"Notes\" below.", :select => {:options => [{:value => "No"},{:value => "Yes"}] }},
         {:field => "AcceptAlternateEdition", :field_title => "Accept an alternate edition?", :select => {:options => [{:value => "No"},{:value => "Yes"}] }},
-        {:field => "ShippingOptions", :field_title => "Pickup Location", :required => true, :select => {:options => pickup_options} },
+        {:field => "ShippingOptions", :field_title => "Your location and delivery preferences #{faq_popup}", :note => "We may explore different options for filling your request depending on where you are currently located. Please see the FAQ for more details.", :required => true, :select => {:options => pickup_options} },
         {:field => "Notes", :field_title => 'Notes', :textarea => true}
       ].map {|field| field.merge(Hash[form_fields_maxlength.find{|f| f[:field] == field[:field]}.to_a]) }
     })
@@ -38,4 +38,9 @@ class OtherRequest < Form
       { value: :Other }
     ]
    end
+   def pre_fields_text
+    '<div>
+      <div>NYU Libraries will pursue a digital first fulfillment approach for all requests for materials not available in our collection. If we are unable to source an electronic version, we will try to borrow a print copy on your behalf. Different sourcing options may apply based on your current location.</div>
+    </div>'
+  end
 end
