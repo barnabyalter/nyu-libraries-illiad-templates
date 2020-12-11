@@ -35,15 +35,15 @@ class Form < Layout
   end
 
   def oclc_popup
-    icon_link "https://library.answers.nyu.edu/website/faq/134617"
+    icon_link "https://library.answers.nyu.edu/faq/134617"
   end
 
   def isbn_popup
-    icon_link "https://library.answers.nyu.edu/website/faq/134616"
+    icon_link "https://library.answers.nyu.edu/faq/134616"
   end
 
   def issn_popup
-    icon_link "https://library.answers.nyu.edu/website/faq/134614"
+    icon_link "https://library.answers.nyu.edu/faq/134614"
   end
 
   # Temporarily no physical pickup locations
