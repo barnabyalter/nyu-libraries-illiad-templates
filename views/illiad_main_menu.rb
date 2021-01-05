@@ -62,9 +62,6 @@ class IlliadMainMenu < Table
   end
 
   def pre_header_text
-		'<div class="alert pre-form-text" id="pre-form-text">
-		  <p><strong>Please note that processing will be paused for Bobst Interlibrary Loan and Delivery Services requests received on or after December 21st.  Request services will resume the week of January 4th.</strong></p>
-		</div>'
   end
 
 end
