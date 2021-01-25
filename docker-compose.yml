@@ -29,6 +29,8 @@ services:
       FTP_PROXY:
     # env_file:
     #   - test.env
+    # volumes:
+    #     - .:/app
 
   dev-setup:
     <<: *dev-deploy
@@ -43,6 +45,10 @@ services:
       FTP_PASSWORD:
       FTP_HOST:
       FTP_PROXY:
+    # env_file:
+    #   - test.env
+    # volumes:
+    #     - .:/app
 
   prod-setup:
     <<: *prod-deploy
