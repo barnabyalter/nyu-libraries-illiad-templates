@@ -55,6 +55,7 @@ class Form < Layout
       {:value => "BOBLK", :title => "NYU New York (Bobst Locker pickup)"},
       {:value => "DIBLK", :title => "NYU New York (Dibner Locker Pickup)"},
       {:value => "NIFAP", :title => "NYU New York (IFA Shelf Pickup)"},
+      {:value => "NISAW", :title => "NYU New York (ISAW Pickup)"},
       {:value => "HOMED", :title => "NYU New York (Home Delivery)"},
       {:value => "HOMED", :title => "Continental US (Home Delivery)"},
       {:value => "NY-GLOBAL", :title => "NYU  Remote (Global)"},
@@ -63,7 +64,7 @@ class Form < Layout
       {:value => "NYUSH-SHINMAY", :title => "NYU Shanghai (Go Local - Shinmay)"},
       {:value => "NYUSH-FUHUI", :title => "NYU Shanghai (Go Local - Fuhui)"},
       {:value => "NYUSH-REMOTE",:title => "NYU Shanghai Remote"},
-      {:value => "OTHER", :title => "Other"},
+      {:value => "OTHER", :title => "Other (Tell us more in the Notes)"},
     ]
   end
 
