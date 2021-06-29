@@ -148,16 +148,19 @@ workflows:
   deploy:
     jobs:
       - build-image-dev:
+          context: web-cdn-aws-nyulitsdev
           filters:
             branches:
               ignore:
                 - master
       - build-image-prod:
+          context: web-cdn-aws-nyulits
           filters:
             branches:
               only:
                 - master
       - deploy-dev:
+      context: web-cdn-aws-nyulitsdev
           requires:
             - build-image-dev
           filters:
@@ -165,6 +168,7 @@ workflows:
               ignore:
                 - master
       - deploy-prod:
+          context: web-cdn-aws-nyulits
           requires:
             - build-image-prod
           filters:
