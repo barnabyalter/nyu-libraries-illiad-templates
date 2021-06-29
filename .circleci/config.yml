@@ -160,7 +160,6 @@ workflows:
               only:
                 - master
       - deploy-dev:
-          context: web-cdn-aws-nyulitsdev
           requires:
             - build-image-dev
           filters:
@@ -168,7 +167,6 @@ workflows:
               ignore:
                 - master
       - deploy-prod:
-          context: web-cdn-aws-nyulits
           requires:
             - build-image-prod
           filters:
