@@ -124,8 +124,8 @@ class Form < Layout
   end
 
   def pre_form_text
-    '<div class="pre-form-text" id="pre-form-text">
-      <p>Are you a student requesting assigned readings for a class you are taking? You can go to the Course Reserves Student Request Form (link: <a href="https://nyu.qualtrics.com/jfe/form/SV_3k2HGGaRa12aSLs">https://nyu.qualtrics.com/jfe/form/SV_3k2HGGaRa12aSLs</a>) instead to submit a request for course reserves and help make sure it\'s available for everyone in the class. <br> Instructors can always visit ares.library.nyu.edu to place course reserves requests. </p>
+    '<div class="alert pre-form-text" id="pre-form-text">
+      <p><strong>Are you a student requesting assigned readings for a class you are taking? You can go to the Course Reserves Student Request Form (link: <a href="https://nyu.qualtrics.com/jfe/form/SV_3k2HGGaRa12aSLs">https://nyu.qualtrics.com/jfe/form/SV_3k2HGGaRa12aSLs</a>) instead to submit a request for course reserves and help make sure it\'s available for everyone in the class. <br> Instructors can always visit ares.library.nyu.edu to place course reserves requests. </strong></p>
     </div>'
   end
 end
