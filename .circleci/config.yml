@@ -51,21 +51,12 @@ compile: &compile
       docker-compose run compile
       docker cp `docker ps -a --filter "name=illiad-templates_compile_run_" --format "{{.Names}}"`:/app/dist .
 
-s3_dev_deploy: &s3_dev_deploy
+s3_deploy: &s3_deploy
   aws-s3/sync:
     from: dist
-    to: 's3://cdn-dev.library.nyu.edu/illiad'
-    arguments: |
-      --exclude "*" \
-      --include "javascripts/illiad.js" \
-      --include "stylesheets/illiad.css" \
-      --delete
-    overwrite: true
-
-s3_prod_deploy: &s3_prod_deploy
-  aws-s3/sync:
-    from: dist
-    to: 's3://cdn.library.nyu.edu/illiad'
+    to: '${S3_URI}/illiad'
+    aws-access-key-id: WEB_CDN_AWS_ACCESS_KEY_ID
+    aws-secret-access-key: WEB_CDN_AWS_SECRET_ACCESS_KEY
     arguments: |
       --exclude "*" \
       --include "javascripts/illiad.js" \
@@ -87,7 +78,7 @@ jobs:
       - <<: *build_docker
       - <<: *push_docker
       - <<: *compile
-      - <<: *s3_dev_deploy
+      - <<: *s3_deploy
   
   build-image-prod:
     <<: *docker-defaults
@@ -99,7 +90,7 @@ jobs:
       - <<: *build_docker
       - <<: *push_docker
       - <<: *compile
-      - <<: *s3_prod_deploy
+      - <<: *s3_deploy
 
   deploy-dev:
     <<: *docker-defaults
