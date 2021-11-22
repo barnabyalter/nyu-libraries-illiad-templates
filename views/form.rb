@@ -56,6 +56,7 @@ class Form < Layout
       {:value => "DIBLK", :title => "NYU New York (Dibner Pickup)"},
       {:value => "NIFA", :title => "NYU New York (IFA Pickup)"},
       {:value => "NREI", :title => "NYU New York (Jack Brause Pickup)"},
+      {:value => "NISAW", :title => "NYU New York (ISAW Pickup)"},
       {:value => "HOMED", :title => "NYU New York (Home Delivery)"},
       {:value => "HOMED", :title => "Continental US (Home Delivery)"},
       {:value => "NY-GLOBAL", :title => "NYU  Remote (Global)"},
