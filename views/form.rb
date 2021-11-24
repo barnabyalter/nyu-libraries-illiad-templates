@@ -52,11 +52,13 @@ class Form < Layout
 
   def pickup_options
     [
-      {:value => "BOBLK", :title => "NYU New York (Bobst Locker pickup)"},
-      {:value => "DIBLK", :title => "NYU New York (Dibner Locker Pickup)"},
-      {:value => "NIFAP", :title => "NYU New York (IFA Shelf Pickup)"},
+      {:value => "BOBLK", :title => "NYU New York (Bobst pickup)"},
+      {:value => "DIBLK", :title => "NYU New York (Dibner Pickup)"},
+      {:value => "NIFA", :title => "NYU New York (IFA Pickup)"},
+      {:value => "NREI", :title => "NYU New York (Jack Brause Pickup)"},
       {:value => "NISAW", :title => "NYU New York (ISAW Pickup)"},
-      {:value => "HOMED", :title => "Home Delivery (Faculty/PhD students only)"},
+      {:value => "HOMED", :title => "NYU New York (Home Delivery)"},
+      {:value => "HOMED", :title => "Continental US (Home Delivery)"},
       {:value => "NY-GLOBAL", :title => "NYU  Remote (Global)"},
       {:value => "NYUAB", :title => "NYU Abu Dhabi Campus"},
       {:value => "NYUSH-MAIN", :title => "NYU Shanghai (Academic Building)"},
