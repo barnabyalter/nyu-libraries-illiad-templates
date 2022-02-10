@@ -10,7 +10,7 @@ class IncludeHeader < Mustache
     [
       {:title => "NYU Libraries", :link => "https://library.nyu.edu"},
       {:title => "BobCat", :link => "http://bobcat.library.nyu.edu"},
-      {:title => "E-Shelf"}
+      {:title => "My Requests"}
     ]
   end
   
@@ -26,7 +26,7 @@ class IncludeHeader < Mustache
   
   def head_group
     {
-      :application_title => "e-Shelf",
+      :application_title => "My Requests",
       :username_text =>'for '+app_tag("USER",{:field=>"FirstName"})+' '+app_tag("USER",{:field=>"LastName"}),
     }
   end
