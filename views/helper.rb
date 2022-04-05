@@ -32,7 +32,7 @@ module Helper
     app_tag "INCLUDE", { :filename => filename }
   end
 
-  def menu_tag params = { :name => "transaction", :separator => "|", :item => ["Edit:Edit Request", "Cancel:Cancel Request", "Renew:Renew Request", "ViewPDF:View PDF", "DeletePDF:Delete PDF", "Resubmit:Resubmit Request"] }
+  def menu_tag params = { :name => "transaction", :separator => "|", :item => ["Edit:Edit Request", "Cancel:Cancel Request", "Renew:Renew Request", "ViewPDF:View PDF", "DeletePDF:Delete PDF", "Clone:Clone Request"]}
     app_tag "MENU", params
   end
 
