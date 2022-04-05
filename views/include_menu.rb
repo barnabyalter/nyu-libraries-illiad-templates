@@ -46,7 +46,7 @@ class IncludeMenu < Mustache
           },
           { :id => "links", :header => "Service Information and Policies", :options =>
             [
-              { :link => "#", :target => "_blank" , :id => "delivery_policies", :title => "Delivery Services Info & Policies" },
+              { :link => "https://library.nyu.edu/nyu-returns/collections-access", :target => "_blank" , :id => "delivery_policies", :title => "Delivery Services Info & Policies" },
               { :link => "https://library.nyu.edu/services/borrowing/from-non-nyu-libraries/interlibrary-loan/", :target => "_blank" , :id => "ill_policies", :title => "Interlibrary Loan (ILL) info & Policies" }
             ]
           }
