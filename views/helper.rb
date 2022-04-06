@@ -2,7 +2,15 @@ module Helper
   def app_tag tag_name, params = {}
     str = "<##{tag_name.upcase}"
     params.each do |name, value|
-      str += " #{name}=\"#{value}\""
+      # if we have multiple values, create separate html attribute for each; needed to deal with redundant "item" attributes
+      # atlas docs: https://support.atlas-sys.com/hc/en-us/articles/360011907513-Adding-and-Removing-Menu-Options-v9-0-
+      if value.is_a? Array
+        value.each do |val|
+          str += " #{name}=\"#{val}\""
+        end
+      else
+        str += " #{name}=\"#{value}\""
+      end
     end
     str += ">"
     return str
@@ -24,7 +32,7 @@ module Helper
     app_tag "INCLUDE", { :filename => filename }
   end
 
-  def menu_tag params = { :name => "transaction", :separator => "|" }
+  def menu_tag params = { :name => "transaction", :separator => "|", :item => ["Edit:Edit Request", "Cancel:Cancel Request", "Renew:Renew Request", "ViewPDF:View PDF", "DeletePDF:Delete PDF", "Clone:Clone Request"]}
     app_tag "MENU", params
   end
 
