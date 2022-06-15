@@ -1,6 +1,10 @@
 require File.join(File.dirname(__FILE__), 'table')
 class IlliadMainMenu < Table
 
+  def page_name
+    "My Requests"
+  end
+
   def page_header
     ""
   end
