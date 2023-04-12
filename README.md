@@ -14,18 +14,39 @@ This project contains the logic for templating ILLiad (Interlibrary Loan softwar
 
 ### Compile and deploy
 
-Assuming FTP credentials are setup in docker-compose (for local deploys) or in Kubernetes secrets (for remote deploys):
+#### With Docker
 
+Compile:
+
+```shell
+docker compose run compile
 ```
-docker-compose build dev-deploy
-docker-compose run dev-deploy
+
+Assuming FTP credentials are set up in _docker-compose.yml_ (for local deploys) or in Kubernetes secrets (for remote deploys):
+
+```shell
+docker compose build dev-deploy
+docker compose run dev-deploy
 ```
 
 ~~For more information on how we're serverlessly deploying these templates see [this article](https://github.com/NYULibraries/WebServices-Wiki/wiki/Serverless-deploys-via-Kubernetes).~~ This is now implemented in the [Hermes server API.](https://github.com/NYULibraries/hermesserver)
 
-#### Without Docker
+#### Compile without Docker
 
-This is run within the Docker build, but to see it locally you could always:
+This is run within the Docker build, but to see it locally:
+
+* Uncomment `volumes` in the `compile` service to allow creation of _dist/_ outside
+of the container:
+
+```yaml
+  volumes:
+  - .:/app
+```
+
+Note that _dist/_ is being git-ignored, so won't show up
+in `git status` output.
+
+* Run the compile script:
 
 ```
 ruby compile.rb
