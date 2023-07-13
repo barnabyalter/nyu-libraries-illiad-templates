@@ -54,7 +54,6 @@ class Form < Layout
     [
       {:value => "BOBLK", :title => "NYU New York (Bobst Locker Pickup)"},
       {:value => "BDESK", :title => "NYU New York (Bobst Circulation Desk)"},
-      {:value => "NCOUR", :title => "NYU New York (Courant Pickup)"},
       {:value => "DIBLK", :title => "NYU New York (Dibner Pickup)"},
       {:value => "NIFA", :title => "NYU New York (IFA Pickup)"},
       {:value => "NREI", :title => "NYU New York (Jack Brause Pickup)"},
