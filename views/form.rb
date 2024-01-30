@@ -53,7 +53,7 @@ class Form < Layout
   def pickup_options
     [
       {:value => "BOBLK", :title => "NYU New York (Bobst Locker Pickup)"},
-      {:value => "BDESK", :title => "NYU New York (Bobst Circulation Desk)"},
+      {:value => "NYU Bobst", :title => "NYU New York (Bobst Circulation Desk)"},
       {:value => "DIBLK", :title => "NYU New York (Dibner Pickup)"},
       {:value => "NIFA", :title => "NYU New York (IFA Pickup)"},
       {:value => "NREI", :title => "NYU New York (Jack Brause Pickup)"},
