@@ -9,7 +9,7 @@ class IncludeHeader < Mustache
   def breadcrumbs
     [
       {:title => "NYU Libraries", :link => "https://library.nyu.edu"},
-      {:title => "BobCat", :link => "http://bobcat.library.nyu.edu"},
+      {:title => "Catalog", :link => "https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU"},
       {:title => "My Requests"}
     ]
   end
