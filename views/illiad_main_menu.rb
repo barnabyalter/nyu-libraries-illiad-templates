@@ -23,7 +23,7 @@ class IlliadMainMenu < Table
         <h3>This page has details about the document delivery and interlibrary loan (ILL) requests you've submitted.</h3>
         <h4>To Make New Requests</h4>
         <ul>
-          <li>For NYU Libraries Collections items use the <a href="https://bobcat.library.nyu.edu">catalog</a>.</li>
+          <li>For NYU Libraries Collections items use the <a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU">catalog</a>.</li>
           <li>For Interlibrary Loan (ILL) use the "Make an Interlibrary Loan (ILL) request" forms on the left side of the page.</li>
         </ul>
         <p>
