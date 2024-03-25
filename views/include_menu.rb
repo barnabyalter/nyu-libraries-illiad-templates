@@ -10,9 +10,9 @@ class IncludeMenu < Mustache
         :option_groups => [
           { :id => "shelf_options", :header => nil, :options =>
             [
-              { :link => "https://bobcat.library.nyu.edu/primo-explore/account?vid=NYU&section=overview" , :id => "account", :title => "Library account" },
+              { :link => "https://search.library.nyu.edu/discovery/account?vid=01NYU_INST:NYU&section=overview&lang=en" , :id => "account", :title => "Library account" },
               { :link => "/" , :id => "ill", :title => "My Requests", :class => "selected" },
-              { :link => "https://eshelf.library.nyu.edu" , :id => "records", :title => "Saved Items" },
+              { :link => "https://search.library.nyu.edu/discovery/favorites?vid=01NYU_INST:NYU&lang=en%C2%A7ion=items" , :id => "records", :title => "Saved Items" },
               { :link => action_tag({:action=>"10",:form=>"81"}), :id => "change_user_information", :title => "Update my delivery address" }
             ]
           },
